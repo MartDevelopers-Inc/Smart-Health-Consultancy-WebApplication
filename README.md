@@ -79,6 +79,8 @@ Then the doctor advices the patient on what medicine to take or if they need to 
 7. Feedbacks
     -> Testimonials
     -> Manage Feedbacks
+    -> Medical Experts Ratings
+    -> Complains Management
 
 
 8. Advance Reporting
