@@ -28,7 +28,7 @@ Then the doctor advices the patient on what medicine to take or if they need to 
         -> Silver Members
         -> Bronze Members
 
-4. Payments
+4. Payments / Billings
     -> Membership Payment Fee
     -> Payment Methods
     -> Payment Verifications
