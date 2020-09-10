@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy/blob/master/Smart-Health%20Consultancy.png"></p>
+<p align="center"><img length ="400" height ="200" src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy/blob/master/Smart-Health%20Consultancy.png"></p>
 
 
 ## About Smart Health Consultancy 
@@ -16,6 +16,7 @@ Then the doctor advices the patient on what medicine to take or if they need to 
     -> Management Of Medical Experts
     -> Payrolls
     -> Medical Experts Areas Of Specializations
+    -> Verification Of Doc Accounts
 
 2. Knowledge Base
     -> Varous Diseases And Eminent Symptoms
@@ -79,6 +80,8 @@ Then the doctor advices the patient on what medicine to take or if they need to 
 7. Feedbacks
     -> Testimonials
     -> Manage Feedbacks
+    -> Medical Experts Ratings
+    -> Complains Management
 
 
 8. Advance Reporting
