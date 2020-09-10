@@ -16,6 +16,7 @@ Then the doctor advices the patient on what medicine to take or if they need to 
     -> Management Of Medical Experts
     -> Payrolls
     -> Medical Experts Areas Of Specializations
+    -> Verification Of Doc Accounts
 
 2. Knowledge Base
     -> Varous Diseases And Eminent Symptoms
