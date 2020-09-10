@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy/blob/master/Smart-Health%20Consultancy.png"></p>
+<p align="center"><img length ="400" height ="200" src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy/blob/master/Smart-Health%20Consultancy.png"></p>
 
 
 ## About Smart Health Consultancy 
