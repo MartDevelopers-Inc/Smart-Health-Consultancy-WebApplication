@@ -20,23 +20,14 @@
     <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
     <?php if (isset($success)) { ?>
+        <!--This code for injecting success alert-->
         <script>
             setTimeout(function() {
-                    $('.widget-content .mixin').on('click', function() {
-                        const toast = swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            padding: '2em'
-                        });
-
-                        toast({
-                            type: 'success',
-                            title: 'Signed in successfully',
-                            padding: '2em',
-                        })
-
+                    swal({
+                        title: 'Success',
+                        text: "<?php echo $success; ?>",
+                        type: 'success',
+                        padding: '2em'
                     })
                 },
                 100);
@@ -47,22 +38,7 @@
         <!--This code for injecting error alert-->
         <script>
             setTimeout(function() {
-                    $('.widget-content .mixin').on('click', function() {
-                        const toast = swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            padding: '2em'
-                        });
-
-                        toast({
-                            type: 'success',
-                            title: 'Signed in successfully',
-                            padding: '2em',
-                        })
-
-                    })
+                    swal("Failed", "<?php echo $err; ?>", "error");
                 },
                 100);
         </script>
@@ -78,5 +54,4 @@
         </script>
 
     <?php } ?>
-
 </head>
