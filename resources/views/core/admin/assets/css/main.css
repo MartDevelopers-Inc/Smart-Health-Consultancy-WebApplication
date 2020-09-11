@@ -86,7 +86,7 @@ select.form-custom::-ms-expand {
 
 /*blockquote*/
 blockquote.blockquote { 
-    color: #0e1726;
+    color: #85cf3d;
     padding: 20px 20px 20px 14px;
     font-size: 0.875rem;
     background-color: #ffffff;
@@ -451,7 +451,7 @@ select.form-control.form-custom {
     cursor: not-allowed
 }
 .btn .caret {
-    border-top-color: #0e1726;
+    border-top-color: #85cf3d;
     margin-top: 0;
     margin-left: 3px;
     vertical-align: middle
@@ -691,7 +691,7 @@ select.form-control.form-custom {
     border-top: 1px solid #e2a03f
 }
 .btn-warning:not(:disabled):not(.disabled).active, .btn-warning:not(:disabled):not(.disabled):active, .show>.btn-warning.dropdown-toggle {
-    color: #0e1726;
+    color: #85cf3d;
     background-color: #e2a03f;
     border-color: #e2a03f;
 }
@@ -851,14 +851,14 @@ select.form-control.form-custom {
 }
 .btn-group.open .btn-success.dropdown-toggle { background-color: #499249 }
 .btn-dismiss {
-    color: #0e1726;
+    color: #85cf3d;
     background-color: #fff !important;
     border-color: #fff;
     padding: 3px 7px;
 }
 .btn-dismiss:hover,
 .btn-dismiss:focus {
-    color: #0e1726;
+    color: #85cf3d;
     background-color: #fff;
 }
 
@@ -938,7 +938,7 @@ select.form-control.form-custom {
     right: 8px;
 }
 .dropup .btn .caret {
-    border-bottom-color: #0e1726
+    border-bottom-color: #85cf3d
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
     background-color: #1b55e2;
@@ -1433,7 +1433,7 @@ input[readonly], select[readonly], textarea[readonly] {
     font-size: 14px;
     vertical-align: sub;
     cursor: pointer;
-    color: #0e1726!important;
+    color: #85cf3d!important;
 }
 table .badge-success,table .badge-primary, table .badge-warning,table .badge-danger,
 table .badge-info, table .badge-secondary, table .badge-dark  {
