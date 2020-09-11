@@ -10,7 +10,7 @@
                     <div class="form-content">
                         <h1 class="">Smart Health Consultancy - Admin Module</h1>
                         <p class="">Log in to your account to continue.</p>
-                        <form class="text-left">
+                        <form method="POST" class="text-left">
                             <div class="form">
 
                                 <div id="username-field" class="field-wrapper input">
@@ -19,7 +19,7 @@
                                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
-                                    <input id="username" name="admin_email" type="email" class="form-control" placeholder="e.g John_Doe">
+                                    <input id="username" name="admin_email" type="email" class="form-control">
                                 </div>
 
                                 <div id="password-field" class="field-wrapper input mb-2">
@@ -31,7 +31,7 @@
                                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                     </svg>
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+                                    <input id="password" name="password" type="password" class="form-control">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
@@ -42,7 +42,7 @@
                                         <button type="submit" name="login" class="btn btn-primary" value="">Log In</button>
                                     </div>
                                 </div>
-
+                                <!-- 
                                 <div class="division">
                                     <span>OR</span>
                                 </div>
@@ -54,7 +54,7 @@
                                         </svg>
                                         <span class="brand-name">Login In As Doctor</span>
                                     </a>
-                                </div>
+                                </div> -->
                                 <p class="signup-link">Not registered ? <a href="auth_register_boxed.html">Create an account</a></p>
                             </div>
                         </form>
