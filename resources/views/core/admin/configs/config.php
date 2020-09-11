@@ -2,6 +2,6 @@
     $dbuser="root";
     $dbpass="";
     $host="localhost";
-    $db="martdevelopers_MPSIMS";
+    $db="Smart_Health_Consultancy";
     $mysqli=new mysqli($host,$dbuser, $dbpass, $db);
 ?>

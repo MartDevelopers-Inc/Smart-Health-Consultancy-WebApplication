@@ -1,12 +1,12 @@
 <?php
 function check_login()
 {
-	if(strlen($_SESSION['id'])==0)
+	if(strlen($_SESSION['admin_id'])==0)
 		{
 			$host = $_SERVER['HTTP_HOST'];
 			$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-			$extra="admin_index.php";
-			$_SESSION["id"]="";
+			$extra="admin/";
+			$_SESSION["admin_id"]="";
 			header("Location: http://$host$uri/$extra");
 			
 		}
@@ -14,14 +14,13 @@ function check_login()
 
 function officer_check_login()
 {
-	if(strlen($_SESSION['officer_id'])==0)
+	if(strlen($_SESSION['doc_id'])==0)
 		{
 			$host = $_SERVER['HTTP_HOST'];
 			$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-			$extra="officer_login.php";
-			$_SESSION["officer_id"]="";
+			$extra="doctor/";
+			$_SESSION["doc_id"]="";
 			header("Location: http://$host$uri/$extra");
 			
 		}
 }
-?>
