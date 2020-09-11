@@ -1,167 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-<!-- Mirrored from demo.hasthemes.com/curex-preview/curex/index-box.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Sep 2020 09:17:29 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Curex - Medical Clinic Service Bootstrap 4 Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-
-    <!-- All css files are included here. -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/plugin.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-
-<body class="box_layout_pattern">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->  
+<?php require_once('partials/_head.php');?>
+<body>
 
     <!-- Body main wrapper start -->
-    <div class="wrapper box-layout">
+    <div class="wrapper">
         <!-- Start Header Style -->
-        <header class="htc__header">
-            <!-- Start Header Top Area -->
-            <div class="htc__header__top">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-8 col-12">
-                            <div class="ht__header__top__left">
-                                <p><span><i class="zmdi zmdi-phone"></i></span>+88 011 2225 555 </p>
-                                <p><span><i class="zmdi zmdi-alarm-check"></i></span>Mon to sat 07 am to 12 am</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4 col-12">
-                            <div class="ht__header__top__right">
-                                <div class="social_icon">
-                                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-google-plus"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Header Top Area -->
-            <!-- Start Mainmenu Area -->
-            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-7">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="images/logo/logo.png" alt="logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-9 col-lg-9 d-none d-lg-block">
-                            <nav class="main__menu__nav ">
-                                <ul class="main__menu">
-                                    <li class="drop"><a href="index.html">Home</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home version 01</a></li>
-                                            <li><a href="index-2.html">Home version 02</a></li>
-                                            <li><a href="index-3.html">Home version 03</a></li>
-                                            <li><a href="index-box.html">Home Box Layout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="about-us.html">About</a></li>
-                                    <li class="drop"><a href="service.html">Services</a>
-                                        <ul class="dropdown">
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="single-services.html">Single Service </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="blog.html">Blog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-no-sidebar.html">Blog Details no sidebar</a></li>
-                                         </ul>
-                                    </li>
-                                    <li class="drop"><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="about-us.html">about us</a></li>
-                                            <li><a href="contact-us.html">Contact us</a></li>
-                                            <li><a href="service.html">Services Pages</a></li>
-                                            <li><a href="single-services.html">Single Services</a></li>
-                                            <li><a href="doctor-details.html">Doctor Details</a></li>
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-no-sidebar.html">Blog Details no sidebar</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="contact-us.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                       
-                        <div class="col-12">
-                            <div class="mobile-menu d-lg-none">
-                                <nav>
-                                    <ul>
-                                        <li class="drop"><a href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Home version 01</a></li>
-                                            <li><a href="index-2.html">Home version 02</a></li>
-                                            <li><a href="index-3.html">Home version 03</a></li>
-                                            <li><a href="index-box.html">Home Box Layout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="about-us.html">About</a></li>
-                                    <li class="drop"><a href="service.html">Services</a>
-                                        <ul >
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="single-services.html">Single Service </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="blog.html">Blog</a>
-                                        <ul >
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-no-sidebar.html">Blog Details no sidebar</a></li>
-                                         </ul>
-                                    </li>
-                                    <li class="drop"><a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="about-us.html">about us</a></li>
-                                            <li><a href="contact-us.html">Contact us</a></li>
-                                            <li><a href="service.html">Services Pages</a></li>
-                                            <li><a href="single-services.html">Single Services</a></li>
-                                            <li><a href="doctor-details.html">Doctor Details</a></li>
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-no-sidebar.html">Blog Details no sidebar</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop"><a href="contact-us.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Mainmenu Area -->
-            <!-- End Mainmenu Area -->
-        </header>
+        <?php require_once('partials/_header.php');?>
         <!-- End Header Style -->
         
         <!-- slider-area-start -->
@@ -240,6 +83,7 @@
             </div>
         </section>
         <!-- End Support Area -->
+
         <!-- Start Try Solve Area -->
         <section class="htc__try__solve__area">
             <div class="container-fluid">
@@ -309,6 +153,7 @@
             </div>
         </section>
         <!-- End Try Solve Area -->
+
         <!-- Start Gallery Area -->
         <section class="htc__gallery__area gallery--1 pt--100 pb--70">
             <div class="container">
@@ -368,78 +213,78 @@
             </div>
         </section>
         <!-- End Gallery Area -->
+
         <!-- Start Appoinment Area -->
         <section class="htc__appoinment__area">
             <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-2 col-lg-12 col-12">
-                            <div class="section__title text-center">
-                                <h2>Make an Appointment</h2>
-                            </div>
-                            <div class="htc__appoinment__wrap">
-                                <div class="htc__appoinment__form">
-                                    <form action="#">
-                                        <div class="htc__app__box__inner">
-                                            <div class="htc__app__box">
-                                                <div class="input_inner">
-                                                    <input type="text" placeholder="Type Your Full Name">
-                                                </div>
-                                            </div>
-                                         </div>
-                                        <div class="htc__app__box__inner">
-                                            <div class="htc__app__box">
-                                                <input type="email" placeholder="Type Your E-mail">
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2 col-lg-12 col-12">
+                        <div class="section__title text-center">
+                            <h2>Make an Appointment</h2>
+                        </div>
+                        <div class="htc__appoinment__wrap">
+                            <div class="htc__appoinment__form">
+                                <form action="#">
+                                    <div class="htc__app__box__inner">
+                                        <div class="htc__app__box">
+                                            <div class="input_inner">
+                                                <input type="text" placeholder="Type Your Full Name">
                                             </div>
                                         </div>
-                                        <div class="htc__app__box__inner">
-                                            <div class="htc__app__box">
-                                                <input type="text" placeholder="Consulting Subject">
-                                            </div>
-                                            <div class="htc__app__box psy__calendar">
-                                                <input class="date__dropdown" placeholder="Appoinment Date" type="text" id="datepicker">
+                                     </div>
+                                    <div class="htc__app__box__inner">
+                                        <div class="htc__app__box">
+                                            <input type="email" placeholder="Type Your E-mail">
+                                        </div>
+                                    </div>
+                                    <div class="htc__app__box__inner">
+                                        <div class="htc__app__box">
+                                            <input type="text" placeholder="Consulting Subject">
+                                        </div>
+                                        <div class="htc__app__box psy__calendar">
+                                            <input class="date__dropdown" placeholder="Appoinment Date" type="text" id="datepicker">
+                                        </div>
+                                    </div> 
+                                    <div class="htc__app__box__inner">
+                                        
+                                        <div class="htc__app__box doctor_select">
+                                            <div class="doctor_select_inner">
+                                                <select>
+                                                    <option value="1" selected>Department</option>
+                                                    <option value="2" >Diabetes</option>
+                                                    <option value="3" >Pathology</option>
+                                                    <option value="4" >Neonatology</option>
+                                                    <option value="5" >Surgery</option>
+                                                    <option value="5" >Gastroenterology </option>
+                                                </select>
                                             </div>
                                         </div> 
-                                        <div class="htc__app__box__inner">
-                                            
-                                            <div class="htc__app__box doctor_select">
-                                                <div class="doctor_select_inner">
-                                                    <select>
-                                                        <option value="1" selected>Department</option>
-                                                        <option value="2" >Diabetes</option>
-                                                        <option value="3" >Pathology</option>
-                                                        <option value="4" >Neonatology</option>
-                                                        <option value="5" >Surgery</option>
-                                                        <option value="5" >Gastroenterology </option>
-                                                    </select>
-                                                </div>
-                                            </div> 
-                                            <div class="htc__app__box doctor_select">
-                                                <div class="doctor_select_inner">
-                                                    <select>
-                                                        <option value="1" selected>Select Doctor</option>
-                                                        <option value="2" >Dr. Christine Roberts</option>
-                                                        <option value="3" >Dr. Jacob Torres</option>
-                                                        <option value="4" >Dr. Diane Guerrero</option>
-                                                        <option value="5" >Dr. Justin Howard</option>
-                                                    </select>
-                                                </div>
+                                        <div class="htc__app__box doctor_select">
+                                            <div class="doctor_select_inner">
+                                                <select>
+                                                    <option value="1" selected>Select Doctor</option>
+                                                    <option value="2" >Dr. Christine Roberts</option>
+                                                    <option value="3" >Dr. Jacob Torres</option>
+                                                    <option value="4" >Dr. Diane Guerrero</option>
+                                                    <option value="5" >Dr. Justin Howard</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="appoinment_message">
-                                            <div class="htc__app__box message">
-                                               <textarea name="Message" placeholder="Type Additional Message"></textarea>
-                                            </div>
-                                            <div class="ht__appoin__btn">
-                                                <button type="submit">Send Request</button>
-                                            </div>
+                                    </div>
+                                    <div class="appoinment_message">
+                                        <div class="htc__app__box message">
+                                           <textarea name="Message" placeholder="Type Additional Message"></textarea>
                                         </div>
-                                    </form>
-                                </div>                            
+                                        <div class="ht__appoin__btn">
+                                            <button type="submit">Send Request</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>                            
-                        </div>
+                        </div>                            
                     </div>
                 </div>
-        
+            </div>
         </section>
         <!-- End Appoinment Area -->
         
@@ -670,6 +515,7 @@
             </div>
         </section>
         <!-- End Blog Area -->
+
         <!-- Start Subscribe Area -->
         <section class="htc__subscribe__area subscribe--transparent">
             <div class="container">
@@ -696,106 +542,14 @@
             </div>
         </section>
         <!-- End Subscribe Area -->
+
         <!-- Start Footer Area -->
-        <footer class="footer_area">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                       
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single_footer widget footer_1">
-                                <div class="single_footer_title">
-                                    <h2>Links</h2>
-                                </div>
-                                <div class="single_footer_menu">
-                                    <ul>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                        <li><a href="#">Appoinment</a></li>
-                                        <li><a href="#">Features</a></li>
-                                        <li><a href="#">Inquary</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single_footer widget footer_2">
-                                <div class="single_footer_title">
-                                    <h2>Solutions</h2>
-                                </div>
-                                <div class="single_footer_menu">
-                                    <ul>
-                                        <li><a href="#">Aging And addiction</a></li>
-                                        <li><a href="#">Back pain relief</a></li>
-                                        <li><a href="#">Have Trouble Sleep</a></li>
-                                        <li><a href="#">Therapy at Home</a></li>
-                                        <li><a href="#">Bent Fingers</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single_footer widget footer_3 ">
-                                <div class="single_footer_title">
-                                    <h2>Support</h2>
-                                </div>
-                                <div class="single_footer_menu">
-                                    <ul>
-                                        <li><a href="#">Contact us</a></li>
-                                        <li><a href="#">Care Help Line</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">Site map</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-lg-2 col-md-6">
-                            <div class="single_footer widget footer_4">
-                                <div class="single_footer_title">
-                                    <h2>Contact</h2>
-                                </div>
-                                <div class="single_footer_desc">
-                                    <p>125, Las Vegus, Main City, Street lane, USA</p>
-                                    <p>+12345 365 789 <br> +01235 789 654 </p>
-                                    <p>info@example.com<br> www.example.com </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="copyright__content">
-                                <div class="copyright__inner">
-                                    <p>Copyright © <a href="#">curex</a> All Rights Reserves </p>
-                                </div>
-                                <div class="social__icon">
-                                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-google-plus"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Copyright Area -->
-        </footer>
+       <?php require_once('partials/_footer.php');?>
         <!-- End Footer Area -->
         
         
     </div>
 
-
-   
-    <!-- jquery latest version -->
     <script src="js/vendor/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
@@ -803,6 +557,4 @@
     <script src="js/main.js"></script>
 </body>
 
-
-<!-- Mirrored from demo.hasthemes.com/curex-preview/curex/index-box.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Sep 2020 09:17:29 GMT -->
 </html>
