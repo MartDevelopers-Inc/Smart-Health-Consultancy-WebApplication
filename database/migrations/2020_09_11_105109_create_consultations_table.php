@@ -14,7 +14,15 @@ class CreateConsultationsTable extends Migration
     public function up()
     {
         Schema::create('consultations', function (Blueprint $table) {
-            $table->id();
+            $table->string('consul_id')->id();
+            $table->string('consul_code');
+            $table->string('member_id');
+            $table->string('member_name');
+            $table->string('member_phone');
+            $table->string('doc_id');
+            $table->string('doc_name');
+            $table->longText('consul_details');
+            $table->string('consul_status');
             $table->timestamps();
         });
     }
