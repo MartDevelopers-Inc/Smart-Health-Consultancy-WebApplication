@@ -12,10 +12,9 @@
 
         <ul class="navbar-item flex-row ml-md-auto">
 
-
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="assets/img/profile-16.jpg" alt="avatar">
+                    <img src="assets/img/Smart-Health-Consultancy.png" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="">

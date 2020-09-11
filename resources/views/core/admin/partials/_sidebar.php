@@ -578,17 +578,18 @@
                     <li>
                         <a href="starter_kit_alt_menu.html"> Alternate Menu </a>
                     </li>
-                </ul
+                </ul>
             </li>
 
             <li class="menu">
-                <a href="https://designreset.com/cork/documentation/index.html" aria-expanded="false" class="dropdown-toggle">
+                <a href="log_out.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                            <path d="M10 22H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h5"></path>
+                            <polyline points="17 16 21 12 17 8"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
                         </svg>
-                        <span>Documentation</span>
+                        <span>End Session</span>
                     </div>
                 </a>
             </li>
