@@ -1,4 +1,25 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+session_start();
+include('configs/config.php');
+//handle login
+if (isset($_POST['login'])) {
+    $admin_email = $_POST['admin_email'];
+    $admin_password = sha1(md5($_POST['admin_password'])); //double encrypt to increase security
+    $stmt = $mysqli->prepare("SELECT admin_email, admin_password, admin_id  FROM admin  WHERE (admin_email =? AND admin_password =?");
+    $stmt->bind_param('ss', $admin_email, $admin_password); //bind fetched parameters
+    $stmt->execute(); //execute bind 
+    $stmt->bind_result($admin_email, $admin_password, $admin_id); //bind result
+    $rs = $stmt->fetch();
+    $_SESSION['id'] = $admin_id;
+    if ($rs) {
+        //if its sucessfull
+        header("location:dashboard.php");
+    } else {
+        $err = "Access Denied Please Check Your Credentials";
+    }
+}
+require_once('partials/_head.php');
+?>
 
 <body class="form">
 
@@ -31,7 +52,7 @@
                                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                     </svg>
-                                    <input id="password" name="password" type="password" class="form-control">
+                                    <input id="password" name="admin_password" type="password" class="form-control">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
