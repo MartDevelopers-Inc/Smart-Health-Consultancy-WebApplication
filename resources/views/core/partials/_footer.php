@@ -10,11 +10,12 @@
                         </div>
                         <div class="single_footer_menu">
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Appoinment</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Inquary</a></li>
+                                <li><a href="about-us.php">About</a></li>
+                                <li><a href="service.php">Services</a></li>
+                                <li><a href="contact-us.php">Contact</a></li>
+                                <li><a href="member/">Sign Up</a></li>
+                                <li><a href="doctor/">Doctor Login</a></li>
+                                <li><a href="admin/">Admin Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,7 +75,7 @@
                 <div class="col-12">
                     <div class="copyright__content">
                         <div class="copyright__inner">
-                            <p>Copyright © 2020 - <?php echo date('Y');?> Smart Health Consultancy Inc. Proudly Powered By <a target="_blank" href="https://martdev.info">MartDevelopers Inc</a> All Rights Reserves </p>
+                            <p>Copyright © 2020 - <?php echo date('Y'); ?> Smart Health Consultancy Inc. Proudly Powered By <a target="_blank" href="https://martdev.info">MartDevelopers Inc</a> All Rights Reserves </p>
                         </div>
                         <div class="social__icon">
                             <a href="#"><i class="zmdi zmdi-twitter"></i></a>
