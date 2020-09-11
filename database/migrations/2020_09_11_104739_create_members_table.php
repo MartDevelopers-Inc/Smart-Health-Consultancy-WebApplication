@@ -21,6 +21,7 @@ class CreateMembersTable extends Migration
             $table->string('member_password');
             $table->string('member_adr');
             $table->string('member_pic');
+            $table->string('member_package');
             $table->timestamps();
         });
     }

@@ -14,7 +14,9 @@ class CreateKnowledgeBaseTable extends Migration
     public function up()
     {
         Schema::create('knowledge_base', function (Blueprint $table) {
-            $table->id();
+            $table->string('kb_id')->id();
+            $table->string('kb_title');
+            $table->longText('kb_desc');
             $table->timestamps();
         });
     }
