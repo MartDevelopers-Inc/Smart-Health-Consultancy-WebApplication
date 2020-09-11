@@ -14,7 +14,14 @@ class CreateMedicalExpertsTable extends Migration
     public function up()
     {
         Schema::create('medical_experts', function (Blueprint $table) {
-            $table->id();
+            $table->string('doc_id')->id();
+            $table->string('doc_number');
+            $table->string('doc_name');
+            $table->string('doc_email');
+            $table->string('doc_phone');
+            $table->longText('doc_bio');
+            $table->string('doc_photo');
+            $table->string('doc_status');
             $table->timestamps();
         });
     }
