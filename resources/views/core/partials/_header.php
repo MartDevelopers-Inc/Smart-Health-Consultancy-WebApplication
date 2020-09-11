@@ -43,6 +43,10 @@
                             <li class="drop"><a href="blog.php">Blog</a>
                             </li>
                             <li class="drop"><a href="contact-us.php">Contact</a></li>
+                            <li class="drop"><a href="member/">Sign Up</a></li>
+                            <li class="drop"><a href="doctor/">Doctor Login</a></li>
+                            <li class="drop"><a href="admin/">Admin Login</a></li>
+
                         </ul>
                     </nav>
                 </div>
@@ -60,6 +64,9 @@
                                 <li class="drop"><a href="blog.php">Blog</a>
                                 </li>
                                 <li class="drop"><a href="contact-us.php">Contact</a></li>
+                                <li class="drop"><a href="member/">Sign Up</a></li>
+                                <li class="drop"><a href="doctor/">Doctor Login</a></li>
+                                <li class="drop"><a href="admin/">Admin Login</a></li>
                             </ul>
                         </nav>
                     </div>
