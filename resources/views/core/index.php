@@ -15,9 +15,9 @@
 						<div class="row">
 						    <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="slider-content slider-text-animation">
-                                    <h1>Better life needs</h1>
-                                    <h2>better care</h2>
-                                    <a href="#">Meet Our Doctors</a>									
+                                    <h1>Better Life Needs</h1>
+                                    <h2>Better Care</h2>
+                                    <a href="member/">Join Us</a>									
                                 </div>
                             </div>
 						</div>	
@@ -28,9 +28,9 @@
 				        <div class="row">
 						    <div class="col-md-12 col-sm-12 col-xs-12">
 						        <div class="slider-content slider-text-animation">
-                                    <h1>Better life needs</h1>
-                                    <h2>better care</h2>
-                                    <a href="#">Meet Our Doctors</a>									
+                                    <h1>Saving Lives Is The Best Thing That</h1>
+                                    <h2>You As A Medical Expert Can Do</h2>
+                                    <a href="doctors/">Join As Medical Expert</a>									
                                 </div>
 						    </div>
 						</div>	
