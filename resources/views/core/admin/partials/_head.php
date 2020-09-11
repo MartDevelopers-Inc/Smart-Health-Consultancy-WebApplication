@@ -19,6 +19,8 @@
     <link href="plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
     <?php if (isset($success)) { ?>
         <!--This code for injecting success alert-->
         <script>
