@@ -60,7 +60,7 @@ require_once('partials/_head.php');
                                 </div>
                                 <div class="d-sm-flex justify-content-between">
                                     <div class="field-wrapper">
-                                        <button type="submit" name="login" class="btn btn-primary" value="">Log In</button>
+                                        <button type="submit" name="login" class="btn btn-primary mixin" value="">Log In</button>
                                     </div>
                                 </div>
                                 <!-- 
