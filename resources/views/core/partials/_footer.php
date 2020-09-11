@@ -60,7 +60,7 @@
                         <div class="single_footer_desc">
                             <p>125, Las Vegus, Main City, Street lane, USA</p>
                             <p>+12345 365 789 <br> +01235 789 654 </p>
-                            <p>info@example.com<br> www.example.com </p>
+                            <p>info@smarthealth.com<br> www.smarthealth.com </p>
                         </div>
                     </div>
                 </div>
