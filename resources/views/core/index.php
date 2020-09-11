@@ -1,58 +1,59 @@
-<?php require_once('partials/_head.php');?>
+<?php require_once('partials/_head.php'); ?>
+
 <body>
 
     <!-- Body main wrapper start -->
     <div class="wrapper">
         <!-- Start Header Style -->
-        <?php require_once('partials/_header.php');?>
+        <?php require_once('partials/_header.php'); ?>
         <!-- End Header Style -->
-        
+
         <!-- slider-area-start -->
-		<div class="slider__container">
-			<div class="slider-active owl-carousel">
-				<div class="slider-wrapper bg-opacity" style="background-image:url(images/slider/slider-2.jpg)">
-					<div class="container">
-						<div class="row">
-						    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="slider__container">
+            <div class="slider-active owl-carousel">
+                <div class="slider-wrapper bg-opacity" style="background-image:url(images/slider/slider-2.jpg)">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="slider-content slider-text-animation">
                                     <h1>Better Life Needs</h1>
                                     <h2>Better Care</h2>
-                                    <a href="member/">Join Us</a>									
+                                    <a href="member/">Join Us</a>
                                 </div>
                             </div>
-						</div>	
-					</div>
-				</div>
-				<div class="slider-wrapper bg-opacity " style="background-image:url(images/slider/slider-1.jpg)">
-					<div class="container">
-				        <div class="row">
-						    <div class="col-md-12 col-sm-12 col-xs-12">
-						        <div class="slider-content slider-text-animation">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-wrapper bg-opacity " style="background-image:url(images/slider/slider-1.jpg)">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="slider-content slider-text-animation">
                                     <h1>Saving Lives Is The Best Thing That</h1>
                                     <h2>You As A Medical Expert Can Do</h2>
-                                    <a href="doctors/">Join As Medical Expert</a>									
-                                </div>
-						    </div>
-						</div>	
-					</div>
-				</div>
-				<div class="slider-wrapper bg-opacity thrid_slide" style="background-image:url(images/slider/slider-3.jpg)">
-					<div class="container">
-						<div class="row">
-						    <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slider-content slider-text-animation">
-                                    <h1>Better life needs</h1>
-                                    <h2>better care</h2>
-                                    <a href="#">Meet Our Doctors</a>									
+                                    <a href="doctors/">Join As Medical Expert</a>
                                 </div>
                             </div>
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- slider-area-end -->
-       
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-wrapper bg-opacity thrid_slide" style="background-image:url(images/slider/slider-3.jpg)">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="slider-content slider-text-animation">
+                                    <h1>Experience Five Star Medical Consultation</h1>
+                                    <h2>And Medical Care</h2>
+                                    <a href="members/">Meet Our Doctors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider-area-end -->
+
         <!-- Start Support Area -->
         <section class="htc__support__area ptb--100 bg__white">
             <div class="container">
@@ -64,17 +65,23 @@
                         <div class="col-lg-7 col-sm-12 col-12">
                             <div class="htc__support__content">
                                 <div class="htc__support__inner">
-                                    <h4 class="text--theme">About...</h4>
-                                    <h2 class="text--theme">Health is the root of <br>  all happiness</h2>
+                                    <h4 class="text--theme">About Us</h4>
+                                    <h2 class="text--theme">Health is the root of <br> all happiness</h2>
                                     <div class="htc__support__details">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <p>
+                                            Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens 
+                                            chance to have a five star medical consultation at a given fee. At Smart Health Consultancy, we 
+                                            put clients` health care first.
+                                        </p>
                                     </div>
-                                    <div class="htc__spt__dai">
-                                        <div class="play_video">
-                                            <a href="https://www.youtube.com/watch?v=KeKNjVg22pc"><i class="zmdi zmdi-play"></i></a>
-                                            <span>Play This Video</span>
+                                    <!--
+                                        <div class="htc__spt__dai">
+                                            <div class="play_video">
+                                                <a href="https://www.youtube.com/watch?v=KeKNjVg22pc"><i class="zmdi zmdi-play"></i></a>
+                                                <span>Play This Video</span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -87,7 +94,7 @@
         <!-- Start Try Solve Area -->
         <section class="htc__try__solve__area">
             <div class="container-fluid">
-                <div class="home--try" style="background: rgba(0, 0, 0, 0) url(images/about/2.png) no-repeat scroll 0 0 / cover;" >
+                <div class="home--try" style="background: rgba(0, 0, 0, 0) url(images/about/2.png) no-repeat scroll 0 0 / cover;">
                     <div class="htc__try__solveleft">
                         <div class="htc__try__details">
                             <div class="try_solve_middle_inner">
@@ -95,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="row">
                     <div class="offset-lg-5 col-lg-7 col-md-12 col-12">
                         <div class="htc__solve__items">
@@ -139,7 +146,7 @@
                                 <div class="ht__sin__solve">
                                     <div class="ser_icon">
                                         <img src="images/service/icon/ser-cion-4.png" alt="services Icon">
-                                    </div> 
+                                    </div>
                                     <div class="ser__content">
                                         <h4><a href="single-services.html">Anxiety</a></h4>
                                         <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
@@ -165,7 +172,7 @@
                     </div>
                 </div>
                 <div class="row">
-                   
+
                     <!-- Start Single Gallery -->
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="singel_project mb--30">
@@ -179,7 +186,7 @@
                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="singel_project mb--30">
                             <div class="project_img">
@@ -192,7 +199,7 @@
                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="singel_project mb--30">
                             <div class="project_img">
@@ -207,8 +214,8 @@
                         </div>
                     </div>
                     <!-- End Single Gallery -->
-                   
-                    
+
+
                 </div>
             </div>
         </section>
@@ -231,7 +238,7 @@
                                                 <input type="text" placeholder="Type Your Full Name">
                                             </div>
                                         </div>
-                                     </div>
+                                    </div>
                                     <div class="htc__app__box__inner">
                                         <div class="htc__app__box">
                                             <input type="email" placeholder="Type Your E-mail">
@@ -244,50 +251,50 @@
                                         <div class="htc__app__box psy__calendar">
                                             <input class="date__dropdown" placeholder="Appoinment Date" type="text" id="datepicker">
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="htc__app__box__inner">
-                                        
+
                                         <div class="htc__app__box doctor_select">
                                             <div class="doctor_select_inner">
                                                 <select>
                                                     <option value="1" selected>Department</option>
-                                                    <option value="2" >Diabetes</option>
-                                                    <option value="3" >Pathology</option>
-                                                    <option value="4" >Neonatology</option>
-                                                    <option value="5" >Surgery</option>
-                                                    <option value="5" >Gastroenterology </option>
+                                                    <option value="2">Diabetes</option>
+                                                    <option value="3">Pathology</option>
+                                                    <option value="4">Neonatology</option>
+                                                    <option value="5">Surgery</option>
+                                                    <option value="5">Gastroenterology </option>
                                                 </select>
                                             </div>
-                                        </div> 
+                                        </div>
                                         <div class="htc__app__box doctor_select">
                                             <div class="doctor_select_inner">
                                                 <select>
                                                     <option value="1" selected>Select Doctor</option>
-                                                    <option value="2" >Dr. Christine Roberts</option>
-                                                    <option value="3" >Dr. Jacob Torres</option>
-                                                    <option value="4" >Dr. Diane Guerrero</option>
-                                                    <option value="5" >Dr. Justin Howard</option>
+                                                    <option value="2">Dr. Christine Roberts</option>
+                                                    <option value="3">Dr. Jacob Torres</option>
+                                                    <option value="4">Dr. Diane Guerrero</option>
+                                                    <option value="5">Dr. Justin Howard</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="appoinment_message">
                                         <div class="htc__app__box message">
-                                           <textarea name="Message" placeholder="Type Additional Message"></textarea>
+                                            <textarea name="Message" placeholder="Type Additional Message"></textarea>
                                         </div>
                                         <div class="ht__appoin__btn">
                                             <button type="submit">Send Request</button>
                                         </div>
                                     </div>
                                 </form>
-                            </div>                            
-                        </div>                            
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- End Appoinment Area -->
-        
+
         <!--Special Banner start-->
         <div class="special_banner">
             <div class="container">
@@ -305,7 +312,7 @@
         </div>
         <!--special Banner end-->
 
-        <!--Specialized Doctor start-->   
+        <!--Specialized Doctor start-->
         <div class="specialized_doctor pt--80">
             <div class="container">
                 <div class="row">
@@ -316,7 +323,7 @@
                             </div>
                             <div class="title_right section__title">
                                 <h2>Our specialized doctors</h2>
-                            </div> 
+                            </div>
                         </div>
                         <div class="doctor_tab_inner">
                             <div class="tab-content">
@@ -373,7 +380,7 @@
                                 </div>
                             </div>
                             <div class="doctor_name_tab">
-                               
+
                                 <ul class="nav" role="tablist">
                                     <li>
                                         <a href="#mohin" class="active" aria-controls="mohin" data-toggle="tab">
@@ -400,9 +407,9 @@
                 </div>
             </div>
         </div>
-        <!--Specialized Doctor end-->   
-        
-        <!-- Start Blog Area --> 
+        <!--Specialized Doctor end-->
+
+        <!-- Start Blog Area -->
         <section class="htc__blog__area home-blog bg__white ptb--100">
             <div class="container">
                 <div class="row">
@@ -450,7 +457,7 @@
 
                             <div class="ht__blog__thumb">
                                 <a href="blog-details.html">
-                                   <img src="images/blog/latest_post/img-2.png" alt="blog images">
+                                    <img src="images/blog/latest_post/img-2.png" alt="blog images">
                                 </a>
                             </div>
 
@@ -534,7 +541,7 @@
                                         </div>
                                         <button type="submit">Subscribe</button>
                                     </form>
-                                </div>        
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -544,10 +551,10 @@
         <!-- End Subscribe Area -->
 
         <!-- Start Footer Area -->
-       <?php require_once('partials/_footer.php');?>
+        <?php require_once('partials/_footer.php'); ?>
         <!-- End Footer Area -->
-        
-        
+
+
     </div>
 
     <script src="js/vendor/jquery.js"></script>
