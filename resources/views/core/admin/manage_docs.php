@@ -26,8 +26,9 @@ require_once('partials/_head.php');
 
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">DataTables</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>HTML5 Export</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Experts</span></li>
                             </ol>
                         </nav>
 
@@ -99,11 +100,19 @@ require_once('partials/_head.php');
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row->doc_number;?></td>
-                                                <td><?php echo $row->doc_name;?></td>
-                                                <td><?php echo $row->doc_email;?></td>
-                                                <td><?php echo $row->doc_phone;?></td>
-                                                <td><?php echo $row->doc_status;?></td>
+                                                <td><?php echo $row->doc_number; ?></td>
+                                                <td><?php echo $row->doc_name; ?></td>
+                                                <td><?php echo $row->doc_email; ?></td>
+                                                <td><?php echo $row->doc_phone; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row->doc_status == 'Pending') {
+                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
+                                                    }
+                                                    ?> 
+                                                </td>
 
                                                 <td>
                                                     <div class="btn-group">
