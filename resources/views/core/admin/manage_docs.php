@@ -177,7 +177,7 @@ require_once('partials/_head.php');
                                                             <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a>
                                                             <?php 
                                                                 if($row->doc_status == 'Pending'){
-                                                                    echo "<a class='dropdown-item badge ouline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
+                                                                    echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
                                                                 }
                                                                 else {
                                                                     echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
