@@ -61,6 +61,9 @@ require_once('partials/_head.php');
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
                                     <thead>
+                                    <span class="btn btn-outline-success">
+                                        <a href="add_medical_expert.php">Add New Medical Expert</a>
+                                    </span>
                                         <tr>
                                             <th>Number</th>
                                             <th>Name</th>
@@ -77,7 +80,7 @@ require_once('partials/_head.php');
                                             <td>Edinburgh</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
-                                            
+
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-dark btn-sm">Open</button>
