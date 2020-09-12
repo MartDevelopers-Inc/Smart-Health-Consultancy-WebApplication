@@ -3,6 +3,23 @@ require_once('partials/_head.php');
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+if (isset($_POST['update_profile'])) {
+    $admin_id = $_SESSION['admin_email'];
+    $admin_name = $_POST['admin_name'];
+    $admin_email = $_POST['admin_email'];
+
+    $query = "UPDATE  admin  SET admin_name =?, admin_email =?  WHERE admin_id=?";
+    $stmt = $conn->prepare($query);
+    $rc = $stmt->bind_param('sss',  $admin_name, $admin_email, $admin_id);
+    $stmt->execute();
+    if ($stmt) {
+        //inject alert that profile is updated 
+        $success = "Profile Updated" && header("refresh:1; url=user_profile.php");
+    } else {
+        //inject alert that profile update task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
 
 ?>
 
@@ -93,7 +110,7 @@ require_once('configs/checklogin.php');
                                                 </li>
 
                                                 <li class="contacts-block__item">
-                                                    <a href="mailto:<?php echo $row->admin_email;?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                                    <a href="mailto:<?php echo $row->admin_email; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
                                                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                                             <polyline points="22,6 12,13 2,6"></polyline>
                                                         </svg><?php echo $row->admin_email; ?></a>
@@ -114,10 +131,10 @@ require_once('configs/checklogin.php');
                                     <h3 class="">Update Profile</h3>
                                     <form method="POST">
                                         <div class="form-group mb-4">
-                                            <input type="text" required name="admin_name" class="form-control" id="lFullName" placeholder="Full Name *">
+                                            <input type="text" required name="admin_name" value="<?php echo $row->admin_name; ?>" class="form-control" id="lFullName" placeholder="Full Name *">
                                         </div>
                                         <div class="form-group mb-4">
-                                            <input type="email" required name="admin_email" class="form-control" id="lEmail" placeholder="Email address *">
+                                            <input type="email" required name="admin_email" value="<?php echo $row->admin_email; ?>" class="form-control" id="lEmail" placeholder="Email address *">
                                         </div>
                                         <small id="emailHelp" class="form-text text-muted">*Required Fields</small>
                                         <button type="submit" name="update_profile" class="btn btn-primary mt-4">Update Profile</button>
