@@ -46,6 +46,7 @@
                     extend: 'print',
                     className: 'btn'
                 }
+                
             ]
         },
         "oLanguage": {
