@@ -2,11 +2,11 @@
     <header class="header navbar navbar-expand-sm">
 
         <ul class="navbar-item theme-brand flex-row  text-center">
-            <li class="nav-item theme-logo">
+            <!-- <li class="nav-item theme-logo">
                 <a href="dashboard.php">
                     <img src="assets/img/logo-9.png" class="navbar-logo" alt="logo">
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item theme-text">
                 <a href="dashboard.php" class="nav-link"> Smart Health Consultancy </a>
             </li>
