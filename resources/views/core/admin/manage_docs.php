@@ -1,6 +1,8 @@
 <?php
+session_start();
+require_once('configs/config.php');
+require_once('configs/checklogin.php');
 require_once('partials/_head.php');
-
 ?>
 
 <body>
@@ -87,32 +89,42 @@ require_once('partials/_head.php');
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
 
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-dark btn-sm">Manage Doctor</button>
-                                                    <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                                        </svg>
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                        <a class="dropdown-item" href="view_doc.php?view">View Account</a>
-                                                        <a class="dropdown-item" href="update_doc.php?update">Update Account</a>
-                                                        <a class="dropdown-item" href="verify_doc.php?verify">Verify Account</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item text-danger" href="manage_docs.php?delete">Delete Account</a>
+                                    <tbody>
+                                        <?php
+                                        $ret = "SELECT * FROM `medical_experts` ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($row = $res->fetch_object()) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $row->doc_number;?></td>
+                                                <td><?php echo $row->doc_name;?></td>
+                                                <td><?php echo $row->doc_email;?></td>
+                                                <td><?php echo $row->doc_phone;?></td>
+                                                <td><?php echo $row->doc_status;?></td>
+
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-dark btn-sm">Manage Doctor</button>
+                                                        <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
+                                                            <a class="dropdown-item" href="view_doc.php?view">View Account</a>
+                                                            <a class="dropdown-item" href="update_doc.php?update">Update Account</a>
+                                                            <a class="dropdown-item" href="verify_doc.php?verify">Verify Account</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete">Delete Account</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        } ?>
 
                                     </tbody>
                                 </table>
