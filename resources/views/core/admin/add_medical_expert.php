@@ -1,18 +1,26 @@
 <?php
+
+use function Composer\Autoload\includeFile;
+
 session_start();
 include('configs/config.php');
 include('configs/checklogin.php');
+include('configs/codeGen.php');
 check_login();
 
 //Add Medical Expert
 if (isset($_POST['add_doc'])) {
+    $doc_id = $_POST['doc_id'];
+    $doc_number = $_POST['doc_number'];
+    $doc_name =$_POST['doc_name'];
+    $doc_email = $_POST['doc_email'];
+    $doc_phone = $_POST['doc_phone'];
+    $doc_bio = $_POST['doc_bio'];
+    $doc_status = $_POST['doc_status'];
+    $doc_photo = $_FILES['doc_photo']['name'];
+    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
-    $n = date('y');
-    $ad_id = bin2hex(random_bytes($n));
-    $ad_content = $_POST['ad_content'];
-    $ad_img = $_FILES['ad_img']['name'];
-    move_uploaded_file($_FILES["ad_img"]["tmp_name"], "../img/posts/adds/" . $_FILES["ad_img"]["name"]);
-    $query = "INSERT INTO adverts (ad_id, ad_content, ad_img) VALUES (?,?,?)";
+    $query = "INSERT INTO medical_experts (ad_id, ad_content, ad_img) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
     $rc = $stmt->bind_param('sss', $ad_id, $ad_content, $ad_img);
     $stmt->execute();
