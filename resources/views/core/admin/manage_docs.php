@@ -2,6 +2,7 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+
 //Delete
 if (isset($_GET['delete'])) {
     $doc_id = $_GET['delete'];
@@ -18,6 +19,24 @@ if (isset($_GET['delete'])) {
         $info = "Please Try Again Or Try Later";
     }
 }
+
+//Verify
+if (isset($_GET['verify'])) {
+    $id = $_GET['id'];
+    $adn = "UPDATE  medical_experts SET doc_status = 'Verified' WHERE doc_id =?";
+    $stmt = $conn->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Verified" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
+//
 require_once('partials/_head.php');
 ?>
 
@@ -143,10 +162,10 @@ require_once('partials/_head.php');
                                                             <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a>
                                                             <?php 
                                                                 if($row->doc_status == 'Pending'){
-                                                                    echo "<a class='dropdown-item badge ouline-badge-success' href='manage_docs.php?verify=$row->doc_id'>Verify Account</a>";
+                                                                    echo "<a class='dropdown-item badge ouline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
                                                                 }
                                                                 else {
-                                                                    echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id'>Un Verify Account</a>";
+                                                                    echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
                                                                 }
                                                             ?>
                                                             <div class="dropdown-divider"></div>
