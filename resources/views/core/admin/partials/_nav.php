@@ -2,6 +2,11 @@
     <header class="header navbar navbar-expand-sm">
 
         <ul class="navbar-item theme-brand flex-row  text-center">
+            <li class="nav-item theme-logo">
+                <a href="dashboard.php">
+                    <img src="assets/img/logo-9.png" class="navbar-logo" alt="logo">
+                </a>
+            </li>
             <li class="nav-item theme-text">
                 <a href="dashboard.php" class="nav-link"> Smart Health Consultancy </a>
             </li>
@@ -14,7 +19,7 @@
 
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="assets/img/Smart-Health-Consultancy.png" alt="avatar">
+                    <img src="assets/img/admin.png" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="">
