@@ -1,15 +1,15 @@
 <?php
-require_once('partials/_head.php');
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+
 if (isset($_POST['update_profile'])) {
-    $admin_id = $_SESSION['admin_email'];
+    $admin_id = $_SESSION['admin_id'];
     $admin_name = $_POST['admin_name'];
     $admin_email = $_POST['admin_email'];
 
     $query = "UPDATE  admin  SET admin_name =?, admin_email =?  WHERE admin_id=?";
-    $stmt = $conn->prepare($query);
+    $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('sss',  $admin_name, $admin_email, $admin_id);
     $stmt->execute();
     if ($stmt) {
@@ -25,19 +25,19 @@ if (isset($_POST['change_password'])) {
     //Change Password
     $error = 0;
     if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
-        $old_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['old_password']))));
+        $old_password = mysqli_real_escape_string($mysqli, trim(sha1(md5($_POST['old_password']))));
     } else {
         $error = 1;
         $err = "Old Password Cannot Be Empty";
     }
     if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
-        $new_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['new_password']))));
+        $new_password = mysqli_real_escape_string($mysqli, trim(sha1(md5($_POST['new_password']))));
     } else {
         $error = 1;
         $err = "New Password Cannot Be Empty";
     }
     if (isset($_POST['confirm_password']) && !empty($_POST['confirm_password'])) {
-        $confirm_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['confirm_password']))));
+        $confirm_password = mysqli_real_escape_string($mysqli, trim(sha1(md5($_POST['confirm_password']))));
     } else {
         $error = 1;
         $err = "Confirmation Password Cannot Be Empty";
@@ -45,7 +45,7 @@ if (isset($_POST['change_password'])) {
 
     if (!$error) {
         $admin_id = $_SESSION['admin_id'];
-        $sql = "SELECT * FROM  admin  WHERE admin_id = '$user_id'";
+        $sql = "SELECT * FROM  admin  WHERE admin_id = '$admin_id'";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
@@ -70,6 +70,7 @@ if (isset($_POST['change_password'])) {
         }
     }
 }
+require_once('partials/_head.php');
 
 ?>
 
