@@ -55,15 +55,20 @@ require_once('partials/_head.php');
             <div class="layout-px-spacing">
 
                 <div class="row layout-top-spacing">
-
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+
+                            <a class="btn btn-outline-success" href="add_medical_expert.php">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                                Add New Medical Expert
+                            </a>
                             <div class="table-responsive mb-4 mt-4">
-                                <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
+                                <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
-                                    <span class="btn btn-outline-success">
-                                        <a href="add_medical_expert.php">Add New Medical Expert</a>
-                                    </span>
                                         <tr>
                                             <th>Number</th>
                                             <th>Name</th>
