@@ -10,9 +10,10 @@ check_login();
 
 //Add Medical Expert
 if (isset($_POST['add_doc'])) {
+
     $doc_id = $_POST['doc_id'];
     $doc_number = $_POST['doc_number'];
-    $doc_name =$_POST['doc_name'];
+    $doc_name = $_POST['doc_name'];
     $doc_email = $_POST['doc_email'];
     $doc_phone = $_POST['doc_phone'];
     $doc_bio = $_POST['doc_bio'];
@@ -20,13 +21,13 @@ if (isset($_POST['add_doc'])) {
     $doc_photo = $_FILES['doc_photo']['name'];
     move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
-    $query = "INSERT INTO medical_experts (ad_id, ad_content, ad_img) VALUES (?,?,?)";
+    $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $rc = $stmt->bind_param('sss', $ad_id, $ad_content, $ad_img);
+    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Advert Posted" && header("refresh:1; url=super_admin_create_advert.php");
+        $success = "Medical Expert Account Created" && header("refresh:1; url=manage_docs.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
