@@ -7,7 +7,7 @@ require_once('configs/checklogin.php');
 if (isset($_GET['delete'])) {
     $doc_id = $_GET['delete'];
     $adn = "DELETE FROM medical_experts WHERE doc_id =?";
-    $stmt = $conn->prepare($adn);
+    $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $doc_id);
     $stmt->execute();
     $stmt->close();
@@ -24,7 +24,7 @@ if (isset($_GET['delete'])) {
 if (isset($_GET['verify'])) {
     $id = $_GET['id'];
     $adn = "UPDATE  medical_experts SET doc_status = 'Verified' WHERE doc_id =?";
-    $stmt = $conn->prepare($adn);
+    $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
     $stmt->close();
@@ -40,7 +40,7 @@ if (isset($_GET['verify'])) {
 if (isset($_GET['unverify'])) {
     $id = $_GET['id'];
     $adn = "UPDATE  medical_experts SET doc_status = 'Pending' WHERE doc_id =?";
-    $stmt = $conn->prepare($adn);
+    $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
     $stmt->close();
