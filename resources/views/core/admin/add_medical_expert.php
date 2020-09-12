@@ -22,7 +22,7 @@ if (isset($_POST['add_doc'])) {
     move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
     $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
-    $stmt = $conn->prepare($query);
+    $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
     $stmt->execute();
     if ($stmt) {
@@ -116,7 +116,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Profile Picture</label>
-                                        <input  required type="file" name="ad_img" class="form-control btn btn-success">
+                                        <input  required type="file" name="doc_photo" class="form-control btn btn-success">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
