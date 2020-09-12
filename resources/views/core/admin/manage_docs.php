@@ -2,6 +2,22 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+//Delete
+if (isset($_GET['delete'])) {
+    $doc_id = $_GET['delete'];
+    $adn = "DELETE FROM medical_experts WHERE doc_id =?";
+    $stmt = $conn->prepare($adn);
+    $stmt->bind_param('s', $doc_id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Deleted" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
