@@ -120,7 +120,7 @@ require_once('partials/_head.php');
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Email Address</label>
-                                            <input required type="text" value="<?php echo $doc_email; ?>" name="doc_email" class="form-control">
+                                            <input required type="text" value="<?php echo $row->doc_email; ?>" name="doc_email" class="form-control">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Profile Picture</label>
@@ -130,7 +130,7 @@ require_once('partials/_head.php');
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-12">
                                             <label for="inputAddress">Biography | Area Of Specialization</label>
-                                            <textarea required name="doc_bio" rows="10" class="form-control"><?php echo $doc_bio; ?></textarea>
+                                            <textarea required name="doc_bio" rows="10" class="form-control"><?php echo $row->doc_bio; ?></textarea>
                                         </div>
                                     </div>
 
