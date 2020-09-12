@@ -21,7 +21,7 @@
     <link href="assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
     <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
     <link href="assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
-
+    <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/font-icons/fontawesome/css/regular.css">
     <link rel="stylesheet" href="plugins/font-icons/fontawesome/css/fontawesome.css">
     <?php if (isset($success)) { ?>
