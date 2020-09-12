@@ -9,7 +9,7 @@
     $rc= substr(str_shuffle("QWERTYUIOPLKJHGFDSAZXCVBNM1234567890"),1,$length);
 
 // -------Doc ID--------------------------------------------------------------------//
-    $length = 4;
+    $length = 15;
     $doc_id = bin2hex(random_bytes($length));
 
 // ----Doc Number ----------------------------------------------------------------//

@@ -61,9 +61,9 @@ require_once('partials/_head.php');
 
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="super_admin_dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="super_admin_dashboard.php">Adverts</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Create Adverts</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="">HRM</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>New Medical Expert</span></li>
                             </ol>
                         </nav>
 
@@ -94,19 +94,39 @@ require_once('partials/_head.php');
                         <div class="widget-content widget-content-area br-6">
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Advert Image</label>
-                                        <input type="file" name="ad_img" class="form-control btn btn-success">
+                                    <div style="display:none" class="form-group col-md-6">
+                                        <label for="inputEmail4">Id</label>
+                                        <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
+                                        <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
+                                        <input type="text" name="doc_status" value="Verified" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Full Name</label>
+                                        <input required type="text" name="doc_name" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Mobile Phone Number</label>
+                                        <input required type="text" name="doc_phone" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email Address</label>
+                                        <input required type="text" name="doc_email" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Profile Picture</label>
+                                        <input  required type="file" name="ad_img" class="form-control btn btn-success">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
-                                        <label for="inputAddress">Advert Content</label>
-                                        <textarea name="ad_content" rows="10" class="form-control"></textarea>
+                                        <label for="inputAddress">Biography | Area Of Specialization</label>
+                                        <textarea required name="doc_bio" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
 
-                                <button type="submit" name="add" class="btn btn-primary mt-3">Add Advert</button>
+                                <button type="submit" name="add_doc" class="btn btn-primary mt-3">Create Doctor Account</button>
                             </form>
                         </div>
                     </div>
