@@ -23,7 +23,7 @@ if (isset($_POST['update_doc'])) {
 
     $query = "UPDATE medical_experts SET doc_number =?, doc_name =?, doc_email =?, doc_phone =?, doc_bio =?, doc_status =?, doc_photo =? WHERE doc_id =? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss',$doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo, $update);
+    $rc = $stmt->bind_param('ssssssss', $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo, $update);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
@@ -63,7 +63,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="">HRM</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>New Medical Expert</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Expert</span></li>
                             </ol>
                         </nav>
 
@@ -81,62 +81,71 @@ require_once('partials/_head.php');
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <?php require_once('partials/_sidebar.php'); ?>
-        <!--  END SIDEBAR  -->
+        <?php
+        require_once('partials/_sidebar.php');
+        $update = $_GET['update'];
+        $ret = "SELECT * FROM `medical_experts` WHERE doc_id ='$update' ";
+        $stmt = $mysqli->prepare($ret);
+        $stmt->execute(); //ok
+        $res = $stmt->get_result();
+        while ($row = $res->fetch_object()) {
+        ?>
+            <!--  END SIDEBAR  -->
 
-        <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
-            <div class="layout-px-spacing">
+            <!--  BEGIN CONTENT AREA  -->
+            <div id="content" class="main-content">
+                <div class="layout-px-spacing">
 
-                <div class="row layout-top-spacing">
+                    <div class="row layout-top-spacing">
 
-                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-                        <div class="widget-content widget-content-area br-6">
-                            <form method="POST" enctype="multipart/form-data">
-                                <div class="form-row mb-4">
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <label for="inputEmail4">Id</label>
-                                        <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
-                                        <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="doc_status" value="Verified" class="form-control">
+                        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                            <div class="widget-content widget-content-area br-6">
+                                <form method="POST" enctype="multipart/form-data">
+                                    <div class="form-row mb-4">
+                                        <div style="display:none" class="form-group col-md-6">
+                                            <label for="inputEmail4">Id</label>
+                                            <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
+                                            <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
+                                            <input type="text" name="doc_status" value="Verified" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Full Name</label>
-                                        <input required type="text" name="doc_name" class="form-control">
+                                    <div class="form-row mb-4">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Full Name</label>
+                                            <input required type="text" value="<?php echo $row->doc_name; ?>" name="doc_name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Mobile Phone Number</label>
+                                            <input required type="text" value="<?php echo $row->doc_phone; ?>" name="doc_phone" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Email Address</label>
+                                            <input required type="text" value="<?php echo $doc_email; ?>" name="doc_email" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Profile Picture</label>
+                                            <input required type="file" name="doc_photo" class="form-control btn btn-success">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Mobile Phone Number</label>
-                                        <input required type="text" name="doc_phone" class="form-control">
+                                    <div class="form-row mb-4">
+                                        <div class="form-group col-md-12">
+                                            <label for="inputAddress">Biography | Area Of Specialization</label>
+                                            <textarea required name="doc_bio" rows="10" class="form-control"><?php echo $doc_bio; ?></textarea>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email Address</label>
-                                        <input required type="text" name="doc_email" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Profile Picture</label>
-                                        <input  required type="file" name="doc_photo" class="form-control btn btn-success">
-                                    </div>
-                                </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputAddress">Biography | Area Of Specialization</label>
-                                        <textarea required name="doc_bio" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
 
-                                <button type="submit" name="add_doc" class="btn btn-primary mt-3">Create Doctor Account</button>
-                            </form>
+                                    <button type="submit" name="update_doc" class="btn btn-primary mt-3">Update Doctor Account</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <?php
             require_once('partials/_footer.php');
+        }
             ?>
-        </div>
-        <!--  END CONTENT AREA  -->
+            </div>
+            <!--  END CONTENT AREA  -->
     </div>
     <!-- END MAIN CONTAINER -->
 
