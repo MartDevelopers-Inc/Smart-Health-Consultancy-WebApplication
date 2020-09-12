@@ -13,11 +13,61 @@ if (isset($_POST['update_profile'])) {
     $rc = $stmt->bind_param('sss',  $admin_name, $admin_email, $admin_id);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that profile is updated 
         $success = "Profile Updated" && header("refresh:1; url=user_profile.php");
     } else {
-        //inject alert that profile update task failed
         $info = "Please Try Again Or Try Later";
+    }
+}
+
+
+if (isset($_POST['change_password'])) {
+
+    //Change Password
+    $error = 0;
+    if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
+        $old_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['old_password']))));
+    } else {
+        $error = 1;
+        $err = "Old Password Cannot Be Empty";
+    }
+    if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
+        $new_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['new_password']))));
+    } else {
+        $error = 1;
+        $err = "New Password Cannot Be Empty";
+    }
+    if (isset($_POST['confirm_password']) && !empty($_POST['confirm_password'])) {
+        $confirm_password = mysqli_real_escape_string($conn, trim(sha1(md5($_POST['confirm_password']))));
+    } else {
+        $error = 1;
+        $err = "Confirmation Password Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $admin_id = $_SESSION['admin_id'];
+        $sql = "SELECT * FROM  admin  WHERE admin_id = '$user_id'";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($old_password != $row['admin_password']) {
+                $err =  "Please Enter Correct Old Password";
+            } elseif ($new_password != $confirm_password) {
+                $err = "Confirmation Password Does Not Match";
+            } else {
+                $admin_id = $_SESSION['admin_id'];
+                $new_password  = sha1(md5($_POST['new_password']));
+                $query = "UPDATE admin SET  admin_password =? WHERE admin_id =?";
+                $stmt = $mysqli->prepare($query);
+                $rc = $stmt->bind_param('ss', $new_password, $admin_id);
+                $stmt->execute();
+
+                if ($stmt) {
+                    $success = "Password Changed" && header("refresh:1; url=user_profile.php");
+                } else {
+                    $err = "Please Try Again Or Try Later";
+                }
+            }
+        }
     }
 }
 
@@ -154,7 +204,7 @@ if (isset($_POST['update_profile'])) {
                                             <input type="password" required name="new_password" class="form-control" placeholder="New Password">
                                         </div>
                                         <div class="form-group mb-4">
-                                            <input type="password" required name="conf_password" class="form-control" placeholder="Confirm New Password">
+                                            <input type="password" required name="confirm_password" class="form-control" placeholder="Confirm New Password">
                                         </div>
                                         <small id="emailHelp" class="form-text text-muted">*Required Fields</small>
                                         <button type="submit" name="change_password" class="btn btn-primary mt-4">Change Password</button>
