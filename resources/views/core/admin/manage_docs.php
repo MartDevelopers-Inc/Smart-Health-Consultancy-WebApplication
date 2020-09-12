@@ -2,6 +2,56 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+
+//Delete
+if (isset($_GET['delete'])) {
+    $doc_id = $_GET['delete'];
+    $adn = "DELETE FROM medical_experts WHERE doc_id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $doc_id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Deleted" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
+
+//Verify
+if (isset($_GET['verify'])) {
+    $id = $_GET['id'];
+    $adn = "UPDATE  medical_experts SET doc_status = 'Verified' WHERE doc_id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Verified" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
+//Unverify
+if (isset($_GET['unverify'])) {
+    $id = $_GET['id'];
+    $adn = "UPDATE  medical_experts SET doc_status = 'Pending' WHERE doc_id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Un Verified" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
@@ -26,8 +76,9 @@ require_once('partials/_head.php');
 
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">DataTables</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>HTML5 Export</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Experts</span></li>
                             </ol>
                         </nav>
 
@@ -99,11 +150,19 @@ require_once('partials/_head.php');
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row->doc_number;?></td>
-                                                <td><?php echo $row->doc_name;?></td>
-                                                <td><?php echo $row->doc_email;?></td>
-                                                <td><?php echo $row->doc_phone;?></td>
-                                                <td><?php echo $row->doc_status;?></td>
+                                                <td><?php echo $row->doc_number; ?></td>
+                                                <td><?php echo $row->doc_name; ?></td>
+                                                <td><?php echo $row->doc_email; ?></td>
+                                                <td><?php echo $row->doc_phone; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row->doc_status == 'Pending') {
+                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
+                                                    }
+                                                    ?> 
+                                                </td>
 
                                                 <td>
                                                     <div class="btn-group">
@@ -114,11 +173,18 @@ require_once('partials/_head.php');
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                            <a class="dropdown-item" href="view_doc.php?view">View Account</a>
-                                                            <a class="dropdown-item" href="update_doc.php?update">Update Account</a>
-                                                            <a class="dropdown-item" href="verify_doc.php?verify">Verify Account</a>
+                                                            <a class="dropdown-item" href="view_doc.php?view=<?php echo $row->doc_id;?>">View Account</a>
+                                                            <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a>
+                                                            <?php 
+                                                                if($row->doc_status == 'Pending'){
+                                                                    echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
+                                                                }
+                                                                else {
+                                                                    echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
+                                                                }
+                                                            ?>
                                                             <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete">Delete Account</a>
+                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete=<?php echo $row->doc_id;?>">Delete Account</a>
                                                         </div>
                                                     </div>
                                                 </td>
