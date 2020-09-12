@@ -36,7 +36,22 @@ if (isset($_GET['verify'])) {
         $info = "Please Try Again Or Try Later";
     }
 }
-//
+//Unverify
+if (isset($_GET['unverify'])) {
+    $id = $_GET['id'];
+    $adn = "UPDATE  medical_experts SET doc_status = 'Pending' WHERE doc_id =?";
+    $stmt = $conn->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Un Verified" && header("refresh:1; url=manage_docs.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
