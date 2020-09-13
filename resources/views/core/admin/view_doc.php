@@ -106,7 +106,14 @@ require_once('partials/_head.php');
                                                         <line x1="16" y1="2" x2="16" y2="6"></line>
                                                         <line x1="8" y1="2" x2="8" y2="6"></line>
                                                         <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                    </svg> <?php echo $row->doc_status; ?>
+                                                    </svg>
+                                                    <?php
+                                                    if ($row->doc_status == 'Pending') {
+                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
+                                                    }
+                                                    ?> 
                                                 </li>
 
                                                 <li class="contacts-block__item">
@@ -252,6 +259,7 @@ require_once('partials/_head.php');
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Bio </h3>
                                     <?php echo $row->doc_bio; ?>
+                                    <br>
                                     <!-- <div class="bio-skill-box">
 
                                         <div class="row">
