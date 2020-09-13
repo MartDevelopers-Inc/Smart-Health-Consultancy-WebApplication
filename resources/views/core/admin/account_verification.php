@@ -145,32 +145,18 @@ require_once('partials/_head.php');
                                                     } else {
                                                         echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
                                                     }
-                                                    ?> 
+                                                    ?>
                                                 </td>
 
                                                 <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-dark btn-sm">Manage Doctor</button>
-                                                        <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                                                <polyline points="6 9 12 15 18 9"></polyline>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                            <a class="dropdown-item" href="view_doc.php?view=<?php echo $row->doc_id;?>">View Account</a>
-                                                            <!-- <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a> -->
-                                                            <?php 
-                                                                if($row->doc_status == 'Pending'){
-                                                                    echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
-                                                                }
-                                                                else {
-                                                                    echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
-                                                                }
-                                                            ?>
-                                                            <!-- <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete=<?php echo $row->doc_id;?>">Delete Account</a> -->
-                                                        </div>
-                                                    </div>
+                                                    <?php
+                                                    if ($row->doc_status == 'Pending') {
+                                                        echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
+                                                    } else {
+                                                        echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
+                                                    }
+                                                    ?>
+
                                                 </td>
                                             </tr>
                                         <?php
