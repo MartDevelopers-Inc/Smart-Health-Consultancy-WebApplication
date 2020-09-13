@@ -3,22 +3,6 @@ session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 
-//Delete
-if (isset($_GET['delete'])) {
-    $doc_id = $_GET['delete'];
-    $adn = "DELETE FROM medical_experts WHERE doc_id =?";
-    $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('s', $doc_id);
-    $stmt->execute();
-    $stmt->close();
-    if ($stmt) {
-        //inject alert that post is shared  
-        $success = "Deleted" && header("refresh:1; url=manage_docs.php");
-    } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
-    }
-}
 
 //Verify
 if (isset($_GET['verify'])) {
@@ -78,7 +62,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Experts</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Experts Verification</span></li>
                             </ol>
                         </nav>
 
@@ -174,17 +158,17 @@ require_once('partials/_head.php');
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
                                                             <a class="dropdown-item" href="view_doc.php?view=<?php echo $row->doc_id;?>">View Account</a>
-                                                            <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a>
-                                                           <!--  <?php 
+                                                            <!-- <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a> -->
+                                                            <?php 
                                                                 if($row->doc_status == 'Pending'){
                                                                     echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
                                                                 }
                                                                 else {
                                                                     echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
                                                                 }
-                                                            ?> -->
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete=<?php echo $row->doc_id;?>">Delete Account</a>
+                                                            ?>
+                                                            <!-- <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete=<?php echo $row->doc_id;?>">Delete Account</a> -->
                                                         </div>
                                                     </div>
                                                 </td>
