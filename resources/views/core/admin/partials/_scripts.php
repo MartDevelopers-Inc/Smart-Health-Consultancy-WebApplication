@@ -81,4 +81,19 @@
         "lengthMenu": [7, 10, 20, 50],
         "pageLength": 7
     });
+
+    var ss = $(".basic").select2({
+        tags: true,
+    });
+
+    function printContent(el) {
+        var restorepage = $('body').html();
+        var printcontent = $('#' + el).clone();
+        $('body').empty().html(printcontent);
+        window.print();
+        $('body').html(restorepage);
+    }
 </script>
+<script src="plugins/select2/select2.min.js"></script>
+<script src="plugins/select2/custom-select2.js"></script>
+<script src="assets/js/apps/invoice.js"></script>

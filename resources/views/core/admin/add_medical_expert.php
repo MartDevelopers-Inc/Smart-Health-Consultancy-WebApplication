@@ -1,7 +1,5 @@
 <?php
 
-use function Composer\Autoload\includeFile;
-
 session_start();
 include('configs/config.php');
 include('configs/checklogin.php');
@@ -62,8 +60,9 @@ require_once('partials/_head.php');
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="">HRM</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>New Medical Expert</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">HRM</a></li>
+                                <li class="breadcrumb-item"><a href="payrolls.php">Payrolls</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Generate Payrolls</span></li>
                             </ol>
                         </nav>
 

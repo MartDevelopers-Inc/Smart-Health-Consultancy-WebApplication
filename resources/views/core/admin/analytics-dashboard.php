@@ -1,4 +1,11 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+session_start();
+require_once('configs/config.php');
+require_once('configs/checklogin.php');
+require_once('partials/_analytics.php');
+check_login();
+require_once('partials/_head.php');
+?>
 <!-- Dont  Wonder why this style sheet is out here-->
 <link href="assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
 
@@ -83,7 +90,7 @@
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $verified_medics;?></h6>
                                         <p class="text-success">Verified Medical Experts</p>
                                     </div>
                                     <div class="">
@@ -106,7 +113,7 @@
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $unverified;?></h6>
                                         <p class="text-success">Un Verified Medical Experts</p>
                                     </div>
                                     <div class="">
@@ -130,7 +137,7 @@
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $total_medics;?></h6>
                                         <p class="text-success">Total Enrolled Medical Experts</p>
                                     </div>
                                     <div class="">
