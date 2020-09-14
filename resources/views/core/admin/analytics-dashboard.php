@@ -163,7 +163,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $gold;?></h6>
                                         <p class="text-success">Gold Package Members</p>
                                     </div>
                                     <div class="">
@@ -184,7 +184,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $silver;?></h6>
                                         <p class="text-success">Silver Package Members</p>
                                     </div>
                                     <div class="">
@@ -206,7 +206,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $bronze;?></h6>
                                         <p class="text-success">Bronze Package Members</p>
                                     </div>
                                     <div class="">
@@ -272,7 +272,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $members;?></h6>
                                         <p class="text-success">Total Enrolled Members</p>
                                     </div>
                                     <div class="">
