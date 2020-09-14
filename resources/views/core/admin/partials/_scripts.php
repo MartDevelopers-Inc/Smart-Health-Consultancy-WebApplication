@@ -80,11 +80,15 @@
         "lengthMenu": [7, 10, 20, 50],
         "pageLength": 7
     });
+</script>
 
+<script>
     var ss = $(".basic").select2({
         tags: true,
     });
+</script>
 
+<script>
     function printContent(el) {
         var restorepage = $('body').html();
         var printcontent = $('#' + el).clone();
@@ -92,7 +96,11 @@
         window.print();
         $('body').html(restorepage);
     }
-
+</script>
+<script src="plugins/select2/select2.min.js"></script>
+<script src="plugins/select2/custom-select2.js"></script>
+<script src="assets/js/apps/invoice.js"></script>
+<script>
     try {
 
         /*
@@ -626,6 +634,3 @@
         console.log(e);
     }
 </script>
-<script src="plugins/select2/select2.min.js"></script>
-<script src="plugins/select2/custom-select2.js"></script>
-<script src="assets/js/apps/invoice.js"></script>
