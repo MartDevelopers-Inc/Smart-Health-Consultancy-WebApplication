@@ -85,17 +85,17 @@ require_once('partials/_head.php');
                                     <circle cx="8.5" cy="7" r="4"></circle>
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
-                                Register New Client 
+                                Register New Client
                             </a>
 
-                            <a class="btn btn-outline-primary" href="">
+                            <!-- <a class="btn btn-outline-primary" href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="8.5" cy="7" r="4"></circle>
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
                                 Import .XLS Document
-                            </a>
+                            </a> -->
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
@@ -124,13 +124,12 @@ require_once('partials/_head.php');
                                                     <?php
                                                     if ($row->member_package == 'Gold Package') {
                                                         echo "<span class='badge outline-badge-success'>$row->member_package</span>";
-                                                    } elseif($row->member_package =='Silver Package'){
+                                                    } elseif ($row->member_package == 'Silver Package') {
                                                         echo "<span class='badge outline-badge-warning'>$row->member_package</span>";
-                                                    }
-                                                    else {
+                                                    } else {
                                                         echo "<span class='badge outline-badge-danger'>$row->member_package</span>";
                                                     }
-                                                    ?> 
+                                                    ?>
                                                 </td>
 
                                                 <td>
@@ -142,10 +141,10 @@ require_once('partials/_head.php');
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                            <a class="dropdown-item" href="view_client.php?view=<?php echo $row->member_id;?>">View Account</a>
-                                                            <a class="dropdown-item" href="update_client.php?update=<?php echo $row->member_id;?>">Update Account</a>
+                                                            <a class="dropdown-item" href="view_client.php?view=<?php echo $row->member_id; ?>">View Account</a>
+                                                            <a class="dropdown-item" href="update_client.php?update=<?php echo $row->member_id; ?>">Update Account</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_clients.php?delete=<?php echo $row->member_id;?>">Delete Account</a>
+                                                            <a class="dropdown-item text-danger" href="manage_clients.php?delete=<?php echo $row->member_id; ?>">Delete Account</a>
                                                         </div>
                                                     </div>
                                                 </td>
