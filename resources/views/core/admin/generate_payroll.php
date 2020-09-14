@@ -6,25 +6,25 @@ include('configs/codeGen.php');
 check_login();
 
 //Add Medical Expert
-if (isset($_POST['add_doc'])) {
+if (isset($_POST['generate_payroll'])) {
 
-    $doc_id = $_POST['doc_id'];
+    $doc_id = $_GET['doc_id'];
     $doc_number = $_POST['doc_number'];
     $doc_name = $_POST['doc_name'];
     $doc_email = $_POST['doc_email'];
     $doc_phone = $_POST['doc_phone'];
-    $doc_bio = $_POST['doc_bio'];
-    $doc_status = $_POST['doc_status'];
-    $doc_photo = $_FILES['doc_photo']['name'];
-    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
+    $payroll_id = $_POST['payroll_id'];
+    $payroll_code = $_POST['payroll_code'];
+    $payroll_month = $_POST['payroll_month'];
+    $payroll_salary = $_POST['payroll_salary'];
 
-    $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO payrolls (doc_id, doc_number, doc_name, doc_email, payroll_id, payroll_code, payroll_month, payroll_salary) VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
+    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $payroll_id, $payroll_code, $payroll_month, $payroll_salary);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Medical Expert Account Created" && header("refresh:1; url=manage_docs.php");
+        $success = "Payroll Added" && header("refresh:1; url=generate_payroll.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -92,38 +92,63 @@ require_once('partials/_head.php');
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
-                                        <label for="inputEmail4">Id</label>
-                                        <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
-                                        <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="doc_status" value="Verified" class="form-control">
+                                        <label for="inputEmail4">Payroll Id</label>
+                                        <input type="text" name="payroll_id" value="<?php echo $payroll_id; ?>" class="form-control">
+                                        <input type="text" name="payroll_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                     </div>
                                 </div>
+                                <?php
+                                $doc_id = $_GET['doc_id'];
+                                $ret = "SELECT * FROM `medical_experts` WHERE doc_id ='$doc_id' ";
+                                $stmt = $mysqli->prepare($ret);
+                                $stmt->execute(); //ok
+                                $res = $stmt->get_result();
+                                while ($row = $res->fetch_object()) {
+                                ?>
+                                    <div class="form-row mb-4">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Full Name</label>
+                                            <input required type="text" value="<?php echo $row->doc_name; ?>" readonly name="doc_name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Number</label>
+                                            <input required type="text" value="<?php echo $row->doc_number; ?>" readonly name="doc_number" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Email Address</label>
+                                            <input required type="text" value="<?php echo $row->doc_email; ?>" readonly name="doc_email" class="form-control">
+                                        </div>
+                                    </div>
+                                <?php } ?>
                                 <div class="form-row mb-4">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Full Name</label>
-                                        <input required type="text" name="doc_name" class="form-control">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Payroll Code</label>
+                                        <input type="text" name="payroll_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Mobile Phone Number</label>
-                                        <input required type="text" name="doc_phone" class="form-control">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Month</label>
+                                        <select  class ='form-control basic' name="payroll_month" id="">
+                                            <option selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>Octomber</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email Address</label>
-                                        <input required type="text" name="doc_email" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Profile Picture</label>
-                                        <input  required type="file" name="doc_photo" class="form-control btn btn-success">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Salary</label>
+                                        <input required type="text" name="payroll_salary" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputAddress">Biography | Area Of Specialization</label>
-                                        <textarea required name="doc_bio" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
-                                <button type="submit" name="add_doc" class="btn btn-primary mt-3">Create Doctor Account</button>
+                                <button type="submit" name="generate_payroll" class="btn btn-primary mt-3">Generate Payroll</button>
                             </form>
                         </div>
                     </div>
