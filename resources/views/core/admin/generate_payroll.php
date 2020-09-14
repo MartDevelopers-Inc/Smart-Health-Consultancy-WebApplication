@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include('configs/config.php');
 include('configs/checklogin.php');
@@ -7,25 +6,25 @@ include('configs/codeGen.php');
 check_login();
 
 //Add Medical Expert
-if (isset($_POST['generate_payroll'])) {
+if (isset($_POST['add_doc'])) {
 
-    $doc_id = $_GET['doc_id'];
+    $doc_id = $_POST['doc_id'];
     $doc_number = $_POST['doc_number'];
     $doc_name = $_POST['doc_name'];
     $doc_email = $_POST['doc_email'];
     $doc_phone = $_POST['doc_phone'];
-    $payroll_id = $_POST['payroll_id'];
-    $payroll_code = $_POST['payroll_code'];
-    $payroll_month = $_POST['payroll_month'];
-    $payroll_salary = $_POST['payroll_salary'];
+    $doc_bio = $_POST['doc_bio'];
+    $doc_status = $_POST['doc_status'];
+    $doc_photo = $_FILES['doc_photo']['name'];
+    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
-    $query = "INSERT INTO payrolls (doc_id, doc_number, doc_name, doc_email, payroll_id, payroll_code, payroll_month, payroll_salary) VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $payroll_id, $payroll_code, $payroll_month, $payroll_salary);
+    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Payroll Added" && header("refresh:1; url=generate_payroll.php");
+        $success = "Medical Expert Account Created" && header("refresh:1; url=manage_docs.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
