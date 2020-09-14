@@ -54,3 +54,4 @@ $stmt->execute();
 $stmt->bind_result($bronze);
 $stmt->fetch();
 $stmt->close();
+
