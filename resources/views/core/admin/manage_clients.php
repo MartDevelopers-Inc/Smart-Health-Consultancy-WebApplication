@@ -105,6 +105,7 @@ require_once('partials/_head.php');
                                             <th>Phone</th>
                                             <th>Email</th>
                                             <th>Package</th>
+                                            <th>Joined On</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -132,7 +133,7 @@ require_once('partials/_head.php');
                                                     }
                                                     ?>
                                                 </td>
-
+                                                <td><?php echo date('d M Y g:i', strtotime($row->created_at));?></td>
                                                 <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-dark btn-sm">Manage Client</button>
