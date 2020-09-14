@@ -230,6 +230,8 @@ check_login();
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
+
+
                                             <tr>
                                                 <th>
                                                     <div class="th-content">Doc Number</div>
@@ -249,24 +251,40 @@ check_login();
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="td-content product-brand">Nike Sport</div>
+                                            <?php
+                                            $ret = "SELECT * FROM `medical_experts` ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($row = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="td-content product-brand"><?php echo $row->doc_number; ?></div>
 
-                                                </td>
-                                                <td>
-                                                    <div class="td-content product-brand">Nike Sport</div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-content">#76894</div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-content pricing"><span class="">$88.00</span></div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-content"><span class="badge outline-badge-primary">Shipped</span></div>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content product-brand"><?php echo $row->doc_name; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $row->doc_email; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content pricing"><span class=""><?php echo $row->doc_phone; ?></span></div>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        if ($row->doc_status == 'Pending') {
+                                                            echo "<div class='td-content'><span class='badge outline-badge-danger'>$row->doc_status</span></div>";
+                                                        } else {
+                                                            echo "<div class='td-content'><span class='badge outline-badge-success'>$row->doc_status</span></div>";
+                                                        }
+
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+
                                         </tbody>
                                     </table>
                                 </div>
