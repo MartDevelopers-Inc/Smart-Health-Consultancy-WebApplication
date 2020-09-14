@@ -45,7 +45,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Experts</span></li>
+                                <li class="breadcrumb-item"><a href="manage_clients.php">Clients</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Clients</span></li>
                             </ol>
                         </nav>
 
@@ -84,7 +85,7 @@ require_once('partials/_head.php');
                                     <circle cx="8.5" cy="7" r="4"></circle>
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
-                                Add New Medical Expert
+                                Register New Client 
                             </a>
 
                             <a class="btn btn-outline-primary" href="">
@@ -99,59 +100,52 @@ require_once('partials/_head.php');
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Number</th>
                                             <th>Name</th>
+                                            <th>Phone</th>
                                             <th>Email</th>
-                                            <th>Phone No</th>
-                                            <th>Acc Status</th>
+                                            <th>Package</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `medical_experts` ";
+                                        $ret = "SELECT * FROM `members` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row->doc_number; ?></td>
-                                                <td><?php echo $row->doc_name; ?></td>
-                                                <td><?php echo $row->doc_email; ?></td>
-                                                <td><?php echo $row->doc_phone; ?></td>
+                                                <td><?php echo $row->member_name; ?></td>
+                                                <td><?php echo $row->member_phone; ?></td>
+                                                <td><?php echo $row->member_email; ?></td>
                                                 <td>
                                                     <?php
-                                                    if ($row->doc_status == 'Pending') {
-                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
-                                                    } else {
-                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
+                                                    if ($row->member_package == 'Gold Package') {
+                                                        echo "<span class='badge outline-badge-success'>$row->member_package</span>";
+                                                    } elseif($row->member_package =='Silver Package'){
+                                                        echo "<span class='badge outline-badge-warning'>$row->member_package</span>";
+                                                    }
+                                                    else {
+                                                        echo "<span class='badge outline-badge-danger'>$row->member_package</span>";
                                                     }
                                                     ?> 
                                                 </td>
 
                                                 <td>
                                                     <div class="btn-group">
-                                                        <button type="button" class="btn btn-dark btn-sm">Manage Doctor</button>
+                                                        <button type="button" class="btn btn-dark btn-sm">Manage Client</button>
                                                         <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
                                                                 <polyline points="6 9 12 15 18 9"></polyline>
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                            <a class="dropdown-item" href="view_doc.php?view=<?php echo $row->doc_id;?>">View Account</a>
-                                                            <a class="dropdown-item" href="update_doc.php?update=<?php echo $row->doc_id;?>">Update Account</a>
-                                                           <!--  <?php 
-                                                                if($row->doc_status == 'Pending'){
-                                                                    echo "<a class='dropdown-item badge outline-badge-success' href='manage_docs.php?verify=$row->doc_id&id=$row->doc_id'>Verify Account</a>";
-                                                                }
-                                                                else {
-                                                                    echo "<a class='dropdown-item badge outline-badge-danger' href='manage_docs.php?unverify=$row->doc_id&id=$row->doc_id'>Un Verify Account</a>";
-                                                                }
-                                                            ?> -->
+                                                            <a class="dropdown-item" href="view_client.php?view=<?php echo $row->member_id;?>">View Account</a>
+                                                            <a class="dropdown-item" href="update_client.php?update=<?php echo $row->member_id;?>">Update Account</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_docs.php?delete=<?php echo $row->doc_id;?>">Delete Account</a>
+                                                            <a class="dropdown-item text-danger" href="manage_clients.php?delete=<?php echo $row->member_id;?>">Delete Account</a>
                                                         </div>
                                                     </div>
                                                 </td>
