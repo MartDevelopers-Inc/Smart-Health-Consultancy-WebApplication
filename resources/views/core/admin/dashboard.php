@@ -1,10 +1,11 @@
 <?php
-require_once('partials/_head.php');
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 //require_once('partials/analytics.php');
 check_login();
+require_once('partials/_head.php');
+
 ?>
 
 <body>
