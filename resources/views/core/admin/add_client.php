@@ -6,26 +6,22 @@ include('configs/checklogin.php');
 include('configs/codeGen.php');
 check_login();
 
-//Add Medical Expert
-if (isset($_POST['add_doc'])) {
+if (isset($_POST['add_client'])) {
+    $member_id = $_POST['member_id'];
+    $member_name = $_POST['member_name'];
+    $member_phone = $_POST['member_phone'];
+    $member_email = $_POST['member_email'];
+    $member_adr = $_POST['member_adr'];
+    $member_package = $_POST['member_package'];
+    $member_pic = $_FILES['member_pic']['name'];
+    move_uploaded_file($_FILES["member_pic"]["tmp_name"], "assets/img/clients/" . $_FILES["member_pic"]["name"]);
 
-    $doc_id = $_POST['doc_id'];
-    $doc_number = $_POST['doc_number'];
-    $doc_name = $_POST['doc_name'];
-    $doc_email = $_POST['doc_email'];
-    $doc_phone = $_POST['doc_phone'];
-    $doc_bio = $_POST['doc_bio'];
-    $doc_status = $_POST['doc_status'];
-    $doc_photo = $_FILES['doc_photo']['name'];
-    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
-
-    $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO members (member_id, member_name, member_phone, member_email, member_adr, member_package, member_pic) VALUES (?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
+    $rc = $stmt->bind_param('sssssss', $member_id, $member_name, $member_phone, $member_email, $member_adr, $member_package, $member_pic);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that post is shared  
-        $success = "Medical Expert Account Created" && header("refresh:1; url=manage_docs.php");
+        $success = "Client Account Created" && header("refresh:1; url=manage_clients.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -60,9 +56,9 @@ require_once('partials/_head.php');
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="dashboard.php">HRM</a></li>
-                                <li class="breadcrumb-item"><a href="">Manage Medical Experts</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>New</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Clients</a></li>
+                                <li class="breadcrumb-item"><a href="manage_client.php">Manage Clients</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Register Client</span></li>
                             </ol>
                         </nav>
 
@@ -95,37 +91,50 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4">Id</label>
-                                        <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
-                                        <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="doc_status" value="Verified" class="form-control">
+                                        <input type="text" name="member_id" value="<?php echo $member_id; ?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="inputEmail4">Full Name</label>
-                                        <input required type="text" name="doc_name" class="form-control">
+                                        <input required type="text" name="member_name" class="form-control">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="inputEmail4">Mobile Phone Number</label>
-                                        <input required type="text" name="doc_phone" class="form-control">
+                                        <input required type="text" name="member_phone" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Membership Package</label>
+                                        <select class='form-control basic' name="member_package" id="">
+                                            <option selected>Select Membership Package</option>
+                                            <?php
+                                            $ret = "SELECT * FROM `packages` ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($row = $res->fetch_object()) {
+                                            ?>
+                                                <option><?php echo $row->package_name; ?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Email Address</label>
-                                        <input required type="text" name="doc_email" class="form-control">
+                                        <input required type="text" name="member_email" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Profile Picture</label>
-                                        <input  required type="file" name="doc_photo" class="form-control btn btn-success">
+                                        <input required type="file" name="member_pic" class="form-control btn btn-success">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
-                                        <label for="inputAddress">Biography | Area Of Specialization</label>
-                                        <textarea required name="doc_bio" rows="10" class="form-control"></textarea>
+                                        <label for="inputAddress">Address</label>
+                                        <textarea required name="member_adr" rows="5" class="form-control"></textarea>
                                     </div>
                                 </div>
 
-                                <button type="submit" name="add_doc" class="btn btn-primary mt-3">Create Doctor Account</button>
+                                <button type="submit" name="add_client" class="btn btn-primary mt-3">Register Client</button>
                             </form>
                         </div>
                     </div>

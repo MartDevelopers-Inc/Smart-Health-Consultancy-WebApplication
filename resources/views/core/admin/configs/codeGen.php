@@ -16,6 +16,10 @@
     $length = 15;
     $payroll_id = bin2hex(random_bytes($length));
 
+// -------Member ID--------------------------------------------------------------------//
+    $length = 15;
+    $member_id = bin2hex(random_bytes($length));
+
 // ----Doc Number ----------------------------------------------------------------//
     $alpha = 5;
     $beta = 5;
