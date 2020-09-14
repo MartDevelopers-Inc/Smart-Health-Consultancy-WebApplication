@@ -28,7 +28,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Payrolls</span></li>
+                                <li class="breadcrumb-item"><a href="dashboard.php">Payrolls</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Payrolls</span></li>
                             </ol>
                         </nav>
 
@@ -61,16 +62,16 @@ require_once('partials/_head.php');
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
 
-                            <!-- <a class="btn btn-outline-success" href="add_medical_expert.php">
+                            <a class="btn btn-outline-success" href="payrolls.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                                 </svg>
-                                Add New Medical Expert
+
+                                Generate New Payroll
                             </a>
 
-                            <a class="btn btn-outline-primary" href="">
+                            <!--<a class="btn btn-outline-primary" href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="8.5" cy="7" r="4"></circle>
@@ -82,18 +83,19 @@ require_once('partials/_head.php');
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Number</th>
+                                            <th>Code</th>
+                                            <th>Month</th>
+                                            <th>Amount</th>
                                             <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone No</th>
-                                            <th>Acc Status</th>
+                                            <th>Number</th>
+                                            <th>Generated At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `medical_experts` ";
+                                        $ret = "SELECT * FROM `payrolls` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
@@ -101,36 +103,23 @@ require_once('partials/_head.php');
                                         ?>
                                             <tr>
                                                 <td>
-                                                    <a class="badge outline-badge-success" href="view_doc.php?view=<?php echo $row->doc_id; ?>">
-                                                        <?php echo $row->doc_number; ?>
+                                                    <a class="badge outline-badge-success" href="view_payroll.php?view=<?php echo $row->payroll_id; ?>">
+                                                        <?php echo $row->payroll_code; ?>
                                                     </a>
                                                 </td>
+                                                <td><?php echo $row->payroll_month; ?></td>
+                                                <td>Ksh <?php echo $row->payroll_salary; ?></td>
                                                 <td><?php echo $row->doc_name; ?></td>
-                                                <td><?php echo $row->doc_email; ?></td>
-                                                <td><?php echo $row->doc_phone; ?></td>
+                                                <td><?php echo $row->doc_number; ?></td>
+                                                <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <?php
-                                                    if ($row->doc_status == 'Pending') {
-                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
-                                                    } else {
-                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
-                                                    }
-                                                    ?>
-                                                </td>
+                                                    <a class="badge outline-badge-primary" href="update_payroll.php?update=<?php echo $row->payroll_id; ?>">Update</a>
 
-                                                <td>
-                                                    <a class='dropdown-item badge outline-badge-success' href='generate_payroll.php?doc_id=<?php echo $row->doc_id;?>'>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                                        </svg>
-                                                        Generate Payroll
-                                                    </a>
+                                                    <a class="badge outline-badge-danger text-danger" href="manage_payrolls.php?delete=<?php echo $row->payroll_id; ?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php
                                         } ?>
-
                                     </tbody>
                                 </table>
                             </div>

@@ -23,7 +23,7 @@ if (isset($_POST['generate_payroll'])) {
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Payroll Added" && header("refresh:1; url=payrolls.php");
+        $success = "Payroll Added" && header("refresh:1; url=manage_payrolls.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -58,8 +58,8 @@ require_once('partials/_head.php');
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="">HRM</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>New Medical Expert</span></li>
+                                <li class="breadcrumb-item"><a href="">Payrolls</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Generate Payroll</span></li>
                             </ol>
                         </nav>
 
