@@ -12,7 +12,6 @@ if (isset($_POST['generate_payroll'])) {
     $doc_number = $_POST['doc_number'];
     $doc_name = $_POST['doc_name'];
     $doc_email = $_POST['doc_email'];
-    $doc_phone = $_POST['doc_phone'];
     $payroll_id = $_POST['payroll_id'];
     $payroll_code = $_POST['payroll_code'];
     $payroll_month = $_POST['payroll_month'];
@@ -24,7 +23,7 @@ if (isset($_POST['generate_payroll'])) {
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Payroll Added" && header("refresh:1; url=generate_payroll.php");
+        $success = "Payroll Added" && header("refresh:1; url=payrolls.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -106,28 +105,28 @@ require_once('partials/_head.php');
                                 while ($row = $res->fetch_object()) {
                                 ?>
                                     <div class="form-row mb-4">
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-6">
                                             <label for="inputEmail4">Full Name</label>
                                             <input required type="text" value="<?php echo $row->doc_name; ?>" readonly name="doc_name" class="form-control">
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-6">
                                             <label for="inputEmail4">Number</label>
                                             <input required type="text" value="<?php echo $row->doc_number; ?>" readonly name="doc_number" class="form-control">
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-6">
                                             <label for="inputEmail4">Email Address</label>
                                             <input required type="text" value="<?php echo $row->doc_email; ?>" readonly name="doc_email" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Payroll Code</label>
+                                            <input type="text" name="payroll_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                         </div>
                                     </div>
                                 <?php } ?>
                                 <div class="form-row mb-4">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputEmail4">Payroll Code</label>
-                                        <input type="text" name="payroll_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="inputEmail4">Month</label>
-                                        <select  class ='form-control basic' name="payroll_month" id="">
+                                        <select class='form-control basic' name="payroll_month" id="">
                                             <option selected>Select Month</option>
                                             <option>January</option>
                                             <option>February</option>
@@ -143,7 +142,7 @@ require_once('partials/_head.php');
                                             <option>December</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="inputEmail4">Salary</label>
                                         <input required type="text" name="payroll_salary" class="form-control">
                                     </div>
