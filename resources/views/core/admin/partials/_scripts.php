@@ -85,6 +85,14 @@
     var ss = $(".basic").select2({
         tags: true,
     });
+
+    function printContent(el) {
+        var restorepage = $('body').html();
+        var printcontent = $('#' + el).clone();
+        $('body').empty().html(printcontent);
+        window.print();
+        $('body').html(restorepage);
+    }
 </script>
 <script src="plugins/select2/select2.min.js"></script>
 <script src="plugins/select2/custom-select2.js"></script>
