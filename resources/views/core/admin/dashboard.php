@@ -219,7 +219,7 @@ check_login();
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-two">
 
                             <div class="widget-heading">
@@ -234,7 +234,7 @@ check_login();
 
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">Doc Number</div>
+                                                    <div class="th-content">Number</div>
                                                 </th>
                                                 <th>
                                                     <div class="th-content">Name</div>
@@ -243,7 +243,7 @@ check_login();
                                                     <div class="th-content">Email</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Phone Number</div>
+                                                    <div class="th-content th-heading">Phone </div>
                                                 </th>
                                                 <th>
                                                     <div class="th-content">Acc Status</div>
@@ -292,7 +292,7 @@ check_login();
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-three">
 
                             <div class="widget-heading">
