@@ -162,17 +162,25 @@ require_once('partials/_head.php');
                                     <div class="widget-content widget-content-area">
                                         <h3 class="">Consultation History</h3>
                                         <div class="timeline-alter">
-                                            <div class="item-timeline">
-                                                <div class="t-meta-date">
-                                                    <p class="">04 Mar 2009</p>
+                                            <?php
+                                            $ret = "SELECT * FROM `consultations`  WHERE member_id = '$view' ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($row = $res->fetch_object()) {
+                                            ?>
+                                                <div class="item-timeline">
+                                                    <div class="t-meta-date">
+                                                        <p class=""><?php echo date('d M Y g:i', strtotime($row->created_at));?></p>
+                                                    </div>
+                                                    <div class="t-dot">
+                                                    </div>
+                                                    <div class="t-text">
+                                                        <p><?php echo $row->doc_name;?></p>
+                                                        <p><?php echo $row->consul_details;?></p>
+                                                    </div>
                                                 </div>
-                                                <div class="t-dot">
-                                                </div>
-                                                <div class="t-text">
-                                                    <p>Royal Collage of Art</p>
-                                                    <p>Designer Illustrator</p>
-                                                </div>
-                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
