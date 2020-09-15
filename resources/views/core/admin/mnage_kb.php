@@ -72,19 +72,54 @@ require_once('partials/_head.php');
             <div class="layout-px-spacing">
 
                 <div class="row layout-top-spacing">
-
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            
+                            <div id="iconsAccordion" class="accordion-icons">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne1">
+                                        <section class="mb-0 mt-0">
+                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
+                                                Collapsible Group Item #1 <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg></div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div id="defaultAccordionOne" class="collapse" aria-labelledby="headingOne1" data-parent="#toggleAccordion">
+                                        <div class="card-body">
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
+
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </section>
+                            </div>
+                            <div id="iconAccordionOne" class="collapse" aria-labelledby="..." data-parent="#iconsAccordion">
+                                <div class="card-body">
+
+                                    ..................
+                                    ..................
+
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-            <?php
-            require_once('partials/_footer.php');
-            ?>
         </div>
-        <!--  END CONTENT AREA  -->
+    </div>
+    <?php
+    require_once('partials/_footer.php');
+    ?>
+    </div>
+    <!--  END CONTENT AREA  -->
     </div>
     <?php require_once('partials/_scripts.php'); ?>
 
