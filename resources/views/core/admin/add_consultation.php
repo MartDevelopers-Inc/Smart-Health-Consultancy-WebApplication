@@ -122,7 +122,7 @@ require_once('partials/_head.php');
                                                 </td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-success" href="add_client_consultation.php?member_id =<?php echo $row->member_id;?>&member_name=<?php echo $row->member_name;?>&member_phone=<?php echo $row->member_phone;?>">
+                                                    <a class="badge outline-badge-success" href="add_client_consultation.php?member_id=<?php echo $row->member_id;?>&member_name=<?php echo $row->member_name;?>&member_phone=<?php echo $row->member_phone;?>">
                                                         Add Consultation
                                                     </a>
                                                 </td>
