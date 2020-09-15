@@ -1,5 +1,5 @@
 <!-- Load Analytics Once Again -->
-<?php require_once('partials/_analytics.php');?>
+<?php require_once('partials/_analytics.php'); ?>
 <script src="assets/js/authentication/form-2.js"></script>
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
 <script src="bootstrap/js/popper.min.js"></script>
@@ -105,7 +105,7 @@
 <script>
     try {
 
-        
+
 
         /*
             =================================
@@ -402,7 +402,7 @@
                 show: true,
                 width: 25,
             },
-            series: [<?php echo $gold;?>, <?php echo $silver;?>, <?php echo $bronze;?>],
+            series: [<?php echo $gold; ?>, <?php echo $silver; ?>, <?php echo $bronze; ?>],
             labels: ['Gold', 'Silver', 'Bronze'],
             responsive: [{
                 breakpoint: 1599,
@@ -436,15 +436,6 @@
             }]
         }
 
-
-        /*
-            ==============================
-            |    @Render Charts Script    |
-            ==============================
-        */
-
-
-        
         /*
             ================================
                 Montly Member Enrollment
@@ -476,3 +467,20 @@
         console.log(e);
     }
 </script>
+<script src="plugins/editors/quill/quill.js"></script>
+<script>
+    var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: [
+                [{
+                    header: [1, 2, false]
+                }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+            ]
+        },
+        placeholder: 'Knowledge Base Details',
+        theme: 'snow' // or 'bubble'
+    });
+</script>
+<script src="assets/js/components/ui-accordions.js"></script>

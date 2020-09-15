@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="plugins/font-icons/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" type="text/css" href="plugins/select2/select2.min.css">
     <link href="assets/css/apps/invoice.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="plugins/editors/quill/quill.snow.css">
+    <link href="assets/css/components/tabs-accordian/custom-accordions.css" rel="stylesheet" type="text/css" />
     <!--Data Tables-->
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_html5.css">
