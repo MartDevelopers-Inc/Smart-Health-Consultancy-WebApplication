@@ -3,7 +3,6 @@ session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 
-//Delete Payroll
 if (isset($_GET['delete'])) {
     $delete = $_GET['delete'];
     $adn = "DELETE FROM knowledge_base WHERE kb_id =?";
@@ -108,7 +107,7 @@ require_once('partials/_head.php');
                                         <tr>
                                             <th>KB Code</th>
                                             <th>KB Title</th>
-                                            <th>Generated At</th>
+                                            <th>KB Generated At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
