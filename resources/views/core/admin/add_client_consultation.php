@@ -94,7 +94,7 @@ require_once('partials/_head.php');
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4"></label>
                                         <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
-                                        <input type="text" name="consul_code" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control">
+                                        <input type="text" name="consul_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                         <input type="text" name="consul_status" value="Pending" class="form-control">
                                     </div>
                                 </div>
@@ -103,15 +103,23 @@ require_once('partials/_head.php');
                                         <label for="inputEmail4">Medical Expert</label>
                                         <select class='form-control basic' name="package_name" id="">
                                             <option selected>Select Medical Expert Number</option>
-                                            <option>Gold Package</option>
+                                            <?php
+                                            $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($row = $res->fetch_object()) {
+                                            ?>
+                                                <option><?php echo $row->doc_number;?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Medical Expert Name</label>
-                                        <input type="text" id="docName" class="form-control" name="doc_name">
+                                        <input type="text" readonly id="docName" class="form-control" name="doc_name">
                                     </div>
                                     <div style="display:none" class="form-group col-md-6">
-                                        <input type="text" id="docID" class="form-control" name="doc_id">
+                                        <input type="text" id="docId" class="form-control" name="doc_id">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">

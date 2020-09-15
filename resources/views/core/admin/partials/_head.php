@@ -69,5 +69,31 @@
         </script>
 
     <?php } ?>
+    <script>
+        function getDoctorDetails(val) {
+            $.ajax({
+
+                type: "POST",
+                url: "ajax.php",
+                data: 'docNumber=' + val,
+                success: function(data) {
+                    //alert(data);
+                    $('#docName').val(data);
+                }
+            });
+
+            $.ajax({
+
+                type: "POST",
+                url: "ajax.php",
+                data: 'docName=' + val,
+                success: function(data) {
+                    //alert(data);
+                    $('#docId').val(data);
+                }
+            });
+
+        }
+    </script>
 
 </head>
