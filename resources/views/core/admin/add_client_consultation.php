@@ -101,7 +101,7 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Medical Expert</label>
-                                        <select class='form-control basic' name="package_name" id="">
+                                        <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
                                             <option selected>Select Medical Expert Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
