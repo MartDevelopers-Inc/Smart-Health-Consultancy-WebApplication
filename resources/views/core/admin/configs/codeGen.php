@@ -28,8 +28,13 @@
 // -------Package ID--------------------------------------------------------------------//
     $length = 15;
     $package_id= bin2hex(random_bytes($length));
+    
 
-// ----Doc Number ----------------------------------------------------------------//
+// -------Package ID--------------------------------------------------------------------//
+    $length = 15;
+    $consul_id= bin2hex(random_bytes($length));
+    
+// ---CODES Number ----------------------------------------------------------------//
     $alpha = 5;
     $beta = 5;
     $a = substr(str_shuffle("QWERTYUIOPLKJHGFDSAZXCVBNM"),1,$alpha);

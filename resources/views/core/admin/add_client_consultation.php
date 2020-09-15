@@ -59,8 +59,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="packages.php">Packages</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add</span></li>
+                                <li class="breadcrumb-item"><a href="manage_consultations.php">Consultations</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Add Consultation</span></li>
                             </ol>
                         </nav>
 
@@ -92,24 +92,26 @@ require_once('partials/_head.php');
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
-                                        <label for="inputEmail4">Packages</label>
-                                        <input type="text" name="package_id" value="<?php echo $package_id; ?>" class="form-control">
+                                        <label for="inputEmail4"></label>
+                                        <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
+                                        <input type="text" name="consul_code" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control">
+                                        <input type="text" name="consul_status" value="Pending" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Membership Package</label>
+                                        <label for="inputEmail4">Medical Expert</label>
                                         <select class='form-control basic' name="package_name" id="">
-                                            <option selected>Select Membership Package</option>
+                                            <option selected>Select Medical Expert Number</option>
                                             <option>Gold Package</option>
-                                            <option>Silver Package</option>
-                                            <option>Bronze Package</option>
-                                            <option>Free Trial</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Membership Package Price Per Month</label>
-                                        <input type="text" class="form-control" name="package_price"  >
+                                        <label for="inputEmail4">Medical Expert Name</label>
+                                        <input type="text" id="docName" class="form-control" name="doc_name">
+                                    </div>
+                                    <div style="display:none" class="form-group col-md-6">
+                                        <input type="text" id="docID" class="form-control" name="doc_id">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
