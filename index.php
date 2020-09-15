@@ -5,7 +5,7 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/SMC/resources/views/core/');
+	header('Location: '.$uri.'/SHC/resources/views/core/');
 	exit;
 ?>
 Something is wrong here and i can feel it
