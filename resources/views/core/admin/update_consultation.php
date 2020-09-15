@@ -9,18 +9,17 @@ check_login();
 if (isset($_POST['update'])) {
 
     $update = $_GET['update'];
-    $consul_code = $_POST['consul_code'];
     $doc_id = $_POST['doc_id'];
     $doc_name = $_POST['doc_name'];
     $consul_details = $_POST['consul_details'];
     $consul_status = $_POST['consul_status'];
 
-    $query = "UPDATE  consultations SET  consul_code =?,doc_id =?, doc_name =?, consul_details =?, consul_status =? WHERE consul_id =?";
+    $query = "UPDATE  consultations SET doc_id =?, doc_name =?, consul_details =?, consul_status =? WHERE consul_id =?";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssss', $consul_code, $doc_id, $doc_name, $consul_details, $consul_status, $update);
+    $rc = $stmt->bind_param('sssss', $doc_id, $doc_name, $consul_details, $consul_status, $update);
     $stmt->execute();
     if ($stmt) {
-        $success = "Success" && header("refresh:1; url=manage_consultation.php");
+        $success = "Success" && header("refresh:1; url=manage_consultations.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -75,76 +74,80 @@ require_once('partials/_head.php');
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <?php 
-            require_once('partials/_sidebar.php');
-            $update = $_GET['update'];
-            $ret = "SELECT * FROM `consultations` WHERE consul_id = '$update' ";
-                                        $stmt = $mysqli->prepare($ret);
-                                        $stmt->execute(); //ok
-                                        $res = $stmt->get_result();
-                                        while ($consul = $res->fetch_object()) {
-                                            ?>
-        <!--  END SIDEBAR  -->
+        <?php
+        require_once('partials/_sidebar.php');
+        $update = $_GET['update'];
+        $ret = "SELECT * FROM `consultations` WHERE consul_id = '$update' ";
+        $stmt = $mysqli->prepare($ret);
+        $stmt->execute(); //ok
+        $res = $stmt->get_result();
+        while ($consul = $res->fetch_object()) {
+        ?>
+            <!--  END SIDEBAR  -->
 
-        <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
-            <div class="layout-px-spacing">
+            <!--  BEGIN CONTENT AREA  -->
+            <div id="content" class="main-content">
+                <div class="layout-px-spacing">
 
-                <div class="row layout-top-spacing">
+                    <div class="row layout-top-spacing">
 
-                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-                        <div class="widget-content widget-content-area br-6">
-                            <form method="POST" enctype="multipart/form-data">
-                                <div class="form-row mb-4">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert</label>
-                                        <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected><?php echo $consul->doc_number; ?></option>
-                                            <?php
-                                            $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($row = $res->fetch_object()) {
+                        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                            <div class="widget-content widget-content-area br-6">
+                                <form method="POST" enctype="multipart/form-data">
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Consultation Status</label>
+                                            <input type="text" name="consul_status" value="Pending" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Medical Expert</label>
+
+                                            <select id="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
+                                                <option selected>Select Doctor Number</option>
+                                                <?php
+                                                $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
+                                                $stmt = $mysqli->prepare($ret);
+                                                $stmt->execute(); //ok
+                                                $res = $stmt->get_result();
+                                                while ($row = $res->fetch_object()) {
                                                 ?>
-                                                <option><?php echo $row->doc_number; ?></option>
-                                            <?php
-                                            } ?>
-                                        </select>
+                                                    <option><?php echo $row->doc_number; ?></option>
+                                                <?php
+                                                } ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Medical Expert Name</label>
+                                            <input type="text" readonly id="docName" class="form-control" name="doc_name">
+                                        </div>
+                                        <div style="display:none" class="form-group col-md-6">
+                                            <input type="text" id="docId" class="form-control" name="doc_id">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert Name</label>
-                                        <input type="text" readonly id="docName" class="form-control" name="doc_name">
+                                    <div class="form-row mb-4">
+                                        <div class="form-group col-md-12">
+                                            <label for="inputAddress">Consultation Details</label>
+                                            <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details; ?></textarea>
+                                        </div>
                                     </div>
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <input type="text" id="docId" class="form-control" name="doc_id">
-                                    </div>
-                                </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputAddress">Consultation Details</label>
-                                        <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details; ?></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" name="update" class="btn btn-primary mt-3">Submit</button>
-                            </form>
+                                    <button type="submit" name="update" class="btn btn-primary mt-3">Submit</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php
+                require_once('partials/_footer.php'); ?>
             </div>
-            <?php
-            require_once('partials/_footer.php'); ?>
-        </div>
-        <!--  END CONTENT AREA  -->
+            <!--  END CONTENT AREA  -->
     </div>
     <!-- END MAIN CONTAINER -->
 
-    <?php
-    require_once('partials/_scripts.php');
-                                        }
-    ?>
+<?php
+            require_once('partials/_scripts.php');
+        }
+?>
 </body>
 
 </html>
