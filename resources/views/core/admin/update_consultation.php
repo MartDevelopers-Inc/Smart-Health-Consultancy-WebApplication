@@ -83,7 +83,7 @@ require_once('partials/_head.php');
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
                                         while ($consul = $res->fetch_object()) {
-         ?>
+                                            ?>
         <!--  END SIDEBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
@@ -101,16 +101,17 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Medical Expert</label>
                                         <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected><?php echo $consul->doc_number;?></option>
+                                            <option selected><?php echo $consul->doc_number; ?></option>
                                             <?php
                                             $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
                                             while ($row = $res->fetch_object()) {
-                                            ?>
-                                                <option><?php echo $row->doc_number;?></option>
-                                            <?php } ?>
+                                                ?>
+                                                <option><?php echo $row->doc_number; ?></option>
+                                            <?php
+                                            } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -124,7 +125,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Consultation Details</label>
-                                        <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details;?></textarea>
+                                        <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details; ?></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="update" class="btn btn-primary mt-3">Submit</button>
@@ -134,8 +135,7 @@ require_once('partials/_head.php');
                 </div>
             </div>
             <?php
-            require_once('partials/_footer.php');
-            ?>
+            require_once('partials/_footer.php'); ?>
         </div>
         <!--  END CONTENT AREA  -->
     </div>
@@ -143,6 +143,7 @@ require_once('partials/_head.php');
 
     <?php
     require_once('partials/_scripts.php');
+                                        }
     ?>
 </body>
 
