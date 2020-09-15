@@ -57,7 +57,7 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="manage_consultations.php">Consultations</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add Consultation</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Update</span></li>
                             </ol>
                         </nav>
 
@@ -75,7 +75,15 @@ require_once('partials/_head.php');
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <?php require_once('partials/_sidebar.php'); ?>
+        <?php 
+            require_once('partials/_sidebar.php');
+            $update = $_GET['update'];
+            $ret = "SELECT * FROM `consultations` WHERE consul_id = '$update' ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($consul = $res->fetch_object()) {
+         ?>
         <!--  END SIDEBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
@@ -88,18 +96,12 @@ require_once('partials/_head.php');
                         <div class="widget-content widget-content-area br-6">
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="form-row mb-4">
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <label for="inputEmail4"></label>
-                                        <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
-                                        <input type="text" name="consul_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="consul_status" value="Pending" class="form-control">
-                                    </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Medical Expert</label>
                                         <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected>Select Medical Expert Number</option>
+                                            <option selected><?php echo $consul->doc_number;?></option>
                                             <?php
                                             $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
                                             $stmt = $mysqli->prepare($ret);
@@ -122,10 +124,10 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Consultation Details</label>
-                                        <textarea required name="consul_details" rows="10" class="form-control"></textarea>
+                                        <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details;?></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" name="add" class="btn btn-primary mt-3">Submit</button>
+                                <button type="submit" name="update" class="btn btn-primary mt-3">Submit</button>
                             </form>
                         </div>
                     </div>
