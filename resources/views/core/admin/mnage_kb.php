@@ -84,14 +84,22 @@ require_once('partials/_head.php');
                                 <div class="card">
                                     <div class="card-header" id="headingOne3">
                                         <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#<?php echo $row->kb_id;?>" aria-expanded="true" aria-controls="iconAccordionOne">
+                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#<?php echo $row->kb_id; ?>" aria-expanded="true" aria-controls="iconAccordionOne">
                                                 <div class="accordion-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay">
-                                                        <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
-                                                        <polygon points="12 15 17 21 7 21 12 15"></polygon>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                                        <rect x="9" y="9" width="6" height="6"></rect>
+                                                        <line x1="9" y1="1" x2="9" y2="4"></line>
+                                                        <line x1="15" y1="1" x2="15" y2="4"></line>
+                                                        <line x1="9" y1="20" x2="9" y2="23"></line>
+                                                        <line x1="15" y1="20" x2="15" y2="23"></line>
+                                                        <line x1="20" y1="9" x2="23" y2="9"></line>
+                                                        <line x1="20" y1="14" x2="23" y2="14"></line>
+                                                        <line x1="1" y1="9" x2="4" y2="9"></line>
+                                                        <line x1="1" y1="14" x2="4" y2="14"></line>
                                                     </svg>
                                                 </div>
-                                                <?php echo $row->kb_title;?>
+                                                <?php echo $row->kb_title; ?>
                                                 <div class="icons">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
                                                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -101,10 +109,10 @@ require_once('partials/_head.php');
                                         </section>
                                     </div>
 
-                                    <div id="<?php echo $row->kb_id;?>" class="collapse" aria-labelledby="headingOne3" data-parent="#iconsAccordion">
+                                    <div id="<?php echo $row->kb_id; ?>" class="collapse" aria-labelledby="headingOne3" data-parent="#iconsAccordion">
                                         <div class="card-body">
                                             <p class="">
-                                                <?php echo $kb_desc;?>
+                                                <?php echo $row->kb_desc; ?>
                                             </p>
                                         </div>
                                     </div>
@@ -115,12 +123,9 @@ require_once('partials/_head.php');
                 </div>
             </div>
         </div>
-        <?php
-        require_once('partials/_footer.php');
-        ?>
     </div>
+   
     <!--  END CONTENT AREA  -->
-    </div>
     <?php require_once('partials/_scripts.php'); ?>
 
     </html>
