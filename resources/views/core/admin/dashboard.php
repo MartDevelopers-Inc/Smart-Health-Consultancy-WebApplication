@@ -312,36 +312,50 @@ require_once('partials/_head.php');
                                                     <div class="th-content th-heading">Package Name</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Members Under Package</div>
+                                                    <div class="th-content th-heading">Number Of Members Under Package</div>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="td-content"><span class="pricing">$84.00</span></div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-content"><span class="pricing">$84.00</span></div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-content"><span class="discount-pricing">$10.00</span></div>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            $ret = "SELECT * FROM `packages` ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($row = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="td-content"><span class="badge outline-badge-success"><?php echo $row->package_id; ?></span></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><span class="pricing"><?php echo $row->package_name; ?></span></div>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        $MP = $row->package_name;
+                                                        $query = "SELECT COUNT(*) FROM `members` WHERE member_package = '$MP' ";
+                                                        $stmt = $mysqli->prepare($query);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($members);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                        ?>
+                                                        <div class="td-content"><span class="discount-pricing"><?php echo $members; ?> </span></div>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <?php require_once('partials/_footer.php'); ?>
         </div>
         <!--  END CONTENT AREA  -->
-
     </div>
     <?php require_once('partials/_scripts.php'); ?>
 

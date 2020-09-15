@@ -24,6 +24,11 @@
     $length = 15;
     $kb_id = bin2hex(random_bytes($length));
 
+
+// -------Package ID--------------------------------------------------------------------//
+    $length = 15;
+    $package_id= bin2hex(random_bytes($length));
+
 // ----Doc Number ----------------------------------------------------------------//
     $alpha = 5;
     $beta = 5;
