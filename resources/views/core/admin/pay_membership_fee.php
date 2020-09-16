@@ -97,9 +97,9 @@ require_once('partials/_head.php');
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-6">
                                         <label for="inputEmail4">Payment Method</label>
-                                        <select id="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
+                                        <select class='form-control basic' name="pay_method">
                                             <option selected>Select Payment Method</option>
                                             <?php
                                             $ret = "SELECT * FROM `payment_methods` ";
@@ -127,9 +127,10 @@ require_once('partials/_head.php');
                                     ?>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Package</label>
-                                            <input type="text" readonly value="<?php echo $row->package_name;?>" class="form-control" >
+                                            <input type="text" readonly value="<?php echo $row->package_name; ?>" class="form-control">
                                         </div>
                                         <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Payment Amount</label>
                                             <input type="text" readonly value="<?php echo $row->package_price; ?>" class="form-control" name="pay_amt">
                                         </div>
                                     <?php } ?>
