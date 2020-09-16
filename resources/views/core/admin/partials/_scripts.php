@@ -220,7 +220,9 @@
             },
             series: [{
                 name: 'Clients',
-                data: [<?php echo $jan;?>, <?php echo $feb;?>, <?php echo $mar;?>, <?php echo $apr;?>, <?php echo $may;?>, <?php echo $jun;?>, <?php echo $jul;?>, <?php echo $aug;?>, <?php echo $sep;?>, <?php echo $oct ;?>, <?php echo $nov;?>, <?php echo $dec;?>]
+                data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>],
+                name: 'Doctors',
+                data: [<?php echo $Jan; ?>, <?php echo $Feb; ?>, <?php echo $Mar; ?>, <?php echo $Apr; ?>, <?php echo $May; ?>, <?php echo $Jun; ?>, <?php echo $Jul; ?>, <?php echo $Aug; ?>, <?php echo $Sep; ?>, <?php echo $Oct; ?>, <?php echo $Nov; ?>, <?php echo $Dec; ?>],
             }],
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             xaxis: {
