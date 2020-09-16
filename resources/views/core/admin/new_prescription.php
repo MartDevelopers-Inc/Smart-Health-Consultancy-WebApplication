@@ -19,7 +19,7 @@ if (isset($_POST['add'])) {
     $stmt = $mysqli->prepare($query);
     $stmt1 = $mysqli->prepare($query1);
     $rc = $stmt->bind_param('ssss', $consul_id, $pre_id, $pre_code, $prescription);
-    $rc = $stmt1->bind_param('ss', $consul_id, $status);
+    $rc = $stmt1->bind_param('ss', $status, $consul_id);
     $stmt->execute();
     $stmt1->execute();
 
