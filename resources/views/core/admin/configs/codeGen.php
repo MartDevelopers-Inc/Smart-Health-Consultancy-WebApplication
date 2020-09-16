@@ -33,8 +33,12 @@
 // -------Package ID--------------------------------------------------------------------//
     $length = 15;
     $consul_id= bin2hex(random_bytes($length));
+
+// -------Package ID--------------------------------------------------------------------//
+    $length = 15;
+    $pre_id= bin2hex(random_bytes($length));
     
-// ---CODES Number ----------------------------------------------------------------//
+// ---Codes----------------------------------------------------------------//
     $alpha = 5;
     $beta = 5;
     $a = substr(str_shuffle("QWERTYUIOPLKJHGFDSAZXCVBNM"),1,$alpha);
