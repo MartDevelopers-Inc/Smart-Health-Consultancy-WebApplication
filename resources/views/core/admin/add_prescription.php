@@ -42,8 +42,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="manage_consultations.php">Consultations</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Consultations</span></li>
+                                <li class="breadcrumb-item"><a href="add_prescription.php">Prescriptions</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>New Prescription</span></li>
                             </ol>
                         </nav>
 
@@ -81,7 +81,7 @@ require_once('partials/_head.php');
                                     <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                 </svg>
 
-                                New Consultation
+                                New Consultation Record
                             </a>
 
                             <!--<a class="btn btn-outline-primary" href="">
@@ -126,7 +126,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->consul_status; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="new_prescription.php?consul_id=<?php echo $row->consul_id;?>"></a>
+                                                    <a class="badge outline-badge-primary" href="new_prescription.php?consul_id=<?php echo $row->consul_id;?>&status='Prescribed'">Add Prescription</a>
                                                 </td>
                                             </tr>
                                         <?php
