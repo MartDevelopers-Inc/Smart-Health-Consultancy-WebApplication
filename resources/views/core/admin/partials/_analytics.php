@@ -154,7 +154,7 @@ $stmt->close();
 $query = "SELECT COUNT(*) FROM `members` WHERE month_joined ='Oct' ";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($mar);
+$stmt->bind_result($oct);
 $stmt->fetch();
 $stmt->close();
 
@@ -175,3 +175,13 @@ $stmt->fetch();
 $stmt->close();
 
 /* End Member Enrollment Per Month */
+
+/* Medical Expters Enrollment Per Month */
+
+//Jan
+$query = "SELECT COUNT(*) FROM `medical_experts` WHERE month_joined = 'Jan' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($med_jan);
+$stmt->fetch();
+$stmt->close();

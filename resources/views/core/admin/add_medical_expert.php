@@ -8,7 +8,7 @@ check_login();
 
 //Add Medical Expert
 if (isset($_POST['add_doc'])) {
-
+    $month_joined = $_POST['month_joined'];
     $doc_id = $_POST['doc_id'];
     $doc_number = $_POST['doc_number'];
     $doc_name = $_POST['doc_name'];
@@ -19,9 +19,9 @@ if (isset($_POST['add_doc'])) {
     $doc_photo = $_FILES['doc_photo']['name'];
     move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
-    $query = "INSERT INTO medical_experts (doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO medical_experts (month_joined, doc_id, doc_number, doc_name, doc_email, doc_phone, doc_bio, doc_status, doc_photo) VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
+    $rc = $stmt->bind_param('sssssssss', $month_joined, $doc_id, $doc_number, $doc_name, $doc_email, $doc_phone, $doc_bio, $doc_status, $doc_photo);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
@@ -98,6 +98,7 @@ require_once('partials/_head.php');
                                         <input type="text" name="doc_id" value="<?php echo $doc_id; ?>" class="form-control">
                                         <input type="text" name="doc_number" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                         <input type="text" name="doc_status" value="Verified" class="form-control">
+                                        <input type="text" name="month_joined" value="<?php echo date('M');?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">

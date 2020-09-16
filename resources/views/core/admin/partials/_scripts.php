@@ -201,7 +201,7 @@
                 }
             },
             title: {
-                text: '<?php echo $members;?> Clients',
+                text: '',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
