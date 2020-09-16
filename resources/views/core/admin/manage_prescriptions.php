@@ -121,8 +121,8 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->pre_id; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="update_consultation.php?update=<?php echo $row->pre_id; ?>">Update</a>
-                                                    <a class="badge outline-badge-danger" href="manage_prescriptions.php?update=<?php echo $row->pre_id; ?>">Delete</a>
+                                                    <a class="badge outline-badge-primary" href="update_prescription.php?update=<?php echo $row->pre_id;?>">Update</a>
+                                                    <a class="badge outline-badge-danger" href="manage_prescriptions.php?delete=<?php echo $row->pre_id;?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php
