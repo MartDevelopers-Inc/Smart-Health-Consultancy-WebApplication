@@ -85,7 +85,7 @@ require_once('partials/_head.php');
                     <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-chart-one">
                             <div class="widget-heading">
-                                <h5 class="">Members</h5>
+                                <h5 class="">Enrollments</h5>
                                 <ul class="tabs tab-pills">
                                     <li><a href="javascript:void(0);" id="tb_1" class="tabmenu">Monthly</a></li>
                                 </ul>

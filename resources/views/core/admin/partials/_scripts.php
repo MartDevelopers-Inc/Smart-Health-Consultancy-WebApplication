@@ -189,7 +189,7 @@
                 }]
             },
             subtitle: {
-                text: 'Total Profit',
+                text: '',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
@@ -201,7 +201,7 @@
                 }
             },
             title: {
-                text: '$10,840',
+                text: '',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
@@ -219,12 +219,14 @@
                 lineCap: 'square'
             },
             series: [{
-                name: 'Income',
-                data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000, 17000]
-            }, {
-                name: 'Expenses',
-                data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
-            }],
+                    name: 'Clients',
+                    data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>]
+                },
+                {
+                    name: 'Doctors',
+                    data: [<?php echo $Jan; ?>, <?php echo $Feb; ?>, <?php echo $Mar; ?>, <?php echo $Apr; ?>, <?php echo $May; ?>, <?php echo $Jun; ?>, <?php echo $Jul; ?>, <?php echo $Aug; ?>, <?php echo $Sep; ?>, <?php echo $Oct; ?>, <?php echo $Nov; ?>, <?php echo $Dec; ?>],
+                }
+            ],
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             xaxis: {
                 axisBorder: {

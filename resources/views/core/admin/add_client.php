@@ -7,6 +7,7 @@ include('configs/codeGen.php');
 check_login();
 
 if (isset($_POST['add_client'])) {
+    $month_joined = $_POST['month_joined'];
     $member_id = $_POST['member_id'];
     $member_name = $_POST['member_name'];
     $member_phone = $_POST['member_phone'];
@@ -16,9 +17,9 @@ if (isset($_POST['add_client'])) {
     $member_pic = $_FILES['member_pic']['name'];
     move_uploaded_file($_FILES["member_pic"]["tmp_name"], "assets/img/clients/" . $_FILES["member_pic"]["name"]);
 
-    $query = "INSERT INTO members (member_id, member_name, member_phone, member_email, member_adr, member_package, member_pic) VALUES (?,?,?,?,?,?,?)";
+    $query = "INSERT INTO members (month_joined, member_id, member_name, member_phone, member_email, member_adr, member_package, member_pic) VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssss', $member_id, $member_name, $member_phone, $member_email, $member_adr, $member_package, $member_pic);
+    $rc = $stmt->bind_param('ssssssss', $month_joined, $member_id, $member_name, $member_phone, $member_email, $member_adr, $member_package, $member_pic);
     $stmt->execute();
     if ($stmt) {
         $success = "Client Account Created" && header("refresh:1; url=manage_clients.php");
@@ -92,6 +93,7 @@ require_once('partials/_head.php');
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4">Id</label>
                                         <input type="text" name="member_id" value="<?php echo $member_id; ?>" class="form-control">
+                                        <input type="text" name="month_joined" value="<?php echo date('M'); ?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
