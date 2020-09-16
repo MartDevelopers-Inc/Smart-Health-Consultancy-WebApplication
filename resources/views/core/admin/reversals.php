@@ -8,11 +8,11 @@ if (isset($_GET['reverse'])) {
     $status = $_GET['status'];
     $adn = "UPDATE  membership_payments SET status =? WHERE pay_id =?";
     $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('ss', $status, $verify);
+    $stmt->bind_param('ss', $status, $reverse);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Success" && header("refresh:1; url=payment_verification.php");
+        $success = "Success" && header("refresh:1; url=reversals.php");
     } else {
         $info = "Please Try Again Or Try Later";
     }
