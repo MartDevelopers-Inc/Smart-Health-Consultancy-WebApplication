@@ -3,15 +3,16 @@ session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 
-if (isset($_GET['delete'])) {
-    $delete = $_GET['delete'];
-    $adn = "DELETE FROM membership_payments WHERE pay_id =?";
+if (isset($_GET['verify'])) {
+    $verify = $_GET['verify'];
+    $status = $_GET['status'];
+    $adn = "UPDATE  membership_payments SET status =? WHERE pay_id =?";
     $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('s', $delete);
+    $stmt->bind_param('ss', $status, $verify);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=membership_fee.php");
+        $success = "Success" && header("refresh:1; url=payment_verification.php");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -110,7 +111,7 @@ require_once('partials/_head.php');
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `membership_payments` ";
+                                        $ret = "SELECT * FROM `membership_payments`  WHERE status !='Confirmed' ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
@@ -141,9 +142,7 @@ require_once('partials/_head.php');
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="update_membership_fee.php?update=<?php echo $row->pay_id; ?>">Update</a>
-
-                                                    <a class="badge outline-badge-danger text-danger" href="membership_fee.php?delete=<?php echo $row->pay_id; ?>">Delete</a>
+                                                    <a class="badge outline-badge-danger text-danger" href="membership_fee.php?confirm=<?php echo $row->pay_id;?>&status=Confirmed">Verify Payment</a>
                                                 </td>
                                             </tr>
                                         <?php
