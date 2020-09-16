@@ -119,7 +119,7 @@ require_once('partials/_head.php');
                                         ?>
                                             <tr>
                                                 <td>
-                                                    <span  class="badge outline-badge-success">
+                                                    <span class="badge outline-badge-success">
                                                         <?php echo $row->pay_code; ?>
                                                     </span>
                                                 </td>
@@ -130,19 +130,17 @@ require_once('partials/_head.php');
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
                                                     <?php
-                                                    if ($row->status == 'Pending'){
+                                                    if ($row->status == 'Pending') {
                                                         echo "<span class='badge outline-badge-danger'>$row->status</span>";
-                                                    }
-                                                    elseif($row->status =='Reversed'){
+                                                    } elseif ($row->status == 'Reversed') {
                                                         echo "<span class='badge outline-badge-warning'>$row->status</span>";
-                                                    }
-                                                    else{
+                                                    } else {
                                                         echo "<span class='badge outline-badge-success'>$row->status</span>";
                                                     }
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a class="badge outline-badge-danger text-danger" href="payment_verification.php?reverse=<?php echo $row->pay_id;?>&status=Reversed">Reverse Payment</a>
+                                                    <a class="badge outline-badge-danger text-danger" href="reversals.php?reverse=<?php echo $row->pay_id; ?>&status=Reversed">Reverse Payment</a>
                                                 </td>
                                             </tr>
                                         <?php
