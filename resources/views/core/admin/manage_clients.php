@@ -128,30 +128,18 @@ require_once('partials/_head.php');
                                                         echo "<span class='badge outline-badge-success'>$row->member_package</span>";
                                                     } elseif ($row->member_package == 'Silver Package') {
                                                         echo "<span class='badge outline-badge-warning'>$row->member_package</span>";
-                                                    } elseif($row->member_package == 'Bronze Package') {
+                                                    } elseif ($row->member_package == 'Bronze Package') {
                                                         echo "<span class='badge outline-badge-primary'>$row->member_package</span>";
-                                                    }
-                                                    else{
+                                                    } else {
                                                         echo "<span class='badge outline-badge-danger'>$row->member_package</span>";
                                                     }
                                                     ?>
                                                 </td>
-                                                <td><?php echo date('d M Y g:i', strtotime($row->created_at));?></td>
+                                                <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-dark btn-sm">Manage Client</button>
-                                                        <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                                                <polyline points="6 9 12 15 18 9"></polyline>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                            <a class="dropdown-item" href="view_client.php?view=<?php echo $row->member_id; ?>">View Account</a>
-                                                            <a class="dropdown-item" href="update_client.php?update=<?php echo $row->member_id; ?>">Update Account</a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="manage_clients.php?delete=<?php echo $row->member_id; ?>">Delete Account</a>
-                                                        </div>
-                                                    </div>
+                                                    <a class="badge outline-badge-success" href="view_client.php?view=<?php echo $row->member_id; ?>">View </a>
+                                                    <a class="badge outline-badge-primary" href="update_client.php?update=<?php echo $row->member_id; ?>">Update</a>
+                                                    <a class="badge outline-badge-danger text-danger" href="manage_clients.php?delete=<?php echo $row->member_id; ?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php
