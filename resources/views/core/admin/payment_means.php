@@ -117,16 +117,15 @@ require_once('partials/_head.php');
                                             <tr>
                                                 <td>
                                                     <span class="badge outline-badge-success">
-                                                        <?php echo $row->package_id; ?>
+                                                        <?php echo $row->method_code; ?>
                                                     </span>
                                                 </td>
-                                                <td><?php echo $row->package_name; ?></td>
-                                                <td>Ksh <?php echo $row->package_price; ?></td>
+                                                <td><?php echo $row->method_name; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="update_package.php?update=<?php echo $row->package_id; ?>">Update</a>
+                                                    <a class="badge outline-badge-primary" href="update_payment_means?update=<?php echo $row->method_id; ?>">Update</a>
 
-                                                    <a class="badge outline-badge-danger text-danger" href="packages.php?delete=<?php echo $row->package_id; ?>">Delete</a>
+                                                    <a class="badge outline-badge-danger text-danger" href="payment_methods.php?delete=<?php echo $row->method_id; ?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php
