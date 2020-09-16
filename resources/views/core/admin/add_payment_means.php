@@ -93,7 +93,7 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Payment Method Name</label>
-                                        <select class='form-control basic' name="package_name" id="">
+                                        <select class='form-control basic' name="method_name" id="">
                                             <option selected>Select Payment Method</option>
                                             <option>Credit Card</option>
                                             <option>Mpesa</option>
