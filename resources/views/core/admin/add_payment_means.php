@@ -6,19 +6,18 @@ include('configs/checklogin.php');
 include('configs/codeGen.php');
 check_login();
 
-if (isset($_POST['add_package'])) {
+if (isset($_POST['add'])) {
 
-    $package_id = $_POST['package_id'];
-    $package_name = $_POST['package_name'];
-    $package_price = $_POST['package_price'];
-    $package_desc = $_POST['package_desc'];
+    $method_id = $_POST['method_id'];
+    $method_name = $_POST['method_name'];
+    $method_code = $_POST['method_code'];
 
-    $query = "INSERT INTO packages (package_id, package_name, package_price, package_desc ) VALUES (?,?,?,?)";
+    $query = "INSERT INTO payment_methods (method_id, method_name, method_code) VALUES (?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssss', $package_id, $package_name, $package_price, $package_desc);
+    $rc = $stmt->bind_param('sss', $method_id, $method_name, $method_code);
     $stmt->execute();
     if ($stmt) {
-        $success = "Success" && header("refresh:1; url=add_package.php");
+        $success = "Success" && header("refresh:1; url=payment_means.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
