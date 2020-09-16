@@ -121,7 +121,7 @@ require_once('partials/_head.php');
                                                 </td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="pay_membership_fee.php?update=<?php echo $row->member_id; ?>">Pay Membership Fee</a>
+                                                    <a class="badge outline-badge-primary" href="pay_membership_fee.php?member_id=<?php echo $row->member_id; ?>&member_package=<?php echo $row->member_package;?>&member_name=<?php echo $row->member_name;?>">Pay Membership Fee</a>
                                                 </td>
                                             </tr>
                                         <?php
