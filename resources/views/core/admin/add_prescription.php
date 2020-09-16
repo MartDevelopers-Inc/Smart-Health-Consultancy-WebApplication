@@ -126,7 +126,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->consul_status; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="new_prescription.php?consul_id=<?php echo $row->consul_id;?>&status='Prescribed'">Add Prescription</a>
+                                                    <a class="badge outline-badge-primary" href="new_prescription.php?consul_id=<?php echo $row->consul_id;?>&status=Prescribed">Add Prescription</a>
                                                 </td>
                                             </tr>
                                         <?php

@@ -22,7 +22,7 @@ if (isset($_POST['add'])) {
     $rc = $stmt1->bind_param('ss', $consul_id, $status);
     $stmt->execute();
     $stmt1->execute();
-    
+
     if ($stmt && $stmt1) {
         $success = "Success" && header("refresh:1; url=add_prescription.php");
     } else {
@@ -98,6 +98,27 @@ require_once('partials/_head.php');
                                         <input type="text" name="pre_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                     </div>
                                 </div>
+                                <?php
+                                $consul_id = $_GET['consul_id'];
+                                $ret = "SELECT * FROM `consultations` WHERE consul_id ='$consul_id' ";
+                                $stmt = $mysqli->prepare($ret);
+                                $stmt->execute(); //ok
+                                $res = $stmt->get_result();
+                                while ($row = $res->fetch_object()) {
+                                ?>
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-12">
+                                        <div class="card component-card_1">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Consultation Details</h5>
+                                                <p class="card-text">
+                                                    <?php echo $row->consul_details;?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php }?>
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Prescription Details</label>
