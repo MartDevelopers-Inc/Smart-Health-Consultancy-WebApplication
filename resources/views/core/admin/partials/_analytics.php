@@ -55,3 +55,19 @@ $stmt->bind_result($bronze);
 $stmt->fetch();
 $stmt->close();
 
+//Consultations
+$query = "SELECT COUNT(*) FROM `consultations`  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($consultations);
+$stmt->fetch();
+$stmt->close();
+
+//Prescriptions
+$query = "SELECT COUNT(*) FROM `prescriptions`  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($prescriptions);
+$stmt->fetch();
+$stmt->close();
+
