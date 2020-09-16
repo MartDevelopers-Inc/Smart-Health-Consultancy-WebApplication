@@ -189,7 +189,7 @@
                 }]
             },
             subtitle: {
-                text: 'Total Profit',
+                text: '',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
@@ -201,7 +201,7 @@
                 }
             },
             title: {
-                text: '$10,840',
+                text: '<?php echo $members;?> Clients',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
@@ -219,11 +219,8 @@
                 lineCap: 'square'
             },
             series: [{
-                name: 'Income',
+                name: 'Clients',
                 data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000, 17000]
-            }, {
-                name: 'Expenses',
-                data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
             }],
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             xaxis: {
