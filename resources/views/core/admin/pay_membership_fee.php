@@ -58,8 +58,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="manage_consultations.php">Consultations</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add Consultation</span></li>
+                                <li class="breadcrumb-item"><a href="membership_fee.php">Billings</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Pay Membership Fee</span></li>
                             </ol>
                         </nav>
 
@@ -92,41 +92,49 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4"></label>
-                                        <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
-                                        <input type="text" name="consul_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="consul_status" value="Pending" class="form-control">
+                                        <input type="text" name="pay_id" value="<?php echo $pay_id; ?>" class="form-control">
+                                        <input type="text" name="status" value="Confirmed" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert</label>
-                                        <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected>Select Medical Expert Number</option>
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">Payment Method</label>
+                                        <select id="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
+                                            <option selected>Select Payment Method</option>
                                             <?php
-                                            $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
+                                            $ret = "SELECT * FROM `payment_methods` ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
                                             while ($row = $res->fetch_object()) {
                                             ?>
-                                                <option><?php echo $row->doc_number;?></option>
+                                                <option><?php echo $row->method_name; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert Name</label>
-                                        <input type="text" readonly id="docName" class="form-control" name="doc_name">
+                                        <label for="inputEmail4">Payment Code</label>
+                                        <input type="text" name="pay_code" value="<?php echo $paycode; ?>" class="form-control">
                                     </div>
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <input type="text" id="docId" class="form-control" name="doc_id">
-                                    </div>
+                                    <?php
+                                    $member_package = $_GET['member_package'];
+                                    $ret = "SELECT * FROM `packages` WHERE package_name ='$member_package' ";
+                                    $stmt = $mysqli->prepare($ret);
+                                    $stmt->execute(); //ok
+                                    $res = $stmt->get_result();
+                                    while ($row = $res->fetch_object()) {
+
+                                    ?>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Package</label>
+                                            <input type="text" readonly value="<?php echo $row->package_name;?>" class="form-control" >
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="text" readonly value="<?php echo $row->package_price; ?>" class="form-control" name="pay_amt">
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputAddress">Consultation Details</label>
-                                        <textarea required name="consul_details" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
+
                                 <button type="submit" name="add" class="btn btn-primary mt-3">Submit</button>
                             </form>
                         </div>
