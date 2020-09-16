@@ -75,7 +75,7 @@ require_once('partials/_head.php');
         <?php
         require_once('partials/_sidebar.php');
         $update = $_GET['update'];
-        $ret = "SELECT * FROM `payment_methods`  WHERE method_code = '$update' ";
+        $ret = "SELECT * FROM `payment_methods`  WHERE method_id = '$update' ";
         $stmt = $mysqli->prepare($ret);
         $stmt->execute(); //ok
         $res = $stmt->get_result();
