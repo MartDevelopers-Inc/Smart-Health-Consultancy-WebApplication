@@ -3,19 +3,6 @@ session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 
-if (isset($_GET['delete'])) {
-    $delete = $_GET['delete'];
-    $adn = "DELETE FROM membership_payments WHERE pay_id =?";
-    $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('s', $delete);
-    $stmt->execute();
-    $stmt->close();
-    if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=membership_fee.php");
-    } else {
-        $info = "Please Try Again Or Try Later";
-    }
-}
 require_once('partials/_head.php');
 ?>
 
@@ -76,63 +63,70 @@ require_once('partials/_head.php');
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
 
-                            <a class="btn btn-outline-success" href="add_membership_fee.php">
+                            <!-- <a class="btn btn-outline-success" href="add_client.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                    <line x1="23" y1="11" x2="17" y2="11"></line>
                                 </svg>
-
-                                Add New Membership Fee Payment Record
+                                Register New Client
                             </a>
 
-                            <!--<a class="btn btn-outline-primary" href="">
+                             <a class="btn btn-outline-primary" href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="8.5" cy="7" r="4"></circle>
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
                                 Import .XLS Document
-                            </a>-->
+                            </a>  -->
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
-                                            <th>Method</th>
-                                            <th>Package</th>
-                                            <th>Amount P/M</th>
                                             <th>Name</th>
-                                            <th>Paid On</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Package</th>
+                                            <th>Joined On</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `membership_payments` ";
+                                        $ret = "SELECT * FROM `members` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
+                                                <td><?php echo $row->member_name; ?></td>
+                                                <td><?php echo $row->member_phone; ?></td>
+                                                <td><?php echo $row->member_email; ?></td>
                                                 <td>
-                                                    <a href="view_payment.php?view=<?php echo $row->pay_id; ?>" class="badge outline-badge-success">
-                                                        <?php echo $row->pay_code; ?>
-                                                    </a>
+                                                    <?php
+                                                    if ($row->member_package == 'Gold Package') {
+                                                        echo "<span class='badge outline-badge-success'>$row->member_package</span>";
+                                                    } elseif ($row->member_package == 'Silver Package') {
+                                                        echo "<span class='badge outline-badge-warning'>$row->member_package</span>";
+                                                    } elseif ($row->member_package == 'Bronze Package') {
+                                                        echo "<span class='badge outline-badge-primary'>$row->member_package</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-danger'>$row->member_package</span>";
+                                                    }
+                                                    ?>
                                                 </td>
-                                                <td><?php echo $row->pay_method; ?></td>
-                                                <td><?php echo $row->pay_package; ?></td>
-                                                <td>Ksh <?php echo $row->pay_amt; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="update_membership_fee.php?update=<?php echo $row->pay_id; ?>">Update</a>
-
-                                                    <a class="badge outline-badge-danger text-danger" href="membership_fee.php?delete=<?php echo $row->pay_id; ?>">Delete</a>
+                                                    <a class="badge outline-badge-primary" href="pay_membership_fee.php?update=<?php echo $row->member_id; ?>">Pay Membership Fee</a>
                                                 </td>
                                             </tr>
                                         <?php
                                         } ?>
+
                                     </tbody>
                                 </table>
                             </div>
