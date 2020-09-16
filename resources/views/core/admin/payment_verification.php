@@ -142,7 +142,7 @@ require_once('partials/_head.php');
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a class="badge outline-badge-danger text-danger" href="membership_fee.php?confirm=<?php echo $row->pay_id;?>&status=Confirmed">Verify Payment</a>
+                                                    <a class="badge outline-badge-success text-success" href="payment_verification.php?verify=<?php echo $row->pay_id;?>&status=Confirmed">Verify Payment</a>
                                                 </td>
                                             </tr>
                                         <?php
