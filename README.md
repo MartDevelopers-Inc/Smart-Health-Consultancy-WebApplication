@@ -93,6 +93,8 @@ Then the doctor advices the patient on what medicine to take or if they need to 
     -> Prescriptions / Examination Reports
 
 ```
+<p align="center"><img src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy-WebApplication/blob/master/Smart-Health-Consultancy.png"></p>
+
 ## Smart Health Consultancy Security Vulnerabilities
 
 If you discover a security vulnerability within this application , please send an e-mail to MartDevelopers Inc via
