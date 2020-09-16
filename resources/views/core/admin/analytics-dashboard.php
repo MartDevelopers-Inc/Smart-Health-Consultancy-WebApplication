@@ -229,7 +229,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $consultations;?></h6>
                                         <p class="text-success">Consultations</p>
                                     </div>
                                     <div class="">
@@ -250,7 +250,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $prescriptions;?></h6>
                                         <p class="text-success">Prescriptions</p>
                                     </div>
                                     <div class="">
