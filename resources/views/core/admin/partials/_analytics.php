@@ -173,3 +173,5 @@ $stmt->execute();
 $stmt->bind_result($dec);
 $stmt->fetch();
 $stmt->close();
+
+/* End Member Enrollment Per Month */
