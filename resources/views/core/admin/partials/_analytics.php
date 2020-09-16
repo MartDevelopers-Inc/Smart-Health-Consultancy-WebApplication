@@ -244,7 +244,7 @@ $stmt->fetch();
 $stmt->close();
 
 //Sep
-$query = "SELECT COUNT(*) FROM `memembersdical_experts` WHERE month_joined ='Sep' ";
+$query = "SELECT COUNT(*) FROM `medical_experts` WHERE month_joined ='Sep' ";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
 $stmt->bind_result($Sep);
