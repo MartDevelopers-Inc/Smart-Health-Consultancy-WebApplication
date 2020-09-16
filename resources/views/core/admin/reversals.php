@@ -111,7 +111,7 @@ require_once('partials/_head.php');
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `membership_payments`  WHERE status !='Confirmed' ";
+                                        $ret = "SELECT * FROM `membership_payments`  WHERE  status != 'Reversed' ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
