@@ -103,6 +103,7 @@ require_once('partials/_head.php');
                                             <th>Amount P/M</th>
                                             <th>Name</th>
                                             <th>Paid On</th>
+                                            <th>Payment Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -126,6 +127,19 @@ require_once('partials/_head.php');
                                                 <td>Ksh <?php echo $row->pay_amt; ?></td>
                                                 <td><?php echo $row->member_name; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row->status == 'Pending'){
+                                                        echo "<span class='badge outline-badge-danger'>$row->status</span>";
+                                                    }
+                                                    elseif($row->status =='Reversed'){
+                                                        echo "<span class='badge outline-badge-warning'>$row->status</span>";
+                                                    }
+                                                    else{
+                                                        echo "<span class='badge outline-badge-success'>$row->status</span>";
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <a class="badge outline-badge-primary" href="update_membership_fee.php?update=<?php echo $row->pay_id; ?>">Update</a>
 
