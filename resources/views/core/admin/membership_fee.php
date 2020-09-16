@@ -122,8 +122,9 @@ require_once('partials/_head.php');
                                                     </a>
                                                 </td>
                                                 <td><?php echo $row->pay_method; ?></td>
-                                                <td><?php echo $row->pay_package; ?></td>
+                                                <td><?php echo $row->member_package; ?></td>
                                                 <td>Ksh <?php echo $row->pay_amt; ?></td>
+                                                <td><?php echo $row->member_name; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
                                                     <a class="badge outline-badge-primary" href="update_membership_fee.php?update=<?php echo $row->pay_id; ?>">Update</a>
