@@ -159,7 +159,7 @@ require_once('partials/_head.php');
                         <div class="widget widget-activity-four">
 
                             <div class="widget-heading">
-                                <h5 class="">Recent Activities</h5>
+                                <h5 class="">System Logs</h5>
                             </div>
 
                             <div class="widget-content">
@@ -236,8 +236,6 @@ require_once('partials/_head.php');
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
-
-
                                             <tr>
                                                 <th>
                                                     <div class="th-content">Number</div>

@@ -316,5 +316,5 @@ $stmt->close();
 /* Assume there is a fixed taxation ogf 14% */
 $taxrate = 0.14;
 $income = $membership_payment;
-$tax = $taxrate * $taxable_income;
+$tax = $taxrate * $income;
 $acc_bal = $income - $tax;
