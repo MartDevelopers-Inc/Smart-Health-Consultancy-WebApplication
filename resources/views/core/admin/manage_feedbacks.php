@@ -76,7 +76,7 @@ require_once('partials/_head.php');
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
 
-                            <a class="btn btn-outline-success" href="add_prescription.php">
+                            <a class="btn btn-outline-success" href="add_feedbacks.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
@@ -97,8 +97,8 @@ require_once('partials/_head.php');
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Prescription Code</th>
-                                            <th>Consultation Code</th>
+                                            <th>Client ID</th>
+                                            <th>Client Name</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
@@ -106,7 +106,7 @@ require_once('partials/_head.php');
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `prescriptions` ";
+                                        $ret = "SELECT * FROM `feedbacks` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
@@ -114,15 +114,14 @@ require_once('partials/_head.php');
                                         ?>
                                             <tr>
                                                 <td>
-                                                    <a class="badge outline-badge-success" href="view_prescription.php?view=<?php echo $row->pre_id; ?>">
-                                                        <?php echo $row->pre_code; ?>
+                                                    <a class="badge outline-badge-success" href="view_feedback.php?view=<?php echo $row->f_id; ?>">
+                                                        <?php echo $row->member_id; ?>
                                                     </a>
                                                 </td>
-                                                <td><?php echo $row->pre_id; ?></td>
+                                                <td><?php echo $row->member_name; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-primary" href="update_prescription.php?update=<?php echo $row->pre_id; ?>">Update</a>
-                                                    <a class="badge outline-badge-danger" href="manage_prescriptions.php?delete=<?php echo $row->pre_id; ?>">Delete</a>
+                                                    <a class="badge outline-badge-danger" href="manage_feedbacks.php?delete=<?php echo $row->f_id; ?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php
