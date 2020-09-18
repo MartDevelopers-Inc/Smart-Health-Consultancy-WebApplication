@@ -108,7 +108,7 @@ require_once('partials/_head.php');
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `feedbacks` WHERE type ='Complains' ";
+                                        $ret = "SELECT * FROM `feedbacks` WHERE type ='Complain' ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
