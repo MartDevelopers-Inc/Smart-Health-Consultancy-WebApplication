@@ -88,39 +88,13 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4"></label>
-                                        <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
-                                        <input type="text" name="consul_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
-                                        <input type="text" name="consul_status" value="Pending" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert</label>
-                                        <select id="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected>Select Medical Expert Number</option>
-                                            <?php
-                                            $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($row = $res->fetch_object()) {
-                                            ?>
-                                                <option><?php echo $row->doc_number; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert Name</label>
-                                        <input type="text" readonly id="docName" class="form-control" name="doc_name">
-                                    </div>
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <input type="text" id="docId" class="form-control" name="doc_id">
+                                        <input type="text" name="f_id" value="<?php echo $f_id; ?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
-                                        <label for="inputAddress">Consultation Details</label>
-                                        <textarea required name="consul_details" rows="10" class="form-control"></textarea>
+                                        <label for="inputAddress">Feedback</label>
+                                        <textarea required name="f_content" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="add" class="btn btn-primary mt-3">Submit</button>
