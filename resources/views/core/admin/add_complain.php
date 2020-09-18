@@ -118,7 +118,7 @@ require_once('partials/_head.php');
                                                 </td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-danger text-danger" href="add_member_feedback.php?member_id=<?php echo $row->member_id; ?>&member_name=<?php echo $row->member_name; ?>&status=Complain">Add Complain</a>
+                                                    <a class="badge outline-badge-danger text-danger" href="add_member_complain.php?member_id=<?php echo $row->member_id; ?>&member_name=<?php echo $row->member_name; ?>&type=Complain">Add Complain</a>
                                                 </td>
                                             </tr>
                                         <?php
