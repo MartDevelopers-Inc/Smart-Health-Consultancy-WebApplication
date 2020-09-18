@@ -115,7 +115,7 @@ require_once('partials/_head.php');
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a class="badge outline-badge-success" href="add_doc_rating.php?doc_id=<?php echo $row->doc_id; ?>&doc_name=<?php echo $doc_name; ?>">Rate Doctor</a>
+                                                    <a class="badge outline-badge-success" href="add_doc_rating.php?doc_id=<?php echo $row->doc_id; ?>&doc_name=<?php echo $row->doc_name; ?>">Rate Doctor</a>
                                                 </td>
                                             </tr>
                                         <?php

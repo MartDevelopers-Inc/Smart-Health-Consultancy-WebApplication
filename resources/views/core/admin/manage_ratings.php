@@ -118,7 +118,7 @@ require_once('partials/_head.php');
                                                     </span>
                                                 </td>
                                                 <td><?php echo $row->doc_name; ?></td>
-                                                <td><?php echo $row->rating; ?></td>
+                                                <td><?php echo $row->rate; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
                                                     <a class="badge outline-badge-danger" href="manage_ratings.php?delete=<?php echo $row->rate_id; ?>">Delete</a>

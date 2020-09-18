@@ -89,8 +89,8 @@ require_once('partials/_head.php');
                                         <input type="text" name="rate_id" value="<?php echo $rate_id; ?>" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Medical Expert</label>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail4">Medical Expert Rates Based On Consultation Services</label>
                                     <select class='form-control basic' name="rate">
                                         <option selected>Select Rating</option>
                                         <option>One Star</option>
