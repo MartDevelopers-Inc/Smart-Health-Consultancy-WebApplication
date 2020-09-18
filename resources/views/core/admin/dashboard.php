@@ -2,7 +2,7 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
-//require_once('partials/analytics.php');
+require_once('partials/_analytics.php');
 check_login();
 require_once('partials/_head.php');
 
@@ -144,17 +144,12 @@ require_once('partials/_head.php');
                                             </div>
                                             <div class="t-rate rate-dec">
                                                 <p>
-                                                    <span>KSH <?php echo $row->pay_amt;?></span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down">
-                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                        <polyline points="19 12 12 19 5 12"></polyline>
-                                                    </svg>
+                                                    <span>KSH <?php echo $row->pay_amt;?></span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 <?php } ?>
-
-
                             </div>
                         </div>
                     </div>
@@ -206,18 +201,18 @@ require_once('partials/_head.php');
                                 <div class="invoice-box">
 
                                     <div class="acc-total-info">
-                                        <h5>Balance</h5>
-                                        <p class="acc-amount">Ksh 470</p>
+                                        <h5>Account Balance</h5>
+                                        <p class="acc-amount">Ksh <?php echo $acc_bal;?>  </p>
                                     </div>
 
                                     <div class="inv-detail">
                                         <div class="info-detail-1">
                                             <p>Monthly Payments</p>
-                                            <p>Ksh 199.0</p>
+                                            <p>Ksh <?php echo $membership_payment;?></p>
                                         </div>
                                         <div class="info-detail-2">
                                             <p>Taxes</p>
-                                            <p>Ksh 17.82</p>
+                                            <p>Ksh <?php echo $tax;?></p>
                                         </div>
                                     </div>
 
