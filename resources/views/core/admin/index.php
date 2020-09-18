@@ -63,8 +63,8 @@ require_once('partials/_head.php');
                                         <button type="submit" name="login" class="btn btn-primary mixin" value="">Log In</button>
                                     </div>
                                 </div>
-                                <!-- 
-                                <div class="division">
+                                
+                                <!-- <div class="division">
                                     <span>OR</span>
                                 </div>
 
@@ -75,8 +75,8 @@ require_once('partials/_head.php');
                                         </svg>
                                         <span class="brand-name">Login In As Doctor</span>
                                     </a>
-                                </div> -->
-                                <p class="signup-link">Not registered ? <a href="auth_register_boxed.html">Create an account</a></p>
+                                </div>
+                                <p class="signup-link">Not registered ? <a href="auth_register_boxed.html">Create an account</a></p> -->
                             </div>
                         </form>
 
