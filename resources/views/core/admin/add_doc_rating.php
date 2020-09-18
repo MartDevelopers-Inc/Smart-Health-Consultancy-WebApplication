@@ -53,11 +53,10 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="manage_feedbacks.php">Feedbacks</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add Feedbacks</span></li>
+                                <li class="breadcrumb-item"><a href="manage_ratings.php">Ratings</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Add Rating</span></li>
                             </ol>
                         </nav>
-
                     </div>
                 </li>
             </ul>
@@ -87,14 +86,19 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div style="display:none" class="form-group col-md-6">
                                         <label for="inputEmail4"></label>
-                                        <input type="text" name="f_id" value="<?php echo $f_id; ?>" class="form-control">
+                                        <input type="text" name="rate_id" value="<?php echo $rate_id; ?>" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-12">
-                                        <label for="inputAddress">Feedback</label>
-                                        <textarea required name="f_content" rows="10" class="form-control"></textarea>
-                                    </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Medical Expert</label>
+                                    <select class='form-control basic' name="rate">
+                                        <option selected>Select Rating</option>
+                                        <option>One Star</option>
+                                        <option>Two Stars</option>
+                                        <option>Three Stars</option>
+                                        <option>Four Stars</option>
+                                        <option>Five Stars</option>
+                                    </select>
                                 </div>
                                 <button type="submit" name="add" class="btn btn-primary mt-3">Submit</button>
                             </form>
