@@ -2,20 +2,6 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
-
-if (isset($_GET['delete'])) {
-    $delete = $_GET['delete'];
-    $adn = "DELETE FROM ratings WHERE rate_id =?";
-    $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('s', $delete);
-    $stmt->execute();
-    $stmt->close();
-    if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=manage_ratings.php");
-    } else {
-        $info = "Please Try Again Or Try Later";
-    }
-}
 require_once('partials/_head.php');
 ?>
 
@@ -43,7 +29,7 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="manage_ratings.php">Ratings</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Ratings</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Add Rating</span></li>
                             </ol>
                         </nav>
 
@@ -76,56 +62,65 @@ require_once('partials/_head.php');
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
 
-                            <a class="btn btn-outline-success" href="add_rating.php">
+                            <!-- <a class="btn btn-outline-success" href="add_medical_expert.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
-
-                                Add Rating
+                                Add New Medical Expert
                             </a>
-                            <!--<a class="btn btn-outline-primary" href="">
+
+                            <a class="btn btn-outline-primary" href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="8.5" cy="7" r="4"></circle>
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
                                 Import .XLS Document
-                            </a>-->
+                            </a> -->
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Doctor ID</th>
-                                            <th>Doctor Name</th>
-                                            <th>Doctor Rating</th>
-                                            <th>Created At</th>
+                                            <th>Number</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No</th>
+                                            <th>Acc Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `ratings` ";
+                                        $ret = "SELECT * FROM `medical_experts` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td>
-                                                    <span class="badge outline-badge-success">
-                                                        <?php echo $row->doc_id; ?>
-                                                    </span>
-                                                </td>
+                                                <td><?php echo $row->doc_number; ?></td>
                                                 <td><?php echo $row->doc_name; ?></td>
-                                                <td><?php echo $row->rating; ?></td>
-                                                <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
+                                                <td><?php echo $row->doc_email; ?></td>
+                                                <td><?php echo $row->doc_phone; ?></td>
                                                 <td>
-                                                    <a class="badge outline-badge-danger" href="manage_ratings.php?delete=<?php echo $row->rate_id; ?>">Delete</a>
+                                                    <?php
+                                                    if ($row->doc_status == 'Pending') {
+                                                        echo "<span class='badge outline-badge-danger'>$row->doc_status</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-success'>$row->doc_status</span>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a class="badge outline-badge-success" href="add_doc_rating.php?doc_id=<?php echo $row->doc_id; ?>&doc_name=<?php echo $doc_name; ?>">Rate Doctor</a>
                                                 </td>
                                             </tr>
                                         <?php
                                         } ?>
+
                                     </tbody>
                                 </table>
                             </div>
