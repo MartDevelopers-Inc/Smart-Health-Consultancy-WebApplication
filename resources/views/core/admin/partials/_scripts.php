@@ -542,7 +542,7 @@
                 colors: ['transparent']
             },
             series: [{
-                name: 'Membership Packages',
+                name: 'Ksh',
                 data: [<?php echo $gold_payment;?>, <?php echo $silver_payment;?>, <?php echo $bronze_payment;?>]
             }],
             xaxis: {
