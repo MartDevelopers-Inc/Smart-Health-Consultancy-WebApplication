@@ -54,10 +54,10 @@ require_once('partials/_head.php');
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Settings" href="javascript:void(0);">Medical Experts</a>
-                            <a class="dropdown-item" data-value="Mail" href="javascript:void(0);">Members</a>
-                            <a class="dropdown-item" data-value="Print" href="javascript:void(0);">Packages</a>
-                            <a class="dropdown-item" data-value="Download" href="javascript:void(0);">Payments</a>
+                            <a class="dropdown-item" data-value="Settings" href="hr_reports.php">Medical Experts</a>
+                            <a class="dropdown-item" data-value="Mail" href="member_reports.php">Members</a>
+                            <a class="dropdown-item" data-value="Print" href="package_reports.php">Packages</a>
+                            <a class="dropdown-item" data-value="Download" href="payment_reports.php">Payments</a>
                         </div>
                     </div>
                 </li>
@@ -112,7 +112,7 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                    <div class="col-xl-5 col-lg-12 col-md-6 col-sm-12 col-12 layout-spacing">
+                    <div class="col-xl-8 col-lg-12 col-md-6 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-one">
                             <div class="widget-heading">
                                 <h5 class="">Recent Membership Fee Payments <span class="badge outline-badge-success"><a href="membership_fee.php">View All</a></span> </h5>
@@ -150,41 +150,6 @@ require_once('partials/_head.php');
                                         </div>
                                     </div>
                                 <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
-
-                        <div class="widget widget-activity-four">
-
-                            <div class="widget-heading">
-                                <h5 class="">System Logs</h5>
-                            </div>
-
-                            <div class="widget-content">
-
-                                <div class="mt-container mx-auto">
-                                    <div class="timeline-line">
-
-                                        <div class="item-timeline timeline-primary">
-                                            <div class="t-dot" data-original-title="" title="">
-                                            </div>
-                                            <div class="t-text">
-                                                <p><span>Updated</span> Server Logs</p>
-                                                <span class="badge badge-danger">Pending</span>
-                                                <p class="t-time">Just Now</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="tm-action-btn">
-                                    <button class="btn">Clear All <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg></button>
-                                </div>
                             </div>
                         </div>
                     </div>

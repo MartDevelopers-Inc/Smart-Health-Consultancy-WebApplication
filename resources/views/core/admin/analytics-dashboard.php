@@ -56,10 +56,10 @@ require_once('partials/_head.php');
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Settings" href="javascript:void(0);">Medical Experts</a>
-                            <a class="dropdown-item" data-value="Mail" href="javascript:void(0);">Members</a>
-                            <a class="dropdown-item" data-value="Print" href="javascript:void(0);">Packages</a>
-                            <a class="dropdown-item" data-value="Download" href="javascript:void(0);">Payments</a>
+                            <a class="dropdown-item" data-value="Settings" href="hr_reports.php">Medical Experts</a>
+                            <a class="dropdown-item" data-value="Mail" href="member_reports.php">Members</a>
+                            <a class="dropdown-item" data-value="Print" href="package_reports.php">Packages</a>
+                            <a class="dropdown-item" data-value="Download" href="payment_reports.php">Payments</a>
                         </div>
                     </div>
                 </li>
@@ -406,10 +406,10 @@ require_once('partials/_head.php');
                                                     <div class="t-uppercontent">
                                                         <h5>VERIFIED</h5>
                                                     </div>
-                                                    <p><span><?php echo $row->pay_code;?> CONFIRMED</span>
-                                                        <?php echo $row->member_name;?> Paid Ksh <?php echo $row->pay_amt;?> On 
-                                                        <?php echo date('d M Y', strtotime($row->created_at));?> At
-                                                        <?php echo date('g:i', strtotime($row->created_at));?> Using <?php echo $row->pay_method;?>
+                                                    <p><span><?php echo $row->pay_code; ?> CONFIRMED</span>
+                                                        <?php echo $row->member_name; ?> Paid Ksh <?php echo $row->pay_amt; ?> On
+                                                        <?php echo date('d M Y', strtotime($row->created_at)); ?> At
+                                                        <?php echo date('g:i', strtotime($row->created_at)); ?> Using <?php echo $row->pay_method; ?>
                                                     </p>
                                                     <!-- <div class="tags">
                                                         <div class="badge badge-primary"></div>
