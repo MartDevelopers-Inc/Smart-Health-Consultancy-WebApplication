@@ -276,3 +276,45 @@ $stmt->fetch();
 $stmt->close();
 
 /* End Doc */
+
+
+/* Revenue Income as membership packages */
+
+//Gold Package
+$query = "SELECT SUM(pay_amt) FROM `membership_payments` WHERE member_package ='Gold Package' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($gold_payment);
+$stmt->fetch();
+$stmt->close();
+
+//Silver Package
+$query = "SELECT SUM(pay_amt) FROM `membership_payments` WHERE member_package ='Silver Package' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($silver_payment);
+$stmt->fetch();
+$stmt->close();
+
+//Bronze Package
+$query = "SELECT SUM(pay_amt) FROM `membership_payments` WHERE member_package ='Bronze Package' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($bronze_payment);
+$stmt->fetch();
+$stmt->close();
+
+//Total Payments
+$query = "SELECT SUM(pay_amt) FROM `membership_payments` ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($membership_payment);
+$stmt->fetch();
+$stmt->close();
+
+//Tax Computation
+/* Assume there is a fixed taxation ogf 14% */
+$taxrate = 0.14;
+$income = $membership_payment;
+$tax = $taxrate * $income;
+$acc_bal = $income - $tax;
