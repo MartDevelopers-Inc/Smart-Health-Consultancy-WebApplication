@@ -121,6 +121,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->member_name; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                                 <td>
+                                                    <a class="badge outline-badge-primary" href="view_feedback.php?view=<?php echo $row->f_id; ?>">View</a>
                                                     <a class="badge outline-badge-danger" href="manage_feedbacks.php?delete=<?php echo $row->f_id; ?>">Delete</a>
                                                 </td>
                                             </tr>
