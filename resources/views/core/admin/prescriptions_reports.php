@@ -29,7 +29,7 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="">Reports</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Consultation Records</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Prescription Records</span></li>
                             </ol>
                         </nav>
 
@@ -61,23 +61,19 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="html5-extension" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
-                                            <th>Client Name</th>
-                                            <th>Client Phone</th>
-                                            <th>Doc Name</th>
-                                            <th>Status</th>
+                                            <th>Prescription Code</th>
+                                            <th>Consultation Code</th>
                                             <th>Created At</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `consultations` ";
+                                        $ret = "SELECT * FROM `prescriptions` ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
@@ -85,14 +81,11 @@ require_once('partials/_head.php');
                                         ?>
                                             <tr>
                                                 <td>
-                                                    <a class="badge outline-badge-success" href="view_consultation.php?view=<?php echo $row->consul_id; ?>">
-                                                        <?php echo $row->consul_code; ?>
+                                                    <a class="badge outline-badge-success" href="view_prescription.php?view=<?php echo $row->pre_id; ?>">
+                                                        <?php echo $row->pre_code; ?>
                                                     </a>
                                                 </td>
-                                                <td><?php echo $row->member_name; ?></td>
-                                                <td><?php echo $row->member_phone; ?></td>
-                                                <td><?php echo $row->doc_name; ?></td>
-                                                <td><?php echo $row->consul_status; ?></td>
+                                                <td><?php echo $row->pre_id; ?></td>
                                                 <td><?php echo date('d M Y g:i', strtotime($row->created_at)); ?></td>
                                             </tr>
                                         <?php
