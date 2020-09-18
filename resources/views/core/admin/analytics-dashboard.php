@@ -90,7 +90,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $verified_medics;?></h6>
+                                        <h6 class="value"><?php echo $verified_medics; ?></h6>
                                         <p class="text-success">Verified Medical Experts</p>
                                     </div>
                                     <div class="">
@@ -113,7 +113,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $unverified;?></h6>
+                                        <h6 class="value"><?php echo $unverified; ?></h6>
                                         <p class="text-success">Un Verified Medical Experts</p>
                                     </div>
                                     <div class="">
@@ -137,7 +137,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $total_medics;?></h6>
+                                        <h6 class="value"><?php echo $total_medics; ?></h6>
                                         <p class="text-success">Total Enrolled Medical Experts</p>
                                     </div>
                                     <div class="">
@@ -163,7 +163,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $gold;?></h6>
+                                        <h6 class="value"><?php echo $gold; ?></h6>
                                         <p class="text-success">Gold Package Members</p>
                                     </div>
                                     <div class="">
@@ -184,7 +184,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $silver;?></h6>
+                                        <h6 class="value"><?php echo $silver; ?></h6>
                                         <p class="text-success">Silver Package Members</p>
                                     </div>
                                     <div class="">
@@ -206,7 +206,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $bronze;?></h6>
+                                        <h6 class="value"><?php echo $bronze; ?></h6>
                                         <p class="text-success">Bronze Package Members</p>
                                     </div>
                                     <div class="">
@@ -229,7 +229,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $consultations;?></h6>
+                                        <h6 class="value"><?php echo $consultations; ?></h6>
                                         <p class="text-success">Consultations</p>
                                     </div>
                                     <div class="">
@@ -250,7 +250,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $prescriptions;?></h6>
+                                        <h6 class="value"><?php echo $prescriptions; ?></h6>
                                         <p class="text-success">Prescriptions</p>
                                     </div>
                                     <div class="">
@@ -272,7 +272,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $members;?></h6>
+                                        <h6 class="value"><?php echo $members; ?></h6>
                                         <p class="text-success">Total Enrolled Members</p>
                                     </div>
                                     <div class="">
@@ -299,7 +299,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh <?php echo $gold_payment;?></h6>
+                                        <h6 class="value">Ksh <?php echo $gold_payment; ?></h6>
                                         <p class="text-success">Gold Package Payments</p>
                                     </div>
                                     <div class="">
@@ -321,7 +321,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh <?php echo $silver_payment;?></h6>
+                                        <h6 class="value">Ksh <?php echo $silver_payment; ?></h6>
                                         <p class="text-success">Silver Package Payments</p>
                                     </div>
                                     <div class="">
@@ -343,7 +343,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh <?php echo $bronze_payment;?></h6>
+                                        <h6 class="value">Ksh <?php echo $bronze_payment; ?></h6>
                                         <p class="text-success">Bronze Package Payments</p>
                                     </div>
                                     <div class="">
@@ -380,33 +380,42 @@ require_once('partials/_head.php');
                         <div class="widget widget-activity-three">
 
                             <div class="widget-heading">
-                                <h5 class="text-success">Membership Fee Payment Logs</h5>
+                                <h5 class="text-success">Payment Logs</h5>
                             </div>
 
                             <div class="widget-content">
 
                                 <div class="mt-container mx-auto">
                                     <div class="timeline-line">
-
-                                        <div class="item-timeline timeline-new">
-                                            <div class="t-dot">
-                                                <div class="t-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg></div>
-                                            </div>
-                                            <div class="t-content">
-                                                <div class="t-uppercontent">
-                                                    <h5>Logs</h5>
-                                                    <span class="">27 Feb, 2020</span>
+                                        <?php
+                                        $ret = "SELECT * FROM `membership_payments` WHERE status ='Confirmed' ORDER BY `membership_payments`.`created_at` DESC  ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($row = $res->fetch_object()) {
+                                        ?>
+                                            <div class="item-timeline timeline-new">
+                                                <div class="t-dot">
+                                                    <div class="t-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                                        </svg></div>
                                                 </div>
-                                                <p><span>Updated</span> Server Logs</p>
-                                                <div class="tags">
-                                                    <div class="badge badge-primary">Logs</div>
-                                                    <div class="badge badge-success">CPanel</div>
-                                                    <div class="badge badge-warning">Update</div>
+                                                <div class="t-content">
+                                                    <div class="t-uppercontent">
+                                                        <h5>VERIFIED</h5>
+                                                    </div>
+                                                    <p><span><?php echo $row->pay_code;?> CONFIRMED</span>
+                                                        <?php echo $row->member_name;?> Paid Ksh <?php echo $row->pay_amt;?> On 
+                                                        <?php echo date('d M Y', strtotime($row->created_at));?> At
+                                                        <?php echo date('g:i', strtotime($row->created_at));?> Using <?php echo $row->pay_method;?>
+                                                    </p>
+                                                    <!-- <div class="tags">
+                                                        <div class="badge badge-primary"></div>
+                                                    </div> -->
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php
+                                        } ?>
                                     </div>
                                 </div>
                             </div>
