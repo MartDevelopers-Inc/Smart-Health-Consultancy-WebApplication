@@ -299,7 +299,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh 45,141</h6>
+                                        <h6 class="value">Ksh <?php echo $gold_payment;?></h6>
                                         <p class="text-success">Gold Package Payments</p>
                                     </div>
                                     <div class="">
@@ -321,7 +321,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh 45,141</h6>
+                                        <h6 class="value">Ksh <?php echo $silver_payment;?></h6>
                                         <p class="text-success">Silver Package Payments</p>
                                     </div>
                                     <div class="">
@@ -343,7 +343,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">Ksh 45,141</h6>
+                                        <h6 class="value">Ksh <?php echo $bronze_payment;?></h6>
                                         <p class="text-success">Bronze Package Payments</p>
                                     </div>
                                     <div class="">
