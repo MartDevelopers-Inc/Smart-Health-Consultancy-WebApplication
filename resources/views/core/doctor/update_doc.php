@@ -17,7 +17,7 @@ if (isset($_POST['update_doc'])) {
     $doc_bio = $_POST['doc_bio'];
     $doc_status = $_POST['doc_status'];
     $doc_photo = $_FILES['doc_photo']['name'];
-    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "../assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
+    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "../admin/assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
     $query = "UPDATE medical_experts SET doc_number =?, doc_name =?, doc_email =?, doc_phone =?, doc_bio =?, doc_status =?, doc_photo =? WHERE doc_id =? ";
     $stmt = $mysqli->prepare($query);

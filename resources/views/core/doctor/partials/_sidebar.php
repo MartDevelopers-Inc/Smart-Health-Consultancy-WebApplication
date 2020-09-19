@@ -20,40 +20,11 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#accordionExample">
                     <li class="">
-                        <a href="dashboard.php"> Main Dashboard </a>
-                    </li>
-                    <li>
-                        <a href="analytics-dashboard.php"> Analytics </a>
+                        <a href="dashboard.php"> Dashboard </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="menu">
-                <a href="#hrm" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                        <span>HRM</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu list-unstyled" id="hrm" data-parent="#accordionExample">
-                    <li>
-                        <a href="manage_docs.php"> Manage Doctors </a>
-                    </li>
-                    <li>
-                        <a href="account_verification.php"> Doc Verification </a>
-                    </li>
-                </ul>
-            </li>
 
             <li class="menu">
                 <a href="#payrolls" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -72,39 +43,8 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="payrolls" data-parent="#accordionExample">
                     <li>
-                        <a href="payrolls.php"> Generate </a>
+                        <a href="manage_payrolls.php"> My PayRolls </a>
                     </li>
-                    <li>
-                        <a href="manage_payrolls.php"> Manage </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="menu">
-                <a href="#clients" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="8.5" cy="7" r="4"></circle>
-                            <polyline points="17 11 19 13 23 9"></polyline>
-                        </svg>
-                        <span>Clients</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu list-unstyled" id="clients" data-parent="#accordionExample">
-                    <li>
-                        <a href="manage_clients.php"> Manage Clients </a>
-                    </li>
-                    <li>
-                        <a href="free_trial_clients.php">Free Membership</a>
-                    </li>
-
                 </ul>
             </li>
 
@@ -140,20 +80,7 @@
                     </li>
                 </ul>
             </li>
-
-            <li class="menu">
-                <a href="packages.php" aria-expanded="false" class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path>
-                            <polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
-                            <line x1="12" y1="22.76" x2="12" y2="11"></line>
-                            <line x1="7" y1="3.5" x2="17" y2="8.5"></line>
-                        </svg>
-                        <span>Packages</span>
-                    </div>
-                </a>
-            </li>
+           
 
             <li class="menu">
                 <a href="#consultations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -198,38 +125,7 @@
                 </ul>
             </li>
 
-            <li class="menu">
-                <a href="#payments" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                            <line x1="1" y1="10" x2="23" y2="10"></line>
-                        </svg>
-                        <span>Billings</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu list-unstyled" id="payments" data-parent="#accordionExample">
-                    <li>
-                        <a href="payment_means.php"> Payment Means </a>
-                    </li>
-                    <li>
-                        <a href="membership_fee.php"> Membership Fee </a>
-                    </li>
-                    <li>
-                        <a href="payment_verification.php"> Payment Verification </a>
-                    </li>
-                    <li>
-                        <a href="reversals.php"> Reversals </a>
-                    </li>
-
-                </ul>
-            </li>
-
+            
             <li class="menu">
                 <a href="#feedbacks" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -276,22 +172,10 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="Reporting" data-parent="#accordionExample">
                     <li>
-                        <a href="hr_reports.php"> HR Reports </a>
-                    </li>
-                    <li>
-                        <a href="member_reports.php"> Member Reports </a>
-                    </li>
-                    <li>
-                        <a href="package_reports.php"> Packages </a>
-                    </li>
-                    <li>
                         <a href="consultations_reports.php"> Consultations </a>
                     </li>
                     <li>
                         <a href="prescriptions_reports.php"> Prescriptions </a>
-                    </li>
-                    <li>
-                        <a href="payment_reports.php"> Payment Reports </a>
                     </li>
                 </ul>
             </li>

@@ -46,20 +46,7 @@ require_once('partials/_head.php');
                     </div>
                 </li>
             </ul>
-            <ul class="navbar-nav flex-row ml-auto ">
-                <li class="nav-item more-dropdown">
-                    <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Reports</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg></a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Members" href="member_reports.php">Members</a>
-                            <a class="dropdown-item" data-value="Packages" href="package_reports.php">Packages</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            
         </header>
     </div>
     <!--  END NAVBAR  -->
