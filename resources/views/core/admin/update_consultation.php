@@ -128,7 +128,7 @@ require_once('partials/_head.php');
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-12">
                                             <label for="inputAddress">Consultation Details</label>
-                                            <textarea required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details; ?></textarea>
+                                            <textarea id="consultation" required name="consul_details" rows="10" class="form-control"><?php echo $consul->consul_details; ?></textarea>
                                         </div>
                                     </div>
                                     <button type="submit" name="update" class="btn btn-primary mt-3">Submit</button>

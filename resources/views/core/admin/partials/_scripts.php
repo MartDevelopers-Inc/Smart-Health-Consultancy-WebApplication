@@ -1,5 +1,23 @@
 <!-- Load Analytics Once Again -->
 <?php require_once('partials/_analytics.php'); ?>
+<script src="plugins/ckeditor/ckeditor.js"></script>
+<script>
+    //Medical Expert Bio Instance
+    CKEDITOR.replace('medical-expert-bio');
+    //KB Instance
+    CKEDITOR.replace('kbase');
+    //consultation Instance
+    CKEDITOR.replace('consultation');
+    //Prescriptions
+    CKEDITOR.replace('ps');
+    //Feedbacks
+    CKEDITOR.replace('fb');
+    //Complains
+    CKEDITOR.replace('cp');
+
+
+
+</script>
 <script src="assets/js/authentication/form-2.js"></script>
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
 <script src="bootstrap/js/popper.min.js"></script>
@@ -91,12 +109,15 @@
 </script>
 
 <script>
-    function printContent(el) {
-        var restorepage = $('body').html();
-        var printcontent = $('#' + el).clone();
-        $('body').empty().html(printcontent);
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
         window.print();
-        $('body').html(restorepage);
+
+        document.body.innerHTML = originalContents;
     }
 </script>
 <script src="plugins/select2/select2.min.js"></script>
@@ -543,7 +564,7 @@
             },
             series: [{
                 name: 'Ksh',
-                data: [<?php echo $gold_payment;?>, <?php echo $silver_payment;?>, <?php echo $bronze_payment;?>]
+                data: [<?php echo $gold_payment; ?>, <?php echo $silver_payment; ?>, <?php echo $bronze_payment; ?>]
             }],
             xaxis: {
                 categories: ['Gold Package', 'Silver Package', 'Bronze Package'],
@@ -569,7 +590,7 @@
             }
         }
 
-        
+
         /*
             ==============================
             |    @Render Chart  |

@@ -113,7 +113,7 @@ require_once('partials/_head.php');
 
                                         <div class="invoice-header-section">
                                             <div class="invoice-action">
-                                                <button id="print" onclick="printContent('print_payroll');" class='badge outline-badge-success'>
+                                                <button id="print" onclick="printDiv('printableArea')" class='badge outline-badge-success'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer" data-toggle="tooltip" data-placement="top" data-original-title="Print">
                                                     <polyline points="6 9 6 2 18 2 18 9"></polyline>
                                                     <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
@@ -124,7 +124,7 @@ require_once('partials/_head.php');
                                             </div>
                                         </div>
 
-                                        <div id="print_payroll" class="">
+                                        <div id="printableArea" class="">
                                             <div class="invoice-00001">
                                                 <div class="content-section  animated animatedFadeInUp fadeInUp">
 

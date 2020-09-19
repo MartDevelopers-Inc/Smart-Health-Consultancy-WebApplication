@@ -100,7 +100,7 @@ require_once('partials/_head.php');
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-12">
                                             <label for="inputAddress">Knowledge Base Description</label>
-                                            <textarea required name="kb_desc" rows="15" class="form-control"><?php echo $row->kb_desc; ?></textarea>
+                                            <textarea id="kbase" required name="kb_desc" rows="15" class="form-control"><?php echo $row->kb_desc; ?></textarea>
                                         </div>
                                     </div>
                                     <button type="submit" name="update_kb" class="btn btn-primary mt-3">Update Medical Knowlegde Base</button>

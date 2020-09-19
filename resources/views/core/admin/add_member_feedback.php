@@ -94,7 +94,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Feedback</label>
-                                        <textarea required name="f_content" rows="10" class="form-control"></textarea>
+                                        <textarea id="fb" required name="f_content" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="add" class="btn btn-primary mt-3">Submit</button>

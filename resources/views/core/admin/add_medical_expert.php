@@ -122,7 +122,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Biography | Area Of Specialization</label>
-                                        <textarea required name="doc_bio" rows="10" class="form-control"></textarea>
+                                        <textarea id="medical-expert-bio" required name="doc_bio" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
 
