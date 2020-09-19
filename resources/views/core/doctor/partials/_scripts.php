@@ -14,9 +14,6 @@
     CKEDITOR.replace('fb');
     //Complains
     CKEDITOR.replace('cp');
-
-
-
 </script>
 <script src="assets/js/authentication/form-2.js"></script>
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
@@ -240,10 +237,9 @@
                 lineCap: 'square'
             },
             series: [{
-                    name: 'Clients',
-                    data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>]
-                },
-            ],
+                name: 'Clients',
+                data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>]
+            }, ],
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             xaxis: {
                 axisBorder: {

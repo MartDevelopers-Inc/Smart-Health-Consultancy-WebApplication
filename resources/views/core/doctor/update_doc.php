@@ -17,7 +17,7 @@ if (isset($_POST['update_doc'])) {
     $doc_bio = $_POST['doc_bio'];
     $doc_status = $_POST['doc_status'];
     $doc_photo = $_FILES['doc_photo']['name'];
-    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
+    move_uploaded_file($_FILES["doc_photo"]["tmp_name"], "../assets/img/paramedics/" . $_FILES["doc_photo"]["name"]);
 
     $query = "UPDATE medical_experts SET doc_number =?, doc_name =?, doc_email =?, doc_phone =?, doc_bio =?, doc_status =?, doc_photo =? WHERE doc_id =? ";
     $stmt = $mysqli->prepare($query);
@@ -25,7 +25,7 @@ if (isset($_POST['update_doc'])) {
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
-        $success = "Updated" && header("refresh:1; url=manage_docs.php");
+        $success = "Updated" && header("refresh:1; url=user_profile.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -59,9 +59,9 @@ require_once('partials/_head.php');
 
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="">HRM</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Manage Medical Expert</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>My Profile</span></li>
                             </ol>
                         </nav>
 
@@ -131,8 +131,7 @@ require_once('partials/_head.php');
                                             <textarea id="medical-expert-bio" required name="doc_bio" rows="10" class="form-control"><?php echo $row->doc_bio; ?></textarea>
                                         </div>
                                     </div>
-
-                                    <button type="submit" name="update_doc" class="btn btn-primary mt-3">Update Doctor Account</button>
+                                    <button type="submit" name="update_doc" class="btn btn-primary mt-3">Update My Account</button>
                                 </form>
                             </div>
                         </div>
