@@ -6,6 +6,8 @@
     CKEDITOR.replace('medical-expert-bio');
     //KB Instance
     CKEDITOR.replace('kbase');
+    //consultation Instance
+    CKEDITOR.replace('consultation');
 
 </script>
 <script src="assets/js/authentication/form-2.js"></script>
