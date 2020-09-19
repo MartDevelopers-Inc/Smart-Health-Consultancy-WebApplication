@@ -10,6 +10,8 @@
     CKEDITOR.replace('consultation');
     //Prescriptions
     CKEDITOR.replace('ps');
+    //Feedbacks
+    CKEDITOR.replace('fb');
 
 
 </script>
