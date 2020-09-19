@@ -29,7 +29,7 @@ require_once('partials/_head.php');
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <h1 class="">Smart Health Consultancy - Doctors Module</h1>
+                        <h1 class="">Smart Health Consultancy - Doctors` Module</h1>
                         <p class="">Log in to your account to continue.</p>
                         <form method="POST" class="text-left">
                             <div class="form">

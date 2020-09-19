@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('configs/config.php');
+include('configs/codeGen.php');
 //handle login
 if (isset($_POST['login'])) {
     $admin_email = $_POST['admin_email'];
@@ -29,29 +30,36 @@ require_once('partials/_head.php');
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <h1 class="">Smart Health Consultancy - Admin Module</h1>
-                        <p class="">Log in to your account to continue.</p>
+                        <h1 class="">Smart Health Consultancy - Doctors` Module</h1>
+                        <p class="">Fill All Fields </p>
                         <form method="POST" class="text-left">
                             <div class="form">
+                                <div id="username-field" class="field-wrapper input">
+                                    <label for="username">Full Name</label>
+
+                                    <input id="username" required name="doc_name" type="text" class="form-control">
+                                    <input required name="doc_id" value="<?php echo $doc_id; ?>" type="hidden" class="form-control">
+                                    <input required name="doc_number" type="hidden" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
+
+                                </div>
 
                                 <div id="username-field" class="field-wrapper input">
-                                    <label for="username">EMAIL</label>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
+                                    <label for="username">Email Address</label>
+
                                     <input id="username" required name="admin_email" type="email" class="form-control">
+                                </div>
+
+                                <div id="username-field" class="field-wrapper input">
+                                    <label for="username">Phone Number</label>
+
+                                    <input id="username" required name="doc_phone" type="text" class="form-control">
                                 </div>
 
                                 <div id="password-field" class="field-wrapper input mb-2">
                                     <div class="d-flex justify-content-between">
-                                        <label for="password">PASSWORD</label>
-                                        <a href="reset_password.php" class="forgot-pass-link">Forgot Password?</a>
+                                        <label for="password">Password</label>
                                     </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock">
-                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                    </svg>
+
                                     <input id="password" required name="admin_password" type="password" class="form-control">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -63,7 +71,7 @@ require_once('partials/_head.php');
                                         <button type="submit" name="sign-up" class="btn btn-primary mixin" value="">Sign Up</button>
                                     </div>
                                 </div>
-                                
+
                                 <!-- <div class="division">
                                     <span>OR</span>
                                 </div>
