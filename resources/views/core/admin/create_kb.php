@@ -99,7 +99,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
                                         <label for="inputAddress">Knowledge Base Description</label>
-                                        <textarea required name="kb_desc" rows="15" class="form-control"></textarea>
+                                        <textarea id='kbase' required name="kb_desc" rows="15" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="add_kb" class="btn btn-primary mt-3">Create Medical Knowlegde Base</button>

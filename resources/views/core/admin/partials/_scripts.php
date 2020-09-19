@@ -4,6 +4,9 @@
 <script>
     //Medical Expert Bio Instance
     CKEDITOR.replace('medical-expert-bio');
+    //KB Instance
+    CKEDITOR.replace('kbase');
+
 </script>
 <script src="assets/js/authentication/form-2.js"></script>
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
