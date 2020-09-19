@@ -91,12 +91,15 @@
 </script>
 
 <script>
-    function printContent(el) {
-        var restorepage = $('body').html();
-        var printcontent = $('#' + el).clone();
-        $('body').empty().html(printcontent);
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
         window.print();
-        $('body').html(restorepage);
+
+        document.body.innerHTML = originalContents;
     }
 </script>
 <script src="plugins/select2/select2.min.js"></script>
@@ -543,7 +546,7 @@
             },
             series: [{
                 name: 'Ksh',
-                data: [<?php echo $gold_payment;?>, <?php echo $silver_payment;?>, <?php echo $bronze_payment;?>]
+                data: [<?php echo $gold_payment; ?>, <?php echo $silver_payment; ?>, <?php echo $bronze_payment; ?>]
             }],
             xaxis: {
                 categories: ['Gold Package', 'Silver Package', 'Bronze Package'],
@@ -569,7 +572,7 @@
             }
         }
 
-        
+
         /*
             ==============================
             |    @Render Chart  |
