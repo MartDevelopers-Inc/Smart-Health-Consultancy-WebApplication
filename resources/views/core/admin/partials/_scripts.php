@@ -12,6 +12,9 @@
     CKEDITOR.replace('ps');
     //Feedbacks
     CKEDITOR.replace('fb');
+    //Complains
+    CKEDITOR.replace('cp');
+
 
 
 </script>
