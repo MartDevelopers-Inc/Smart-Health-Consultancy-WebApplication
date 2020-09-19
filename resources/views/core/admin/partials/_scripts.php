@@ -8,6 +8,9 @@
     CKEDITOR.replace('kbase');
     //consultation Instance
     CKEDITOR.replace('consultation');
+    //Prescriptions
+    CKEDITOR.replace('ps');
+
 
 </script>
 <script src="assets/js/authentication/form-2.js"></script>
