@@ -4,6 +4,7 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 require_once('partials/_head.php');
 ?>
+
 <body>
 
     <!--  BEGIN NAVBAR  -->
@@ -89,9 +90,9 @@ require_once('partials/_head.php');
                                             <div class="text-center user-info">
                                                 <?php
                                                 if ($user->member_pic == '') {
-                                                    echo "<img src='assets/img/admin/admin.png' class='img-thumbnail img-fluid' alt='avatar'>";
+                                                    echo "<img src='../admin/assets/img/admin/admin.png' class='img-thumbnail img-fluid' alt='avatar'>";
                                                 } else {
-                                                    echo "<img src='assets/img/clients/$user->member_pic' class='img-thumbnail img-fluid' alt='avatar'>";
+                                                    echo "<img src='../admin/assets/img/clients/$user->member_pic' class='img-thumbnail img-fluid' alt='avatar'>";
                                                 } ?>
                                                 <p class=""><?php echo $user->member_name; ?></p>
                                             </div>

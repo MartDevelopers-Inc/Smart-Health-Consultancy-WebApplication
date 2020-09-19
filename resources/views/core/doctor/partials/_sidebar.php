@@ -80,7 +80,7 @@
                     </li>
                 </ul>
             </li>
-           
+
 
             <li class="menu">
                 <a href="#consultations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -125,15 +125,14 @@
                 </ul>
             </li>
 
-            
+
             <li class="menu">
                 <a href="#feedbacks" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
-                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                            <polyline points="13 2 13 9 20 9"></polyline>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                         </svg>
-                        <span>Feedbacks</span>
+                        <span>Ratings</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
@@ -143,13 +142,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="feedbacks" data-parent="#accordionExample">
                     <li>
-                        <a href="manage_feedbacks.php"> Manage Feedbacks </a>
-                    </li>
-                    <li>
                         <a href="manage_ratings.php"> Manage Ratings </a>
-                    </li>
-                    <li>
-                        <a href="manage_complains.php"> Manage Complains </a>
                     </li>
                 </ul>
             </li>

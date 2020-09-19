@@ -19,8 +19,22 @@
 
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="assets/img/admin.png" alt="avatar">
-                </a>
+                    <?php
+                    $doc_id = $_SESSION['doc_id'];
+                    $ret = "SELECT * FROM `medical_experts` WHERE doc_id ='$doc_id' ";
+                    $stmt = $mysqli->prepare($ret);
+                    $stmt->execute(); //ok
+                    $res = $stmt->get_result();
+                    while ($row = $res->fetch_object()) {
+                        if ($row->doc_photo == '') {
+                            //Load Default Image
+                            echo "<img src='../admin/assets/img/admin.png' alt='avatar'>";
+                        } else {
+                            echo  "<img src='../admin/assets/img/paramedics/$row->doc_photo' alt='avatar'>";
+                        }
+                    }
+                    ?>
+               </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="">
                         <div class="dropdown-item">
