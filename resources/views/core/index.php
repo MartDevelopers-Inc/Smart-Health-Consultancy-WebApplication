@@ -410,7 +410,7 @@
                     <div class="col-12">
                         <div class="htc__subscribe__inner">
                             <div class="newsletter_section_title">
-                                <h2 class="text-theme">Subscribe To Our NewsLatter</h2>
+                                <h2 class="text-theme">Subscribe To Our NewsLetter</h2>
                                 <h4>Get our latest news & update regularly</h4>
                             </div>
                             <div class="newsletter__form">
