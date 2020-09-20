@@ -2,7 +2,6 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
-
 require_once('partials/_head.php');
 ?>
 
@@ -30,7 +29,7 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Knowlegde Base</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>View</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Smart Health Consultancy Knowledge Bases</span></li>
                             </ol>
                         </nav>
 
@@ -67,9 +66,9 @@ require_once('partials/_head.php');
                                 <table id="zero-config" class="table table-hover" style="width:100%" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>KB Code</th>
-                                            <th>KB Title</th>
-                                            <th>KB Generated At</th>
+                                            <th>Knowledge Base Code</th>
+                                            <th>Knowledge Base Title</th>
+                                            <th>Knowledge Base Generated At</th>
                                         </tr>
                                     </thead>
 
