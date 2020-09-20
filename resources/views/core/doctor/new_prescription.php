@@ -12,13 +12,14 @@ if (isset($_POST['add'])) {
     $pre_id = $_POST['pre_id'];
     $pre_code = $_POST['pre_code'];
     $prescription = $_POST['prescription'];
+    $member_id = $_GET['member_id'];
     $status = $_GET['status'];
 
-    $query = "INSERT INTO prescriptions (consul_id, pre_id, pre_code, prescription) VALUES (?,?,?,?)";
+    $query = "INSERT INTO prescriptions (member_id, consul_id, pre_id, pre_code, prescription) VALUES (?,?,?,?,?)";
     $query1 = "UPDATE consultations SET consul_status =? WHERE consul_id =?";
     $stmt = $mysqli->prepare($query);
     $stmt1 = $mysqli->prepare($query1);
-    $rc = $stmt->bind_param('ssss', $consul_id, $pre_id, $pre_code, $prescription);
+    $rc = $stmt->bind_param('sssss', $member_id, $consul_id, $pre_id, $pre_code, $prescription);
     $rc = $stmt1->bind_param('ss', $status, $consul_id);
     $stmt->execute();
     $stmt1->execute();
