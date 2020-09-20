@@ -23,7 +23,7 @@ if (isset($_POST['add'])) {
     $rc = $stmt->bind_param('sssssssss', $consul_id, $consul_code, $member_id, $member_name, $member_phone, $doc_id, $doc_name, $consul_details, $consul_status);
     $stmt->execute();
     if ($stmt) {
-        $success = "Success" && header("refresh:1; url=add_consultation.php");
+        $success = "Success" && header("refresh:1; url=manage_consultations.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
