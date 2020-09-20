@@ -135,7 +135,7 @@ require_once('partials/_head.php');
                                         </div>
                                     </div>
 
-                                    <button type="submit" name="update_client" class="btn btn-primary mt-3">Register Client</button>
+                                    <button type="submit" name="update_client" class="btn btn-primary mt-3">Update Profile</button>
                                 </form>
                             </div>
                         </div>
