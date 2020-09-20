@@ -20,8 +20,8 @@
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <?php
-                    $session = $_SESSION['member_id'];
-                    $ret = "SELECT * FROM `members` WHERE member_id ='$session' ";
+                    $member_id = $_SESSION['member_id'];
+                    $ret = "SELECT * FROM `members` WHERE member_id ='$member_id' ";
                     $stmt = $mysqli->prepare($ret);
                     $stmt->execute(); //ok
                     $res = $stmt->get_result();

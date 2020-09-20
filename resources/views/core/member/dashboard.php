@@ -112,7 +112,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $unverified; ?></h6>
+                                        <h6 class="value"><?php echo $consultations; ?></h6>
                                         <p class="text-success">My Consultations</p>
                                     </div>
                                     <div class="">
@@ -171,7 +171,7 @@ require_once('partials/_head.php');
                         <div class="widget widget-activity-three">
 
                             <div class="widget-heading">
-                                <h5 class="text-success">Payment Logs</h5>
+                                <h5 class="text-success">My Payment Logs</h5>
                             </div>
 
                             <div class="widget-content">
@@ -179,7 +179,8 @@ require_once('partials/_head.php');
                                 <div class="mt-container mx-auto">
                                     <div class="timeline-line">
                                         <?php
-                                        $ret = "SELECT * FROM `membership_payments` WHERE status ='Confirmed' ORDER BY `membership_payments`.`created_at` DESC  ";
+                                        $session = $_SESSION['member_id'];
+                                        $ret = "SELECT * FROM `membership_payments` WHERE status ='Confirmed' AND member_id ='$session' ORDER BY `membership_payments`.`created_at` DESC  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();

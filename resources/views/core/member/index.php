@@ -10,7 +10,7 @@ if (isset($_POST['login'])) {
     $stmt->execute(); //execute bind 
     $stmt->bind_result($member_email, $member_password, $member_id); //bind result
     $rs = $stmt->fetch();
-    $_SESSION['member_id'] = $session;
+    $_SESSION['member_id'] = $member_id;
     if ($rs) {
         //if its sucessfull
         header("location:dashboard.php");
