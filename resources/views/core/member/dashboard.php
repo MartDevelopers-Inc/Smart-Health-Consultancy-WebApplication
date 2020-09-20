@@ -4,6 +4,7 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 require_once('partials/_analytics.php');
 check_login();
+error_reporting(E_ALL ^ E_NOTICE);  //Silence these bitches
 require_once('partials/_head.php');
 ?>
 <!-- Dont  Wonder why this style sheet is out here-->
