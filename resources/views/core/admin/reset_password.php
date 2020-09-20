@@ -1,4 +1,29 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+session_start();
+include('configs/config.php');
+include('configs/checklogin.php');
+include('configs/codeGen.php');
+check_login();
+
+if (isset($_POST['reset-password'])) {
+
+    $email = $_POST['email'];
+    $token = $_POST['token'];
+
+    $query = "INSERT INTO password_resets (email, token) VALUES (?,?)";
+    $stmt = $mysqli->prepare($query);
+    $rc = $stmt->bind_param('ss', $email, $token);
+    $stmt->execute();
+    if ($stmt) {
+        $success = "Please Check Your Email For Password Reset Instructions" ;//&& header("refresh:1; url=manage_feedbacks.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
+
+require_once('partials/_head.php');
+?>
 
 <body class="form">
 
@@ -19,11 +44,12 @@
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
                                     <input id="username" name="email" type="email" class="form-control">
+                                    <input  name="token" value="<?php echo $tk;?>" type="hidden" class="form-control">
                                 </div>
 
                                 <div class="d-sm-flex justify-content-between">
                                     <div class="field-wrapper">
-                                        <button type="submit" name="reset_password" class="btn btn-primary" value="">Reset Password</button>
+                                        <button type="submit" name="reset-password" class="btn btn-primary" value="">Reset Password</button>
                                     </div>
                                 </div>
                                 <p class="signup-link">Remebered Password ? <a href="index.php">Sign In</a></p>
