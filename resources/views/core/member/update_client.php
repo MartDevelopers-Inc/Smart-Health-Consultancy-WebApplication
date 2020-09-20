@@ -149,10 +149,10 @@ require_once('partials/_head.php');
     </div>
     <!-- END MAIN CONTAINER -->
 
-    <?php
-        require_once('partials/_scripts.php');
-    }
-    ?>
+<?php
+            require_once('partials/_scripts.php');
+        }
+?>
 </body>
 
 </html>
