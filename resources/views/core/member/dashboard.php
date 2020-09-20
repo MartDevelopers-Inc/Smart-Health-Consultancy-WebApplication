@@ -155,14 +155,73 @@ require_once('partials/_head.php');
 
                     <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-chart-three">
-                            <div class="widget-heading">
-                                <div class="">
-                                    <h5 class="text-success">Total Income As Per Membership Package</h5>
-                                </div>
-                            </div>
+                            <div class="widget widget-table-two">
 
-                            <div class="widget-content">
-                                <div id="uniqueVisits"></div>
+                                <div class="widget-heading">
+                                    <h5 class="">Available Doctors</h5>
+                                </div>
+
+                                <div class="widget-content">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="th-content">Number</div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="th-content">Name</div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="th-content">Email</div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="th-content th-heading">Phone </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="th-content">Acc Status</div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $ret = "SELECT * FROM `medical_experts` ORDER BY  RAND() LIMIT 5 ";
+                                                $stmt = $mysqli->prepare($ret);
+                                                $stmt->execute(); //ok
+                                                $res = $stmt->get_result();
+                                                while ($row = $res->fetch_object()) {
+                                                ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="td-content product-brand"><?php echo $row->doc_number; ?></div>
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="td-content product-brand"><?php echo $row->doc_name; ?></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="td-content"><?php echo $row->doc_email; ?></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="td-content pricing"><span class=""><?php echo $row->doc_phone; ?></span></div>
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                            if ($row->doc_status == 'Pending') {
+                                                                echo "<div class='td-content'><span class='badge outline-badge-danger'>$row->doc_status</span></div>";
+                                                            } else {
+                                                                echo "<div class='td-content'><span class='badge outline-badge-success'>$row->doc_status</span></div>";
+                                                            }
+
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

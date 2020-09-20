@@ -32,4 +32,3 @@ $stmt->execute();
 $stmt->bind_result($payments);
 $stmt->fetch();
 $stmt->close();
-
