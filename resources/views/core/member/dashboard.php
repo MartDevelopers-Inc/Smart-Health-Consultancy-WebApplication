@@ -90,7 +90,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $verified_medics; ?></h6>
+                                        <h6 class="value">Ksh <?php echo $payments; ?></h6>
                                         <p class="text-success">Total Payments</p>
                                     </div>
                                     <div class="">
@@ -136,7 +136,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $total_medics; ?></h6>
+                                        <h6 class="value"><?php echo $prescriptions; ?></h6>
                                         <p class="text-success">Prescribed Consultations</p>
                                     </div>
                                     <div class="">
