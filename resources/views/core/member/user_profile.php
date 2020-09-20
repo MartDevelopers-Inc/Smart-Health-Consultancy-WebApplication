@@ -28,11 +28,11 @@ if (isset($_POST['change_password'])) {
 
     if (!$error) {
         $member_id = $_SESSION['member_id'];
-        $sql = "SELECT * FROM  members  WHERE member = '$member_id'";
+        $sql = "SELECT * FROM  members  WHERE member_id = '$member_id'";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
-            if ($old_password != $row['doc_password']) {
+            if ($old_password != $row['member_password']) {
                 $err =  "Please Enter Correct Old Password";
             } elseif ($new_password != $confirm_password) {
                 $err = "Confirmation Password Does Not Match";
