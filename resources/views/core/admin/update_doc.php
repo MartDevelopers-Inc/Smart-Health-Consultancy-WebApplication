@@ -1,7 +1,5 @@
 <?php
 
-use function Composer\Autoload\includeFile;
-
 session_start();
 include('configs/config.php');
 include('configs/checklogin.php');

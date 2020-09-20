@@ -54,10 +54,10 @@ require_once('partials/_head.php');
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Settings" href="hr_reports.php">Medical Experts</a>
-                            <a class="dropdown-item" data-value="Mail" href="member_reports.php">Members</a>
-                            <a class="dropdown-item" data-value="Print" href="package_reports.php">Packages</a>
-                            <a class="dropdown-item" data-value="Download" href="payment_reports.php">Payments</a>
+                            <a class="dropdown-item" data-value="Medical Experts" href="hr_reports.php">Medical Experts</a>
+                            <a class="dropdown-item" data-value="Members" href="member_reports.php">Members</a>
+                            <a class="dropdown-item" data-value="Packages" href="package_reports.php">Packages</a>
+                            <a class="dropdown-item" data-value="Payments" href="payment_reports.php">Payments</a>
                         </div>
                     </div>
                 </li>

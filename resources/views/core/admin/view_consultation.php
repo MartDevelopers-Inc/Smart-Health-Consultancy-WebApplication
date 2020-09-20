@@ -4,7 +4,6 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 require_once('partials/_head.php');
 ?>
-
 <body>
 
     <!--  BEGIN NAVBAR  -->
