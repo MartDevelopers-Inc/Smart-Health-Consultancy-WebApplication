@@ -193,7 +193,9 @@ require_once('partials/_head.php');
                                                 ?>
                                                     <tr>
                                                         <td>
-                                                            <div class="td-content product-brand"><?php echo $row->doc_number; ?></div>
+                                                            <a href="view_doc.php?view=<?php echo $row->doc_id;?>">
+                                                                <div class="td-content product-brand"><?php echo $row->doc_number; ?></div>
+                                                            </a>
 
                                                         </td>
                                                         <td>
