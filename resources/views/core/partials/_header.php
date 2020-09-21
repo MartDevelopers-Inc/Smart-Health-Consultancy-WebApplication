@@ -38,9 +38,7 @@
                             <li class="drop"><a href="index.php">Home</a>
                             </li>
                             <li class="drop"><a href="about-us.php">About</a></li>
-                            <li class="drop"><a href="service.php">Services</a>
-                            </li>
-                            <li class="drop"><a href="blog.php">Blog</a>
+                            <li class="drop"><a href="blog.php">Knowledge Base</a>
                             </li>
                             <li class="drop"><a href="contact-us.php">Contact</a></li>
                             <li class="drop"><a href="member/">Sign Up</a></li>
@@ -59,9 +57,7 @@
 
                                 </li>
                                 <li class="drop"><a href="about-us.php">About</a></li>
-                                <li class="drop"><a href="service.php">Services</a>
-                                </li>
-                                <li class="drop"><a href="blog.php">Blog</a>
+                                <li class="drop"><a href="blog.php">Knowlege Base</a>
                                 </li>
                                 <li class="drop"><a href="contact-us.php">Contact</a></li>
                                 <li class="drop"><a href="member/">Sign Up</a></li>

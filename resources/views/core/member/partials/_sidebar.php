@@ -191,6 +191,9 @@
                     <li>
                         <a href="prescriptions_reports.php"> Prescriptions </a>
                     </li>
+                    <li>
+                        <a href="payment_reports.php"> Payment Reports </a>
+                    </li>
                 </ul>
             </li>
 

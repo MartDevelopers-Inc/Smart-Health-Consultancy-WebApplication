@@ -55,6 +55,9 @@
     $length = 15;
     $rate_id= bin2hex(random_bytes($length));
 
+    $length = 150;
+    $tk= bin2hex(random_bytes($length));
+
 // ---Codes----------------------------------------------------------------//
     $alpha = 5;
     $beta = 5;

@@ -1,4 +1,7 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+require_once('admin/configs/config.php');
+require_once('partials/_head.php');
+?>
 
 <body>
 
@@ -66,11 +69,11 @@
                             <div class="htc__support__content">
                                 <div class="htc__support__inner">
                                     <h4 class="text--theme">About Us</h4>
-                                    <h2 class="text--theme">Health is the root of <br> all happiness</h2>
+                                    <h2 class="text--theme">Good Health is the root of <br> all happiness</h2>
                                     <div class="htc__support__details">
                                         <p>
-                                            Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens 
-                                            chance to have a five star medical consultation at a given fee. At Smart Health Consultancy, we 
+                                            Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens
+                                            chance to have a five star medical consultation at a given fee. At Smart Health Consultancy, we
                                             put clients` health care first.
                                         </p>
                                     </div>
@@ -113,8 +116,8 @@
                                         <img src="images/service/icon/ser-cion.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Stress Management</a></h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                                        <h4><a href="service.php">Professional Doctors</a></h4>
+                                        <p>Smart Health Consultancy is a home of higl trained professional medical experts that are there for you.</p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -124,8 +127,10 @@
                                         <img src="images/service/icon/ser-cion-3.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Medical Consulting</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <h4><a href="service.php">Medical Consulting</a></h4>
+                                        <p>
+                                            Every enrolled member is given a change to consult our professional medical experts.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -137,8 +142,10 @@
                                         <img src="images/service/icon/ser-cion-2.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Relationship</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <h4><a href="service.php">Surgery Appointments</a></h4>
+                                        <p>
+                                            In case any of our enrolled members has a surgery complications, our medical professions are available to help
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -148,8 +155,10 @@
                                         <img src="images/service/icon/ser-cion-4.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Anxiety</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <h4><a href="service.php">Therapist Services</a></h4>
+                                        <p>
+                                            Smart Health Consultancy has a subsidiary of therapist services
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -161,140 +170,6 @@
         </section>
         <!-- End Try Solve Area -->
 
-        <!-- Start Gallery Area -->
-        <section class="htc__gallery__area gallery--1 pt--100 pb--70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section__title text-center pb--50">
-                            <h2 class="title__line text--theme">Our Working Area</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <!-- Start Single Gallery -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/1.png" alt="Cardiology Icon">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/icon-1.png" alt="Cardiology Dept"><a href="#">Cardiology Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/2.png" alt="Cardiology Dept">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/ser-cion-2.png" alt="Cardiology icon"><a href="#">Surgery Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/3.png" alt="Cardiology Icon">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/ser-cion-3.png" alt="Cardiology Dept"><a href="#">Child Care Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Gallery -->
-
-
-                </div>
-            </div>
-        </section>
-        <!-- End Gallery Area -->
-
-        <!-- Start Appoinment Area -->
-        <section class="htc__appoinment__area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 offset-xl-2 col-lg-12 col-12">
-                        <div class="section__title text-center">
-                            <h2>Make an Appointment</h2>
-                        </div>
-                        <div class="htc__appoinment__wrap">
-                            <div class="htc__appoinment__form">
-                                <form action="#">
-                                    <div class="htc__app__box__inner">
-                                        <div class="htc__app__box">
-                                            <div class="input_inner">
-                                                <input type="text" placeholder="Type Your Full Name">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="htc__app__box__inner">
-                                        <div class="htc__app__box">
-                                            <input type="email" placeholder="Type Your E-mail">
-                                        </div>
-                                    </div>
-                                    <div class="htc__app__box__inner">
-                                        <div class="htc__app__box">
-                                            <input type="text" placeholder="Consulting Subject">
-                                        </div>
-                                        <div class="htc__app__box psy__calendar">
-                                            <input class="date__dropdown" placeholder="Appoinment Date" type="text" id="datepicker">
-                                        </div>
-                                    </div>
-                                    <div class="htc__app__box__inner">
-
-                                        <div class="htc__app__box doctor_select">
-                                            <div class="doctor_select_inner">
-                                                <select>
-                                                    <option value="1" selected>Department</option>
-                                                    <option value="2">Diabetes</option>
-                                                    <option value="3">Pathology</option>
-                                                    <option value="4">Neonatology</option>
-                                                    <option value="5">Surgery</option>
-                                                    <option value="5">Gastroenterology </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="htc__app__box doctor_select">
-                                            <div class="doctor_select_inner">
-                                                <select>
-                                                    <option value="1" selected>Select Doctor</option>
-                                                    <option value="2">Dr. Christine Roberts</option>
-                                                    <option value="3">Dr. Jacob Torres</option>
-                                                    <option value="4">Dr. Diane Guerrero</option>
-                                                    <option value="5">Dr. Justin Howard</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="appoinment_message">
-                                        <div class="htc__app__box message">
-                                            <textarea name="Message" placeholder="Type Additional Message"></textarea>
-                                        </div>
-                                        <div class="ht__appoin__btn">
-                                            <button type="submit">Send Request</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Appoinment Area -->
-
         <!--Special Banner start-->
         <div class="special_banner">
             <div class="container">
@@ -302,252 +177,16 @@
                     <div class="col-lg-7 col-12">
                         <div class="sepcial_banner_content">
                             <h4>Special Offer !!</h4>
-                            <h2>Get 40% off on Every Dental <br> Checkups.</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            <a href="#">Learn More</a>
+                            <h2>Get Free Membership <br> For One Month</h2>
+                            <a href="member/">Join Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--special Banner end-->
-
-        <!--Specialized Doctor start-->
-        <div class="specialized_doctor pt--80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="specialized_doctor_title">
-                            <div class="title_left">
-                                <h1>Doctors</h1>
-                            </div>
-                            <div class="title_right section__title">
-                                <h2>Our specialized doctors</h2>
-                            </div>
-                        </div>
-                        <div class="doctor_tab_inner">
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active show fade" id="mohin">
-                                    <div class="doctor_details">
-                                        <div class="doctor_img">
-                                            <img src="images/doctor/1.png" alt="">
-                                        </div>
-                                        <div class="doctor_content">
-                                            <div class="doctor_name">
-                                                <h2>Dr. Linda Freeman</h2>
-                                                <span>Neurologist</span>
-                                            </div>
-                                            <p>Dr Linda Freemanis one of the best Nurologiest in Bangladesh, In the world, In the Galaxy.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            <div class="contact_btn">
-                                                <a href="doctor-details.html">Contact Me</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="arif">
-                                    <div class="doctor_details">
-                                        <div class="doctor_img">
-                                            <img src="images/doctor/2.png" alt="">
-                                        </div>
-                                        <div class="doctor_content">
-                                            <div class="doctor_name">
-                                                <h2>Dr. Helen Nelson</h2>
-                                                <span>Surgery specialist</span>
-                                            </div>
-                                            <p>Dr Helen Nelson is one of the best Surgery specialist in Bangladesh, In the world, In the Galaxy.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            <div class="contact_btn">
-                                                <a href="doctor-details.html">Contact Me</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="james">
-                                    <div class="doctor_details">
-                                        <div class="doctor_img">
-                                            <img src="images/doctor/3.png" alt="">
-                                        </div>
-                                        <div class="doctor_content">
-                                            <div class="doctor_name">
-                                                <h2>Dr. James Watson</h2>
-                                                <span>Gynecologist</span>
-                                            </div>
-                                            <p>Dr Helen Nelson is one of the best Gynecologist in Bangladesh, In the world, In the Galaxy.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            <div class="contact_btn">
-                                                <a href="doctor-details.html">Contact Me</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="doctor_name_tab">
-
-                                <ul class="nav" role="tablist">
-                                    <li>
-                                        <a href="#mohin" class="active" aria-controls="mohin" data-toggle="tab">
-                                            <span class="doctor_name">Dr. Linda Freeman</span>
-                                            <span class="doctor_designation">Neurologist</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#arif" aria-controls="arif" data-toggle="tab">
-                                            <span class="doctor_name">Dr. Helen Nelson</span>
-                                            <span class="doctor_designation">Surgery specialist</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#james" aria-controls="james" data-toggle="tab">
-                                            <span class="doctor_name">Dr. James Watson</span>
-                                            <span class="doctor_designation">Gynecologist</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Specialized Doctor end-->
-
-        <!-- Start Blog Area -->
-        <section class="htc__blog__area home-blog bg__white ptb--100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section__title text-center">
-                            <h2 class="title__line text--theme">Health News</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row htc__blog__wrap clearfix mt--30">
-                    <!-- Start single Blog -->
-                    <div class="col-lg-8 col-xl-7 col-md-6 col-12">
-                        <div class="single_latest_post flex left_grid">
-
-                            <div class="ht__blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/blog/latest_post/img-1.png" alt="blog images">
-                                </a>
-                            </div>
-
-                            <div class="htc__blog__content">
-                                <div class="blog__post_title">
-                                    <h2><a href="blog-details.html">Best Depression affects children’s mental development.</a></h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available.</p>
-                                </div>
-                                <div class="blog_post__meta">
-                                    <div class="post_author_img">
-                                        <a href="#"><img src="images/blog/latest_post/author_img_1.png" alt=""></a>
-                                    </div>
-                                    <div class="post_content">
-                                        <div class="author_tile">
-                                            <h4><a href="#">Doctors Ltd.</a></h4>
-                                            <div class="publish_info">
-                                                <ul>
-                                                    <li>2 Days Ago</li>
-                                                    <li>44 read</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_latest_post flex left_grid mt--70">
-
-                            <div class="ht__blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/blog/latest_post/img-2.png" alt="blog images">
-                                </a>
-                            </div>
-
-                            <div class="htc__blog__content">
-                                <div class="blog__post_title">
-                                    <h2><a href="blog-details.html">Best Depression affects children’s mental development.</a></h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available.</p>
-                                </div>
-                                <div class="blog_post__meta">
-                                    <div class="post_author_img">
-                                        <a href="#"><img src="images/blog/latest_post/author_img_2.png" alt=""></a>
-                                    </div>
-                                    <div class="post_content">
-                                        <div class="author_tile">
-                                            <h4><a href="#">Clinic Ltd.</a></h4>
-                                            <div class="publish_info">
-                                                <ul>
-                                                    <li>2 Days Ago</li>
-                                                    <li>44 read</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-5 col-md-6 col-12">
-                        <div class="single_latest_post right_grid">
-                            <div class="ht__blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/blog/latest_post/img-3.png" alt="blog images">
-                                </a>
-                            </div>
-
-                            <div class="htc__blog__content">
-                                <div class="blog__post_title">
-                                    <h2><a href="blog-details.html">Anxiety disorder affects human life very badly</a></h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available.</p>
-                                </div>
-                                <div class="blog_post__meta">
-                                    <div class="post_author_img">
-                                        <a href="#"><img src="images/blog/latest_post/author_img_3.png" alt=""></a>
-                                    </div>
-                                    <div class="post_content">
-                                        <div class="author_tile">
-                                            <h4><a href="#">Medical Ltd.</a></h4>
-                                            <div class="publish_info">
-                                                <ul>
-                                                    <li>2 Days Ago</li>
-                                                    <li>44 read</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End single Blog -->
-                </div>
-            </div>
-        </section>
-        <!-- End Blog Area -->
-
         <!-- Start Subscribe Area -->
-        <section class="htc__subscribe__area subscribe--transparent">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="htc__subscribe__inner">
-                            <div class="newsletter_section_title">
-                                <h2 class="text-theme">Subscribe Email</h2>
-                                <h4>Get our latest news & update regularly</h4>
-                            </div>
-                            <div class="newsletter__form">
-                                <div class="input__box">
-                                    <form action="#">
-                                        <div class="input_email_inner">
-                                            <input type="email" placeholder="Type Email Address">
-                                        </div>
-                                        <button type="submit">Subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php require_once('partials/_subscribe.php'); ?>
         <!-- End Subscribe Area -->
 
         <!-- Start Footer Area -->

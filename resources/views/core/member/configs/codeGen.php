@@ -24,7 +24,8 @@
     $length = 15;
     $kb_id = bin2hex(random_bytes($length));
 
-
+    $length = 150;
+    $tk= bin2hex(random_bytes($length));
 // -------Package ID--------------------------------------------------------------------//
     $length = 15;
     $package_id= bin2hex(random_bytes($length));
