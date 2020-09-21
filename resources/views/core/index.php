@@ -1,4 +1,7 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+require_once('admin/configs/config.php');
+require_once('partials/_head.php');
+?>
 
 <body>
 
@@ -69,8 +72,8 @@
                                     <h2 class="text--theme">Health is the root of <br> all happiness</h2>
                                     <div class="htc__support__details">
                                         <p>
-                                            Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens 
-                                            chance to have a five star medical consultation at a given fee. At Smart Health Consultancy, we 
+                                            Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens
+                                            chance to have a five star medical consultation at a given fee. At Smart Health Consultancy, we
                                             put clients` health care first.
                                         </p>
                                     </div>
@@ -114,6 +117,7 @@
                                     </div>
                                     <div class="ser__content">
                                         <h4><a href="service.php">Professional Doctors</a></h4>
+                                        <p>Smart Health Consultancy is a home of higl trained professional medical experts that are there for you.</p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -124,7 +128,9 @@
                                     </div>
                                     <div class="ser__content">
                                         <h4><a href="service.php">Medical Consulting</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <p>
+                                            Every enrolled member is given a change to consult our professional medical experts.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +143,9 @@
                                     </div>
                                     <div class="ser__content">
                                         <h4><a href="service.php">Surgery Appointments</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <p>
+                                            In case any of our enrolled members has a surgery complications, our medical professions are available to help
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -148,7 +156,9 @@
                                     </div>
                                     <div class="ser__content">
                                         <h4><a href="service.php">Therapist Services</a></h4>
-                                        <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
+                                        <p>
+                                            Smart Health Consultancy has a subsidiary of therapist services
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -159,67 +169,6 @@
             </div>
         </section>
         <!-- End Try Solve Area -->
-
-        <!-- Start Gallery Area -->
-        <section class="htc__gallery__area gallery--1 pt--100 pb--70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section__title text-center pb--50">
-                            <h2 class="title__line text--theme">Our Working Area</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <!-- Start Single Gallery -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/1.png" alt="Cardiology Icon">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/icon-1.png" alt="Cardiology Dept"><a href="#">Cardiology Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/2.png" alt="Cardiology Dept">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/ser-cion-2.png" alt="Cardiology icon"><a href="#">Surgery Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="singel_project mb--30">
-                            <div class="project_img">
-                                <a href="#">
-                                    <img src="images/portfolio/project/3.png" alt="Cardiology Icon">
-                                </a>
-                            </div>
-                            <div class="project_content">
-                                <h3><img src="images/portfolio/project/ser-cion-3.png" alt="Cardiology Dept"><a href="#">Child Care Dep.</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Gallery -->
-
-
-                </div>
-            </div>
-        </section>
-        <!-- End Gallery Area -->
-
 
         <!--Special Banner start-->
         <div class="special_banner">
@@ -237,57 +186,7 @@
         </div>
         <!--special Banner end-->
 
-        <!--Specialized Doctor start-->
-        <div class="specialized_doctor pt--80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="specialized_doctor_title">
-                            <div class="title_left">
-                                <h1>Our Medical Experts</h1>
-                            </div>
-                            <div class="title_right section__title">
-                                <h2>Our Doctors</h2>
-                            </div>
-                        </div>
-                        <div class="doctor_tab_inner">
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active show fade" id="mohin">
-                                    <div class="doctor_details">
-                                        <div class="doctor_img">
-                                            <img src="images/doctor/1.png" alt="">
-                                        </div>
-                                        <div class="doctor_content">
-                                            <div class="doctor_name">
-                                                <h2>Dr. Linda Freeman</h2>
-                                                <span>Neurologist</span>
-                                            </div>
-                                            <p>Dr Linda Freemanis one of the best Nurologiest in Bangladesh, In the world, In the Galaxy.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            <div class="contact_btn">
-                                                <a href="doctor-details.html">Contact Me</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="doctor_name_tab">
-
-                                <ul class="nav" role="tablist">
-                                    <li>
-                                        <a href="#mohin" class="active" aria-controls="mohin" data-toggle="tab">
-                                            <span class="doctor_name">Dr. Linda Freeman</span>
-                                            <span class="doctor_designation">Neurologist</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Specialized Doctor end-->
-
+       
         <!-- Start Blog Area -->
         <section class="htc__blog__area home-blog bg__white ptb--100">
             <div class="container">
@@ -403,7 +302,7 @@
         <!-- End Blog Area -->
 
         <!-- Start Subscribe Area -->
-        <?php require_once('partials/_subscribe.php');?>
+        <?php require_once('partials/_subscribe.php'); ?>
         <!-- End Subscribe Area -->
 
         <!-- Start Footer Area -->
