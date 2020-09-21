@@ -113,8 +113,7 @@
                                         <img src="images/service/icon/ser-cion.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Stress Management</a></h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                                        <h4><a href="service.php">Professional Doctors</a></h4>
                                     </div>
                                 </div>
                                 <!-- End Single Items -->
@@ -124,7 +123,7 @@
                                         <img src="images/service/icon/ser-cion-3.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Medical Consulting</a></h4>
+                                        <h4><a href="service.php">Medical Consulting</a></h4>
                                         <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
                                     </div>
                                 </div>
@@ -137,7 +136,7 @@
                                         <img src="images/service/icon/ser-cion-2.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Relationship</a></h4>
+                                        <h4><a href="service.php">Surgery Appointments</a></h4>
                                         <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
                                     </div>
                                 </div>
@@ -148,7 +147,7 @@
                                         <img src="images/service/icon/ser-cion-4.png" alt="services Icon">
                                     </div>
                                     <div class="ser__content">
-                                        <h4><a href="single-services.html">Anxiety</a></h4>
+                                        <h4><a href="service.php">Therapist Services</a></h4>
                                         <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque dantium, totam rem aperiam, eaque</p>
                                     </div>
                                 </div>

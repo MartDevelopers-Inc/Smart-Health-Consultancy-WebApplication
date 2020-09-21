@@ -11,7 +11,7 @@ require_once('partials/_head.php')
   
        <!-- Start Header Style -->
         <?php
-            require_once('partials/_header.php');?>
+            require_once('partials/_header.php');
         ?>
         <!-- End Header Style -->
         
