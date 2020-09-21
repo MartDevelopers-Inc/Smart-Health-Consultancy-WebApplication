@@ -55,12 +55,12 @@ while ($row = $res->fetch_object()) {
                                 <div class="single_post_content">
                                     <div class="single_post_top_contnt">
                                         <div class="single_post_title">
-                                            <h2><?php echo $row->kb_title;?></h2>
+                                            <h2><?php echo $row->kb_title; ?></h2>
                                         </div>
                                         <div class="single_post_meta">
                                             <div class="single_post_left_meta">
                                                 <ul>
-                                                    <li><?php echo date('d M Y - g:i', strtotime($row->created_at));?></li>
+                                                    <li><?php echo date('d M Y - g:i', strtotime($row->created_at)); ?></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -68,9 +68,9 @@ while ($row = $res->fetch_object()) {
 
                                     <div class="post_excerpt">
                                         <p>
-                                            <?php echo $row->kb_desc;?>
+                                            <?php echo $row->kb_desc; ?>
                                         </p>
-                                        
+
                                     </div>
 
 
@@ -94,11 +94,6 @@ while ($row = $res->fetch_object()) {
         ?>
         <!-- End Footer Area -->
         </div>
-        <!-- Body main wrapper end -->
-
-        <!-- Placed js at the end of the document so the pages load faster -->
-
-        <!-- jquery latest version -->
         <script src="js/vendor/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/popper.js"></script>

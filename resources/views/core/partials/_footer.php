@@ -28,11 +28,9 @@
                         </div>
                         <div class="single_footer_menu">
                             <ul>
-                                <li><a href="#">Aging And addiction</a></li>
-                                <li><a href="#">Back pain relief</a></li>
-                                <li><a href="#">Have Trouble Sleep</a></li>
-                                <li><a href="#">Therapy at Home</a></li>
-                                <li><a href="#">Bent Fingers</a></li>
+                                <li><a href="#">Medical Consultation</a></li>
+                                <li><a href="#">Thearapy </a></li>
+                                <li><a href="#">Surgery Appointments</a></li>
                             </ul>
                         </div>
                     </div>
@@ -44,11 +42,7 @@
                         </div>
                         <div class="single_footer_menu">
                             <ul>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Care Help Line</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Site map</a></li>
+                                <li><a href="contact-us.php">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +53,7 @@
                             <h2>Contact</h2>
                         </div>
                         <div class="single_footer_desc">
-                            <p>125, Las Vegus, Main City, Street lane, USA</p>
+                            <p>127.0.0.1, Localhost</p>
                             <p>+12345 365 789 <br> +01235 789 654 </p>
                             <p>info@smarthealth.com<br> www.smarthealth.com </p>
                         </div>

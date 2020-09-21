@@ -69,7 +69,7 @@ require_once('partials/_head.php');
                             <div class="htc__support__content">
                                 <div class="htc__support__inner">
                                     <h4 class="text--theme">About Us</h4>
-                                    <h2 class="text--theme">Health is the root of <br> all happiness</h2>
+                                    <h2 class="text--theme">Good Health is the root of <br> all happiness</h2>
                                     <div class="htc__support__details">
                                         <p>
                                             Smart Health Consultancy is a Non Governmental Medical Care Organization that gives citizens
