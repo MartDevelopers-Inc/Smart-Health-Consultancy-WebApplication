@@ -27,7 +27,7 @@
             <div class="row align-items-center">
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-7">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="images/logo/logo.png" alt="logo">
                         </a>
                     </div>
