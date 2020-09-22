@@ -77,6 +77,8 @@ require_once('partials/_head.php');
                                     </a>
                                 </div>-->
                                 <p class="signup-link">Not registered ? <a href="create_acc.php">Create an account</a></p>
+                                <p class="signup-link"><a href="../">Home</a></p>
+
                             </div>
                         </form>
 
