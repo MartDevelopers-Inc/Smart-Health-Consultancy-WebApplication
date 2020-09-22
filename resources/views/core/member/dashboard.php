@@ -222,7 +222,7 @@ require_once('partials/_head.php');
                                                         </td>
                                                         <td>
                                                             <div class='td-content'>
-                                                                <a href="add_client_consultation.php?doc_id=<?php echo $row->doc_id;?>&doc_name=<?php echo $row->doc_name;?>" class='badge outline-badge-primary'>Consult Doc</a>
+                                                                <a href="add_client_consultation.php?doc_id=<?php echo $row->doc_id; ?>&doc_name=<?php echo $row->doc_name; ?>" class='badge outline-badge-primary'>Consult Doc</a>
                                                             </div>
                                                         </td>
                                                     </tr>

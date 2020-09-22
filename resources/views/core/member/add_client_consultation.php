@@ -10,11 +10,11 @@ if (isset($_POST['add'])) {
 
     $consul_id = $_POST['consul_id'];
     $consul_code = $_POST['consul_code'];
-    $member_id = $_GET['member_id'];
-    $member_name = $_GET['member_name'];
-    $member_phone = $_GET['member_phone'];
-    $doc_id = $_POST['doc_id'];
-    $doc_name = $_POST['doc_name'];
+    $member_id = $_SESSION['member_id'];
+    $member_name = $_POST['member_name'];
+    $member_phone = $_POST['member_phone'];
+    $doc_id = $_GET['doc_id'];
+    $doc_name = $_GET['doc_name'];
     $consul_details = $_POST['consul_details'];
     $consul_status = $_POST['consul_status'];
 
@@ -96,31 +96,22 @@ require_once('partials/_head.php');
                                         <input type="text" name="consul_id" value="<?php echo $consul_id; ?>" class="form-control">
                                         <input type="text" name="consul_code" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                         <input type="text" name="consul_status" value="Pending" class="form-control">
+                                        <?php
+                                        $member_id = $_SESSION['member_id'];
+                                        $ret = "SELECT * FROM `members` WHERE member_id ='$member_id' ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($row = $res->fetch_object()) {
+                                        ?>
+                                            <input type="text" name="member_name" value="<?php echo $row->member_name; ?>" class="form-control">
+                                            <input type="text" name="member_phone" value="<?php echo $row->member_phone; ?>" class="form-control">
+                                        <?php
+                                        } ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert</label>
-                                        <select id ="docNumber" onChange="getDoctorDetails(this.value)" class='form-control basic' name="package_name" id="">
-                                            <option selected>Select Medical Expert Number</option>
-                                            <?php
-                                            $ret = "SELECT * FROM `medical_experts` WHERE doc_status != 'Pending' ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($row = $res->fetch_object()) {
-                                            ?>
-                                                <option><?php echo $row->doc_number;?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Medical Expert Name</label>
-                                        <input type="text" readonly id="docName" class="form-control" name="doc_name">
-                                    </div>
-                                    <div style="display:none" class="form-group col-md-6">
-                                        <input type="text" id="docId" class="form-control" name="doc_id">
-                                    </div>
+
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-12">
