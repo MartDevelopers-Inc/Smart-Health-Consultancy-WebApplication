@@ -181,6 +181,9 @@ require_once('partials/_head.php');
                                                     <th>
                                                         <div class="th-content">Acc Status</div>
                                                     </th>
+                                                    <th>
+                                                        <div class="th-content">Action</div>
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -193,7 +196,7 @@ require_once('partials/_head.php');
                                                 ?>
                                                     <tr>
                                                         <td>
-                                                            <a href="view_doc.php?view=<?php echo $row->doc_id;?>">
+                                                            <a href="view_doc.php?view=<?php echo $row->doc_id; ?>">
                                                                 <div class="td-content product-brand"><?php echo $row->doc_number; ?></div>
                                                             </a>
 
@@ -216,6 +219,11 @@ require_once('partials/_head.php');
                                                             }
 
                                                             ?>
+                                                        </td>
+                                                        <td>
+                                                            <div class='td-content'>
+                                                                <a href="add_client_consultation.php?doc_id=<?php echo $row->doc_id;?>&doc_name=<?php echo $row->doc_name;?>" class='badge outline-badge-primary'>Consult Doc</a>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
