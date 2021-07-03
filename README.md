@@ -1,7 +1,7 @@
 <p align="center"><img length ="400" height ="200" src="https://github.com/MartDevelopers-Inc/Smart-Health-Consultancy/blob/master/Smart-Health%20Consultancy.png"></p>
 
 
-## About Smart Health Consultancy 
+## About Smart Health Consultancy - Prototype
 
 It might have happened so many times that you or someone else need doctors help immediately, 
 but they are not available due to some reason. The Smart Health Consultation application is an end user
